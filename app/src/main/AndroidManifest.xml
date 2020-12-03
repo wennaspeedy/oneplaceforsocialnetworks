@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          package="com.univap.oneplace">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+
+    <!--<uses-permission android:name="android.permission.READ_PHONE_STATE"/>-->
+    <uses-permission
+            android:name="android.permission.MANAGE_DOCUMENTS"
+            tools:ignore="ProtectedPermissions"/>
+
+    <application
+            android:allowBackup="true"
+            android:hardwareAccelerated="true"
+            android:icon="${appIcon}"
+            android:label="@string/app_name"
+            android:largeHeap="true"
+            android:roundIcon="${appIcon}"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme"
+            android:usesCleartextTraffic="true">
+
+        <activity
+                android:name="com.univap.oneplace.LoadingActivity"
+                android:configChanges="locale|orientation">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+                android:name="com.univap.oneplace.settings.FbSettingActivity"
+                android:label="@string/fbsetting"
+                android:theme="@style/PreferenceScreen"
+                android:configChanges="locale|orientation">
+        </activity>
+        <activity
+                android:name="com.univap.oneplace.IntroActivity"
+                android:configChanges="locale|orientation"
+                android:theme="@style/AppTheme.NoActionBar">
+
+
+        </activity>
+        <activity
+                android:name="com.univap.oneplace.IntroActivity2"
+                android:configChanges="locale|orientation"
+                android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
+        <activity
+                android:name="com.univap.oneplace.settings.CustomActivity"
+                android:label="@string/title_activity_customsoc"
+                android:theme="@style/PreferenceScreen"
+                android:configChanges="locale|orientation">
+        </activity>
+        <activity
+                android:name="com.univap.oneplace.settings.SettingActivity"
+                android:label="@string/setting"
+                android:theme="@style/PreferenceScreen"
+                android:configChanges="locale|orientation">
+        </activity>
+        <activity
+                android:name="com.univap.oneplace.MainActivity"
+                android:configChanges="locale|orientation"
+        >
+        </activity>
+
+        <meta-data
+                android:name="com.google.android.gms.ads.APPLICATION_ID"
+                android:value="ca-app-pub-7065309844332971~1938672281"/>
+    </application>
+
+</manifest>

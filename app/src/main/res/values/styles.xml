@@ -1,0 +1,99 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorFBblue</item>
+        <item name="colorPrimaryDark">@color/colorFBblue</item>
+        <item name="colorAccent">@color/colorFBblue</item>
+        <item name="actionBarItemBackground">@color/colorFBblue</item>
+        <item name="colorBackgroundFloating">@color/colorFBblue</item>
+        <item name="android:textViewStyle">@style/RobotoTextViewStyle</item>
+        <item name="buttonStyle">@style/RobotoButtonStyle</item>
+        <item name="itemTextAppearance">@style/NavimenuStyle</item>
+        <item name="android:windowDisablePreview">true</item>
+
+        <item name="alertDialogTheme">@style/AlertDialogTheme</item>
+        <item name="listMenuViewStyle">@style/NavigationDrawerStyle</item>
+        <item name="android:preferenceScreenStyle">@style/PreferenceScreen</item>
+
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+
+    <style name="RobotoTextViewStyle" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/montserrat</item>
+    </style>
+
+    <style name="RobotoButtonStyle" parent="android:Widget.Holo.Button">
+        <item name="android:fontFamily">@font/montserrat</item>
+    </style>
+    <style name="NavimenuStyle">
+        <item name="android:fontFamily">@font/montserrat</item>
+
+    </style>
+
+    <!--START alert dialog-->
+    <style name="AlertDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="colorAccent">@color/colorFBBlack</item>
+        <item name="android:textColorPrimary">@color/colorWhite</item>
+        <item name="android:windowBackground">@color/colorMenuBack</item>
+        <item name="android:windowTitleStyle">@style/MyTitleTextStyle</item>
+        <item name="android:shadowColor">@color/colorFBBlack</item>
+        <item name="android:shadowDx">2</item>
+        <item name="android:shadowDy">2</item>
+        <item name="android:shadowRadius">2</item>
+        <item name="android:colorControlNormal">@color/colorFBBlack</item>
+        <item name="android:colorControlActivated">@color/colorIGpink</item>
+    </style>
+
+    <style name="MyTitleTextStyle">
+        <item name="android:textColor">@color/colorIGpink</item><!-- HEADER-->
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Title</item>
+        <item name="android:colorButtonNormal">@color/colorIGpink</item>
+    </style>
+    <!--END alert dialog-->
+
+    <!--START navimenu-->
+    <style name="NavigationDrawerStyle">
+        <item name="android:alertDialogTheme">@style/AlertDialogTheme</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:shadowColor">#000000</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">1</item>
+        <item name="android:listPreferredItemHeightSmall">40dp</item>
+        <item name="listPreferredItemHeightSmall">40dp</item>
+        <item name="android:listPreferredItemPaddingLeft">8dp</item>
+        <item name="listPreferredItemPaddingLeft">8dp</item>
+        <item name="android:listPreferredItemPaddingRight">8dp</item>
+        <item name="listPreferredItemPaddingRight">8dp</item>
+    </style>
+    <!--END navimenu-->
+
+    <style name="PreferenceScreen" parent="Theme.AppCompat">
+        <item name="android:textColorPrimary">@color/colorWhite</item><!-- HEADER-->
+        <item name="android:textColor">@color/colorWhite</item><!-- ITEMS-->
+        <item name="android:textSize">16sp</item>
+        <item name="android:shadowColor">#000000</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">1</item>
+        <item name="colorPrimary">@color/colorIGpink</item>
+        <item name="colorPrimaryDark">@color/colorIGpink</item>
+        <item name="colorAccent">@color/colorIGpink</item>
+        <item name="android:windowBackground">@color/colorMenuBack</item>
+        <item name="android:alertDialogTheme">@style/AlertDialogTheme</item>
+        <item name="alertDialogTheme">@style/AlertDialogTheme</item>
+    </style>
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+</resources>

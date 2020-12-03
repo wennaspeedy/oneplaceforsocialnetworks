@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.LinkedinFragment"
+android:background="@color/colorWhite">
+
+    <include layout="@layout/frag_common"/>
+
+    <ImageView android:layout_width="50dp" android:layout_height="50dp"
+               android:id="@+id/imgv"
+               android:src="@drawable/ic_lidark"
+               android:background="@drawable/round_bg"
+               android:layout_centerInParent="true"
+
+    />
+</RelativeLayout>

@@ -1,0 +1,48 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:title="@string/setting">
+
+    <ListPreference
+            android:key="tabmode"
+            android:title="@string/tabmode"
+            android:entries="@array/switcharray"
+            android:entryValues="@array/switchvalue"
+            android:defaultValue="2"/>
+    <ListPreference
+            android:key="lang"
+            android:title="@string/lang"
+            android:entries="@array/langswitch"
+            android:entryValues="@array/langvalue"
+    />
+
+    <CheckBoxPreference android:key="doubleb"
+                        android:title="@string/doubleb"
+                        android:defaultValue="true"/>
+    <CheckBoxPreference android:key="hidenavi"
+                        android:title="@string/hidenavi"
+                        android:defaultValue="false"
+                       />
+    <CheckBoxPreference android:key="swiperefresh"
+                        android:title="@string/swiperefresh"
+                        android:defaultValue="false"
+    />
+    <Preference android:key="clearco"
+                android:title="@string/clearco"></Preference>
+
+    <Preference android:key="cleard"
+                android:title="@string/cleard"></Preference>
+
+
+    <CheckBoxPreference android:key="showfr"
+                        android:title="@string/showfr"
+                        android:defaultValue="false"
+                        android:id="@+id/showfr"
+                        android:enabled="true"/>
+    <CheckBoxPreference android:key="rememposit"
+                        android:title="@string/rememposit"
+                        android:defaultValue="false"
+                        android:enabled="false"
+    />
+
+
+
+</PreferenceScreen>

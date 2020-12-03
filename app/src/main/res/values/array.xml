@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="fbThemeArray">
+        <item>@string/fbtheme1</item>
+        <item>@string/fbtheme2</item>
+        <item>@string/fbtheme3</item>
+        <item>@string/fbtheme4</item>
+        <item>@string/fbtheme5</item>
+        <item>@string/fbtheme6</item>
+        <item>@string/fbtheme7</item>
+
+    </string-array>
+    <string-array name="fbThemeValues">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+    </string-array>
+    <string-array name="switcharray">
+        <item>@string/switch1</item>
+        <item>@string/switch2</item>
+       <!-- <item>@string/switch3</item>-->
+    </string-array>
+    <string-array name="switchvalue">
+        <item>1</item>
+        <item>2</item>
+        <!-- <item>3</item>-->
+    </string-array>
+
+
+    <string-array name="langswitch">
+        <item>@string/langen</item>
+        <item>@string/langcz</item>
+        <item>@string/langge</item>
+        <item>@string/langfr</item>
+        <item>@string/langsp</item>
+        <item>@string/langch</item>
+        <item>@string/langhi</item>
+        <item>@string/langvi</item>
+    </string-array>
+    <string-array name="langvalue">
+        <item>en</item>
+        <item>cs</item>
+        <item>de</item>
+        <item>fr</item>
+        <item>es</item>
+        <item>zh</item>
+        <item>hi</item>
+        <item>vi</item>
+    </string-array>
+
+
+
+
+</resources>

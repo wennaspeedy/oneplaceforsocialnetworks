@@ -1,0 +1,134 @@
+._3q-XSJ2vokDQrvdG6mR__k {
+visibility:hidden}
+
+
+.active .XPromoPopup__content {
+
+    visibility: hidden;
+    display: none !important;}
+
+    .TopButton {
+    visibility: hidden !important;
+    display: none !important;
+    }
+
+    .active .XPromoPopup__overlay {
+        visibility: hidden !important;
+        display: none !important;
+    }
+
+    .XPromoAdFeed {
+       visibility: hidden !important;
+       position: absolute;
+       display: none !important;
+    }
+    .XPromoPill {
+
+        visibility: hidden;
+        display: none !important;
+    }
+
+    .xPromoAppStoreFooter {
+      visibility: hidden !important;
+      position: absolute;
+      display: none !important;
+    }
+
+    .adLinkBar.__compactView {
+        visibility: hidden;
+        position: absolute;
+        display: none !important;
+    }
+
+    .DualPartInterstitial {
+        display: none !important;
+    }
+
+    .DualPartInterstitial {
+        display: none !important;
+    }
+
+    a.TopButton {
+        display: none !important;
+    }
+
+    .XPromoPill {
+        display: none !important;
+    }
+
+.EUCookieNotice {
+
+    display: none !important;
+}
+/*
+
+.XPromoPopup__overlay.m-animated {
+   display: none !important;}
+
+
+.XPromoPopup__content.m-animated {
+   display: none !important;}*/
+
+
+   .XPromoPopup__header {
+       display: none;
+   }
+
+   a.XPromoPopup__actionButton.m-blue {
+       display: none;
+   }
+
+   span.XPromoPopup__actionTitle {
+       display: none;
+   }
+
+
+   img.XPromoPopup__chrome {
+       display: none;
+   }
+
+   .XPromoPopup__actionButton {
+
+    margin-right: 35%
+   }
+
+   .XPromoPopup__imageBtnWrapper {
+
+       margin-left: 45%;
+   }
+
+   a.XPromoInFeed {
+       display: none !important;
+   }
+
+   /*
+ button.XPromoPopup__actionButton {
+   visibility: hidden;
+   }
+
+   button.XPromoPopup__actionButton:after {
+    content:'REDDIT';
+    visibility: visible;
+    display: block;
+
+        margin-bottom: 50px !important;
+   }*/
+
+button.XPromoPopup__actionButton {
+  position: absolute;
+  visibility: hidden;
+}
+
+button.XPromoPopup__actionButton:before {
+  content: "REDDIT";
+  font-size: 40px;
+  visibility: visible;
+}
+
+
+
+
+
+   a.XPromoPopup__actionButton.m-blue {
+    display: none !important;
+   }

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/relativeloading"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:background="@color/colorMenuBack"
+
+>
+    <ImageView
+            android:id="@+id/background_one"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/clouds"/>
+
+
+    <ImageView
+            android:id="@+id/background_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/clouds"/>
+
+
+    <com.tomer.fadingtextview.FadingTextView
+      android:id="@+id/fadingText"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:gravity="center"
+      android:layout_alignBottom="@+id/nav_header_imageViewMain"
+      app:texts="@array/loadingtext"
+      android:textColor="@color/colorFBBlack"
+      android:textSize="25sp"
+      android:textStyle="bold"
+      app:timeout="20"
+      android:layout_alignParentBottom="true"
+    android:visibility="gone"
+    />
+    <ImageView
+            android:id="@+id/nav_header_imageViewMain"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/freepoo_logo_new1"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="40dp"
+            android:padding="50dp"
+
+    />
+</RelativeLayout>

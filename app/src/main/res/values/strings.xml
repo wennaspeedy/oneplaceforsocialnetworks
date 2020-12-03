@@ -1,0 +1,109 @@
+<resources>
+    <string name="connection_error">Check your internet connection and click on reload to restart app.</string>
+    <string name="error1">Connection error!</string>
+    <string name="reload">Reload</string>
+    <string name="errorInsta">Connection error, please reload app!</string>
+    <string name="freeMessage">The development of this application takes a lot of time. Support my work by paying any amount. Thank you.</string>
+    <string name="freeMessageTitle">PLEASE SUPPORT MY WORK</string>
+    <string name="negativeButton">NO</string>
+    <string name="positiveButton">BUY ME A COFFEE</string>
+    <string name="why">Why not? :(</string>
+    <string name="file_chooser">choose</string>
+    <string name="file_chooser_default">choose file</string>
+    <string name="file_chooser_custom">choose file custom</string>
+    <string name="setting">Settings</string>
+    <string name="donate">Buy me a coffee</string>
+    <string name="customize">Customize</string>
+    <string name="changesocials">This option needs to restart the app</string>
+    <string name="changehead">Restart required</string>
+    <string name="changenoopt">This change will take effect after restart</string>
+    <string name="notnow">Not now</string>
+    <string name="selectleast">Select at least one!</string>
+    <string name="selectmax">Maximum number of selected apps is 5!</string>
+    <string name="clear">Clear data</string>
+    <string name="title_activity_customsoc">Customize apps</string>
+    <string name="setting_customize">Customize tabs</string>
+
+    <string name="cleard">Delete all data (Link)</string>
+    <string name="clearco">Clear app cache</string>
+    <string name="clearcotoast">Cache was successfully cleared...</string>
+    <string name="doubleb">Double-back to exit</string>
+    <string name="fbdark">Facebook DarkMaterial Theme</string>
+    <string name="fbheader">Fixed Top Panel</string>
+    <string name="fbthemes">Facebook Themes</string>
+    <string name="showfr">Hide free app warning</string>
+    <string name="title_activity_fb_setting">FbSettingActivity</string>
+    <string name="fbsetting">Facebook Settings</string>
+    <string name="hidenavi">Hide navigation bar</string>
+    <string name="rememposit">Remember tab position</string>
+    <string name="exit">Exit app</string>
+    <string name="fbfast">Power saving mode</string>
+    <string name="tabmode">App mode</string>
+    <string name="filechoose">Choose your files</string>
+    <string name="title_activity_loading">LoadingActivity</string>
+    <string-array name="loadingtext">
+        <item>Loading.</item>
+        <item>Loading..</item>
+        <item>Loading...</item>
+        <item>Loading..</item>
+        <item>Loading.</item>
+    </string-array>
+
+    <string name="switch1">Clear after change (faster)</string>
+    <string name="switch2">Reload after change</string>
+    <string name="switch3">Leave loaded (slower)</string>
+
+    <string name="sponsored">Hide sponsored posts</string>
+    <string name="searchspon">Sponsored</string>
+    <string name="swiperefresh">Swipe down to refresh</string>
+    <string name="fbmessenger">Use messenger app</string>
+
+    <!-- FB THEMES NAMES-->
+    <string name="fbtheme1">Default</string>
+    <string name="fbtheme2">Material dark</string>
+    <string name="fbtheme3">Material light</string>
+    <string name="fbtheme4">Drakula Red</string>
+    <string name="fbtheme5">Black</string>
+    <string name="fbtheme6">Orange Black</string>
+    <string name="fbtheme7">Fallout Pip-Boy Green</string>
+    <string name="linkko">...go back</string>
+    <string name="linkok">Of course!</string>
+    <string name="linkmsg">Do you want to open external link in your browser?</string>
+
+    <string name="tutorial">Tutorial</string>
+    <string name="lang">Language</string>
+    <string name="gnews">G-News</string>
+    <string name="welcome">Welcome to FreePoo tutorial. \nPlease dont skip these instructions.</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="performaction">Do you want really perform this action?</string>
+
+    <string name="langen">English</string>
+    <string name="langcz">Czech</string>
+    <string name="langge">German</string>
+    <string name="langfr">French</string>
+    <string name="langsp">Spanish</string>
+    <string name="langch">Chinese</string>
+    <string name="langhi">Hindi</string>
+    <string name="langvi">Vietnamese</string>
+
+    <string name="int2naz">Left setting panel</string>
+    <string name="int2tex">Use left setting panel every time you need</string>
+
+    <string name="int3naz">Editable bottom bar</string>
+    <string name="int3tex">Choose apps which you want to switch between. \n\n (Facebook, Twitter, Instagram, LinkedIn, Reddit, G-News for now)</string>
+
+    <string name="int4naz">Customizable Facebook</string>
+    <string name="int4tex">Try features for Facebook \n \n (themes, ads killer, fixed panel and many more)</string>
+
+    <string name="int5naz">Donate Me</string>
+    <string name="int5tex">I spent a lot of time developing this app. If you like it, support me and I\'ll add more and
+        more apps and features
+    </string>
+
+    <string name="alclose">Do you want to close this app?</string>
+    <string name="alquit">Quit</string>
+
+
+
+</resources>

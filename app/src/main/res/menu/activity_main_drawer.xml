@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:showIn="nav_view"
+>
+<!--
+    <group android:checkableBehavior="single">
+        <item
+                android:id="@+id/nav_camera"
+                android:title="Import"/>
+        <item
+                android:id="@+id/nav_gallery"
+                android:title="Gallery"/>
+        <item
+                android:id="@+id/nav_slideshow"
+                android:title="Slideshow"/>
+        <item
+                android:id="@+id/nav_manage"
+                android:title="Tools"/>
+    </group>
+-->
+    <group android:id="@+id/grp1">
+        <item
+                android:id="@+id/nav_custom"
+                android:icon="@drawable/ic_customize"
+                android:title="@string/customize"/>
+        <item
+                android:id="@+id/nav_fbsetting"
+                android:icon="@drawable/ic_fb"
+                android:title="@string/fbsetting"
+        />
+        <item
+                android:id="@+id/nav_setting"
+                android:icon="@drawable/ic_setting"
+                android:title="@string/setting"/>
+        <item
+                android:id="@+id/nav_tutorial"
+                android:icon="@drawable/ic_tutor"
+                android:title="@string/tutorial"/>
+
+
+
+
+
+    </group>
+
+<group android:id="@+id/grp2">
+
+    <item
+            android:id="@+id/nav_donate"
+            android:icon="@drawable/ic_donate"
+            android:title="@string/donate"/>
+    <item
+            android:id="@+id/nav_info"
+            android:icon="@drawable/ic_info"
+            android:title="Info"/>
+    <item
+            android:id="@+id/nav_bug"
+            android:icon="@drawable/ic_bug"
+            android:title="Bug Report"/>
+</group>
+    <group android:id="@+id/grp3">
+
+        <item
+                android:id="@+id/nav_exit"
+                android:icon="@drawable/ic_exit"
+                android:title="@string/exit"/>
+
+
+    </group>
+
+
+</menu>

@@ -1,0 +1,41 @@
+/*.global-alert__state:checked ~ .global-alert {
+
+    display: none;
+}*/
+
+
+.nav__button-secondary.nav__button-secondary {
+    font-size: 2.2rem;
+    font-weight: 1000;
+    }
+
+
+
+   .job-finder-cta__header, .hero__headline, .etta-see-more-less-list,.talent-finder-cta,.people-cta, .product-cta-component,.brand-discovery,.marketing,.join-cta,.directory,.li-footer__list {
+
+        display: none;
+    }
+
+/*
+    div#app-upsell-container {
+        display: none !important;
+    }
+*/
+/*
+    .alert-content {
+        display: none !important;
+    }
+  */
+
+
+    .alert-container {
+         display: none !important;
+    }
+
+    .global-alert.global-alert--yield {
+        display: none !important;
+    }
+
+    body.global-alert-transition {
+        padding-top: 10px !important;
+    }

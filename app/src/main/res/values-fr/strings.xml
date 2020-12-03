@@ -1,0 +1,107 @@
+<resources>
+
+        <string name = "connection_error"> Vérifiez votre connexion Internet et cliquez sur recharger pour redémarrer lapplication. </string>
+        <string name = "error1"> Erreur de connexion! </string>
+        <string name = "reload"> Recharger </string>
+        <string name = "errorInsta"> Erreur de connexion, veuillez recharger lapplication! </string>
+        <string name = "freeMessage">Le développement de cette application prend beaucoup de temps. Soutenez mon travail en payant n\'importe quel montant. Merci.</string>
+        <string name = "freeMessageTitle"> VEUILLEZ SUPPORTER MON TRAVAIL </string>
+        <string name = "negativeButton"> NO </string>
+        <string name = "positiveButton">ACHETEZ-MOI UN CAFÉ</string>
+        <string name = "why"> Pourquoi pas? : (</string>
+        <string name = "file_chooser"> choisissez </string>
+        <string name = "file_chooser_default"> choisissez le fichier </string>
+        <string name = "file_chooser_custom"> choisissez le fichier personnalisé </string>
+        <string name = "setting"> Paramètres </string>
+        <string name = "donate"> Achetez-moi un café </string>
+        <string name = "customize"> Personnaliser </string>
+        <string name = "changesocials"> Cette option doit redémarrer lapplication </string>
+        <string name = "changehead"> Redémarrage requis </string>
+        <string name = "changenoopt"> Cette modification prendra effet après le redémarrage </string>
+        <string name = "notnow"> Pas maintenant </string>
+        <string name = "selectleast"> Sélectionnez au moins un! </string>
+        <string name = "selectmax"> Le nombre maximal dapplications sélectionnées est de 5! </string>
+        <string name = "clear"> Effacer les données </string>
+        <string name = "title_activity_customsoc"> Personnaliser les applications </string>
+        <string name = "setting_customize"> Personnaliser les onglets </string>
+
+        <string name = "cleard"> Supprimer toutes les données (lien) </string>
+        <string name = "clearco"> Vider le cache de lapplication </string>
+        <string name = "clearcotoast"> Le cache a été vidé avec succès ... </string>
+        <string name = "doubleb"> Double-retour pour quitter </string>
+        <string name = "fbdark"> Thème Facebook DarkMaterial </string>
+        <string name = "fbheader"> Panneau supérieur fixe </string>
+        <string name = "fbthemes"> Thèmes Facebook </string>
+        <string name = "showfr"> Avertissement de suppression dapplication gratuite </string>
+        <string name = "title_activity_fb_setting"> FbSettingActivity </string>
+        <string name = "fbsetting">" Paramètres FB "</string>
+        <string name = "hidenavi"> Masquer la barre de navigation </string>
+        <string name = "rememposit"> Noubliez pas la position de la tabulation </string>
+        <string name = "exit"> Quitter lapplication </string>
+        <string name = "fbfast"> Mode déconomie dénergie </string>
+        <string name = "tabmode"> Mode App </string>
+        <string name = "filechoose"> Choisissez vos fichiers </string>
+        <string name = "title_activity_loading"> LoadingActivity </string>
+        <string-array name = "loadingtext">
+            <item> Chargement. </item>
+            <item> Chargement .. </item>
+            <item> Chargement en cours ... </item>
+            <item> Chargement .. </item>
+            <item> Chargement. </item>
+        </string-array>
+
+        <string name = "switch1"> Effacer après modification (plus rapide) </string>
+        <string name = "switch2"> Recharger après modification </string>
+        <string name = "switch3"> Laisser chargé (plus lent) </string>
+
+        <string name = "sponsored"> Cacher les messages sponsorisés </string>
+        <string name = "searchspon"> Commandité </string>
+        <string name = "swiperefresh"> Glissez vers le bas pour actualiser </string>
+        <string name = "fbmessenger"> Utiliser lapplication de messagerie </string>
+
+       
+        <string name = "fbtheme1"> Par défaut </string>
+        <string name = "fbtheme2"> Matière sombre </string>
+        <string name = "fbtheme3"> Lumière matérielle </string>
+        <string name = "fbtheme4"> Drakula Red </string>
+        <string name = "fbtheme5"> Noir </string>
+        <string name = "fbtheme6"> Orange noir </string>
+        <string name = "fbtheme7"> Vert Pip-Boy Fallout </string>
+        <string name = "linkko"> ... revenir en arrière </string>
+        <string name = "linkok"> Bien sûr! </string>
+        <string name = "linkmsg"> Voulez-vous ouvrir un lien externe dans votre navigateur? </string>
+
+        <string name = "tutorial"> Didacticiel </string>
+        <string name = "lang"> Langue </string>
+        <string name = "gnews"> G-News </string>
+        <string name = "welcome"> Bienvenue dans le tutoriel FreePoo. \ nVeuillez ne pas ignorer ces instructions. </string>
+        <string name = "yes"> Oui </string>
+        <string name = "no"> Non </string>
+        <string name = "performaction"> Souhaitez-vous vraiment effectuer cette action? </string>
+
+        <string name = "langen"> anglais </string>
+        <string name = "langcz"> tchèque </string>
+        <string name = "langge"> allemand </string>
+        <string name = "langfr"> français </string>
+        <string name = "langsp"> espagnol </string>
+        <string name = "langch"> chinois </string>
+        <string name = "langhi"> hindi </string>
+        <string name = "langvi"> vietnamien </string>
+
+        <string name = "int2naz"> Panneau de configuration gauche </string>
+        <string name = "int2tex"> Utilisez le panneau de configuration gauche chaque fois que vous avez besoin </string>
+
+        <string name = "int3naz"> Barre inférieure éditable </string>
+        <string name = "int3tex"> Choisissez les applications pour lesquelles vous souhaitez basculer. \ n \ n (Facebook, Twitter, Instagram, LinkedIn, Reddit, G-News pour le moment) </string>
+
+       <string name = "int4naz"> Facebook personnalisable </string>
+         <string name = "int4tex"> Essayer des fonctionnalités pour Facebook \ n \ n (thèmes, tueurs d’annonces, panneau fixe et bien d’autres encore) </string>
+
+         <string name = "int5naz"> Me faire un don </string>
+         <string name = "int5tex"> Jai passé beaucoup de temps à développer cette application. Si vous laimez, soutenez-moi et j’ajouterai plus plus dapplications et de fonctionnalités
+         </string>
+    <string name="alclose">Voulez-vous fermer cette application?</string>
+    <string name="alquit">Quitter</string>
+</resources>
+
+

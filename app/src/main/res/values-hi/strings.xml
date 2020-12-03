@@ -1,0 +1,107 @@
+<resources>
+            <string name = "connection_error"> अपने इंटरनेट कनेक्शन की जाँच करें और पुनः आरंभ ऐप को पुनः लोड करने के लिए क्लिक करें</string>
+    <string name = "error1"> कनेक्शन त्रुटि! </string>
+    <string name = "reload"> Reload </string>
+    <string name = "errorInsta"> कनेक्शन त्रुटि, कृपया एप्लिकेशन पुनः लोड करें! </string>
+    <string name = "freeMessage">इस एप्लिकेशन के विकास में बहुत समय लगता है। किसी भी राशि का भुगतान करके मेरे काम का समर्थन करें। धन्यवाद।</string>
+            <string name = "freeMessageTitle"> कृपया मेरे काम का समर्थन करें </string>
+    <string name = "negativeButton"> NO </string>
+    <string name = "positiveButton">मुझे एक कॉफी खरीदें</string>
+    <string name = "why"> क्यों नहीं? : (</string>
+     <string name = "file_chooser"> चुनें </string>
+    <string name = "file_chooser_default"> फ़ाइल चुनें </string>
+    <string name = "file_chooser_custom"> फ़ाइल कस्टम चुनें </string>
+    <string name = "setting"> सेटिंग्स </string>
+    <string name = "donate"> मुझे एक कॉफी खरीदें </string>
+    <string name = "customize"> अनुकूलित करें </string>
+    <string name = "changesocials"> इस विकल्प के लिए ऐप को पुनः आरंभ करना होगा </string>
+    <string name = "changehead"> पुनरारंभ आवश्यक </string>
+    <string name = "changenoopt"> यह परिवर्तन पुनः आरंभ होने के बाद प्रभावी होगा </string>
+    <string name = "notnow"> अभी नहीं </string>
+    <string name = "selectleast"> कम से कम एक का चयन करें! </string>
+    <string name = "selectmax"> चयनित ऐप्स की अधिकतम संख्या 5 है! </string>
+    <string name = "clear"> डेटा साफ़ करें </string>
+    <string name = "title_activity_customsoc"> ऐप्स कस्टमाइज़ करें </string>
+    <string name = "setting_customize"> टैब कस्टमाइज़ करें </string>
+
+    <string name = "cleard"> सभी डेटा हटाएं (लिंक) </string>
+    <string name = "clearco"> स्पष्ट ऐप कैश </string>
+    <string name = "clearcotoast"> कैश को सफलतापूर्वक साफ़ किया गया ... </string>
+    <string name = "doubleb"> डबल-बैक से बाहर निकलें </string>
+    <string name = "fbdark"> Facebook DarkMaterial थीम </string>
+    <string name = "fbheader"> फिक्स्ड टॉप पैनल </string>
+    <string name = "fbthemes"> Facebook Themes </string>
+    <string name = "showfr"> मुफ्त ऐप चेतावनी छिपाएं </string>
+    <string name = "title_activity_fb_setting"> FbSettingActivity </string>
+    <string name = "fbsetting">" FB Settings "</string>
+    <string name = "hidenavi"> नेविगेशन बार छुपाएं </string>
+    <string name = "rememposit"> टैब स्थिति याद रखें </string>
+    <string name = "exit"> ऐप से बाहर निकलें </string>
+    <string name = "fbfast"> पावर सेविंग मोड </string>
+    <string name = "tabmode"> ऐप मोड </string>
+    <string name = "filechoose"> अपनी फ़ाइलें चुनें </string>
+    <string name = "title_activity_loading"> LoadingActivity </string>
+    <string-array name = "loadingtext">
+            <item> लोड हो रहा है। </item>
+            <item> लोड हो रहा है .. </item>
+            <item> लोड हो रहा है ... </item>
+            <item> लोड हो रहा है .. </item>
+            <item> लोड हो रहा है। </item>
+        </string-array>
+
+            <string name = "switch1"> बदलाव (तेज) के बाद स्पष्ट करें </string>
+    <string name = "switch2"> परिवर्तन के बाद पुनः लोड करें </string>
+    <string name = "switch3"> लोड (धीमा) छोड़ें </string>
+
+    <string name = "sponsored"> प्रायोजित पोस्ट छुपाएं </string>
+    <string name = "searchspon"> प्रायोजित </string>
+    <string name = "swiperefresh"> ताज़ा करने के लिए नीचे स्वाइप करें </string>
+    <string name = "fbmessenger"> मैसेंजर ऐप का उपयोग करें </string>
+
+   
+    <string name = "fbtheme1"> डिफ़ॉल्ट </string>
+    <string name = "fbtheme2"> मटेरियल डार्क </string>
+    <string name = "fbtheme3"> मटेरियल लाइट </string>
+    <string name = "fbtheme4"> Drakula Red </string>
+    <string name = "fbtheme5"> ब्लैक </string>
+    <string name = "fbtheme6"> Orange Black </string>
+    <string name = "fbtheme7"> नतीजा Pip-Boy ग्रीन </string>
+    <string name = "linkko"> ... वापस जाएं </string>
+    <string name = "linkok"> बेशक! </string>
+    <string name = "linkmsg"> क्या आप अपने ब्राउज़र में बाहरी लिंक खोलना चाहते हैं? </string>
+
+    <string name = "tutorial"> ट्यूटोरियल </string>
+    <string name = "lang"> भाषा </string>
+    <string name = "gnews"> G-News </string>
+    <string name = "welcome"> FreePoo ट्यूटोरियल में आपका स्वागत है। \ n कृपया इन निर्देशों को न छोड़ें। </string>
+    <string name = "yes"> Yes </string>
+    <string name = "no"> नहीं </string>
+    <string name = "performaction"> क्या आप वास्तव में यह क्रिया करना चाहते हैं? </string>
+
+    <string name = "langen"> अंग्रेजी </string>
+    <string name = "langcz"> चेक </string>
+    <string name = "langge"> जर्मन </string>
+    <string name = "langfr"> फ्रेंच </string>
+    <string name = "langsp"> स्पेनिश </string>
+    <string name = "langch"> चीनी </string>
+    <string name = "langhi"> हिंदी </string>
+    <string name = "langvi"> वियतनामी </string>
+
+    <string name = "int2naz"> लेफ्ट सेटिंग पैनल </string>
+    <string name = "int2tex"> बाईं सेटिंग पैनल का उपयोग करें हर बार जब आपको आवश्यकता होती है </string>
+
+    <string name = "int3naz"> संपादन योग्य नीचे बार </string>
+    <string name = "int3tex"> उन ऐप्स को चुनें जिन्हें आप बीच स्विच करना चाहते हैं। \ n \ n (Facebook, Twitter, Instagram, LinkedIn, Reddit, G-News for now) </string>
+
+ <string name = "int4naz"> अनुकूलन योग्य फेसबुक </string>
+         <string name = "int4tex"> Facebook \ n \ n के लिए सुविधाओं का प्रयास करें (थीम, विज्ञापन हत्यारा, फिक्स्ड पैनल और कई और अधिक) </string>
+
+         <string name = "int5naz"> मुझे दान करें </string>
+         <string name = "int5tex"> मैंने इस ऐप को विकसित करने में बहुत समय बिताया। यदि आप इसे पसंद करते हैं, तो मुझे समर्थन करें और मैं और अधिक जोड़ूंगा
+                 अधिक एप्लिकेशन और सुविधाएँ
+             </string>
+    <string name="alclose">क्या आप इस ऐप को बंद करना चाहते हैं?</string>
+    <string name="alquit">छोड़ना</string>
+
+
+</resources>

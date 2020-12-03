@@ -1,0 +1,36 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:title="@string/fbsetting">
+
+
+    <ListPreference
+            android:key="fbthemes"
+            android:title="@string/fbthemes"
+            android:entries="@array/fbThemeArray"
+            android:entryValues="@array/fbThemeValues"
+            android:defaultValue="1"/>
+
+    <CheckBoxPreference android:key="fbmessenger"
+                        android:title="@string/fbmessenger"
+                        android:defaultValue="false"/>
+
+    <CheckBoxPreference android:key="fbheader"
+                        android:title="@string/fbheader"
+                        android:defaultValue="false"/>
+
+    <CheckBoxPreference android:key="fbfast"
+                        android:title="@string/fbfast"
+                        android:defaultValue="false"/>
+    <CheckBoxPreference android:key="sponsored"
+                        android:title="@string/sponsored"
+                        android:defaultValue="false"
+                        android:enabled="true"/>
+
+
+   <!-- <CheckBoxPreference android:key=""
+                        android:title="ADBlocker"
+                        android:defaultValue="false"
+    android:enabled="false"/>-->
+
+
+
+</PreferenceScreen>

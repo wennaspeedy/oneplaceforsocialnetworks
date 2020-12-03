@@ -1,0 +1,105 @@
+<resources>
+        <string name ="connection_error">检查您的互联网连接，然后单击"重新加载"以重新启动应用程序。</string>
+            <string name ="error1">连接错误！</string>
+            <string name ="reload">重新加载</string>
+            <string name ="errorInsta">连接错误，请重新加载应用程序！</string>
+            <string name ="freeMessage">此应用程序的开发需要大量时间。 通过支付任何金额来支持我的工作。 谢谢。</string>
+            <string name ="freeMessageTitle">请支持我的工作</string>
+            <string name ="negativeButton">否</string>
+            <string name ="positiveButton">给我买咖啡</string>
+            <string name ="why">为什么不呢？ ：（</string>
+            <string name ="file_chooser">选择</string>
+            <string name ="file_chooser_default">选择文件</string>
+            <string name ="file_chooser_custom">选择文件自定义</string>
+            <string name ="setting">设置</string>
+            <string name ="donate">给我买杯咖啡</string>
+            <string name ="customize">自定义</string>
+            <string name ="changesocials">此选项需要重新启动应用程序</string>
+            <string name ="changehead">需要重新启动</string>
+            <string name ="changenoopt">此更改将在重新启动后生效</string>
+            <string name ="notnow">不是现在</string>
+            <string name ="selectleast">选择至少一个！</string>
+            <string name ="selectmax">所选应用程序的最大数量为5！</string>
+            <string name ="clear">清除数据</string>
+            <string name ="title_activity_customsoc">自定义应用</string>
+            <string name ="setting_customize">自定义标签</string>
+
+            <string name ="cleard">删除所有数据（链接）</string>
+            <string name ="clearco">清除应用缓存</string>
+            <string name ="clearcotoast">缓存已成功清除... </string>
+            <string name ="doubleb">双击退出</string>
+            <string name ="fbdark"> Facebook DarkMaterial主题</string>
+            <string name ="fbheader">固定的顶部面板</string>
+            <string name ="fbthemes"> Facebook主题</string>
+            <string name ="showfr">隐藏免费应用警告</string>
+            <string name ="title_activity_fb_setting"> FbSettingActivity </string>
+            <string name ="fbsetting">" FB设置"</string>
+            <string name ="hidenavi">隐藏导航栏</string>
+            <string name ="rememposit">记住标签页的位置</string>
+            <string name ="exit">退出应用程序</string>
+            <string name ="fbfast">省电模式</string>
+            <string name ="tabmode">应用程序模式</string>
+            <string name ="filechoose">选择文件</string>
+            <string name ="title_activity_loading"> LoadingActivity </string>
+            <string-array name ="loadingtext">
+                <item>正在加载。</item>
+                <item>正在加载.. </item>
+                <item>正在加载... </item>
+                <item>正在加载.. </item>
+                <item>正在加载。</item>
+            </string-array>
+
+            <string name ="switch1">更改后清除（更快）</string>
+            <string name ="switch2">更改后重新加载</string>
+            <string name ="switch3">保持加载（慢）</string>
+
+            <string name ="sponsored">隐藏赞助帖子</string>
+            <string name ="searchspon">赞助</string>
+            <string name ="swiperefresh">向下滑动以刷新</string>
+            <string name ="fbmessenger">使用Messenger应用</string>
+
+           
+            <string name ="fbtheme1">默认</string>
+            <string name ="fbtheme2">材料暗</string>
+            <string name ="fbtheme3">材质灯</string>
+            <string name ="fbtheme4">德拉古拉红</string>
+            <string name ="fbtheme5">黑色</string>
+            <string name ="fbtheme6">橙色黑色</string>
+            <string name ="fbtheme7">辐射小男孩绿色</string>
+            <string name ="linkko"> ...返回</string>
+            <string name ="linkok">当然！</string>
+            <string name ="linkmsg">您要在浏览器中打开外部链接吗？</string>
+
+            <string name ="tutorial">教程</string>
+            <string name ="lang">语言</string>
+            <string name ="gnews"> G新闻</string>
+            <string name ="welcome">欢迎使用FreePoo教程。 \ n请不要跳过这些说明。</string>
+            <string name ="yes">是</string>
+            <string name ="no">否</string>
+            <string name ="performaction">您是否真的要执行此操作？</string>
+
+            <string name ="langen">英语</string>
+            <string name ="langcz">捷克</string>
+            <string name ="langge">德语</string>
+            <string name ="langfr">法语</string>
+            <string name ="langsp">西班牙语</string>
+            <string name ="langch">中文</string>
+            <string name ="langhi">印地语</string>
+            <string name ="langvi">越南语</string>
+
+            <string name ="int2naz">左侧设置面板</string>
+            <string name ="int2tex">每次需要时都使用左侧设置面板</string>
+
+            <string name ="int3naz">可编辑的底部栏</string>
+            <string name ="int3tex">选择要在其间切换的应用程序。 \ n \ n（目前为Facebook，Twitter，Instagram，LinkedIn，Reddit，G-News）</string>
+
+    <string name ="int4naz">可自定义的Facebook </string>
+             <string name ="int4tex">尝试使用Facebook \ n \ n的功能（主题，广告杀手，固定面板等等）</string>
+
+             <string name ="int5naz">捐赠我</string>
+             <string name ="int5tex">我花了很多时间开发这个应用程序。 如果您愿意，请支持我，我会添加更多内容，
+                 更多应用和功能
+             </string>
+    <string name="alclose">您要关闭此应用程序吗？</string>
+    <string name="alquit">放弃</string>
+</resources>

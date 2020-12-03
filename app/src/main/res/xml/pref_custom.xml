@@ -1,0 +1,39 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:background="@drawable/gradient_center"
+                  android:layout="@layout/activity_main"
+                  android:title="@string/customize">
+
+    <SwitchPreference
+            android:key="switchfacebook"
+            android:title="Facebook"
+            android:summary=""
+            android:defaultValue="true"/>
+    <SwitchPreference
+            android:key="switchtwitter"
+            android:title="Twitter"
+            android:summary=""
+            android:defaultValue="true"/>
+    <SwitchPreference
+            android:key="switchinstagram"
+            android:title="Instagram"
+            android:summary=""
+            android:defaultValue="true"/>
+    <SwitchPreference
+            android:key="switchlinkedin"
+            android:title="LinkedIn"
+            android:summary=""
+            android:defaultValue="false"/>
+    <SwitchPreference
+            android:key="switchreddit"
+            android:title="Reddit"
+            android:summary=""
+            android:defaultValue="true"/>
+    <SwitchPreference
+            android:key="switchnews"
+            android:title="@string/gnews"
+            android:summary=""
+            android:defaultValue="false"/>
+
+
+
+</PreferenceScreen>

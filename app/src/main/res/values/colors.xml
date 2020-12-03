@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#d53833</color>
+    <color name="colorPrimaryDark">#d53833</color>
+    <color name="colorGrayBg">#A9A9A9</color>
+    <color name="colorBlue">#3295ea</color>
+    <color name="colorGrey">#657786</color>
+    <color name="colorAccent">#d53833</color>
+    <color name="colorDarkGrey">#424649</color>
+    <color name="colorFBblue">#4267b2</color>
+    <color name="colorFBgrey">#e9ebee</color>
+    <color name="colorTWblue">#4ab3f4</color>
+    <color name="colorIGpink">#d62976</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorIGorange">#fcaf45</color>
+    <color name="colorFBlightblue">#dfe3ee</color>
+    <color name="colorLIblue">#0077b5</color>
+    <color name="colorFBRed">#ff3030</color>
+    <color name="colorFBBlack">#2B2E3B</color>
+    <color name="colorFBGrey">#EBEDF0</color>
+    <color name="colorFBBlack2">#000000</color>
+    <color name="colorLightGrey">#40115A67</color>
+    <color name="colorRDorange">#ff4500</color>
+    <color name="colorFBOrange">#FFA500</color>
+    <color name="colorFBGreen">#00FF00</color>
+    <color name="colorMenuBack">#698EA0</color>
+    <color name="colorNews">#4285f4</color>
+</resources>
