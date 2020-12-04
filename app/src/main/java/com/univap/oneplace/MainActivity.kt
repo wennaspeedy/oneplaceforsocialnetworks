@@ -1,31 +1,35 @@
 package com.univap.oneplace
 
+import android.annotation.SuppressLint
 import android.content.Context
-import androidx.appcompat.app.AlertDialog
-
 import android.content.DialogInterface
 import android.content.Intent
 import android.content.SharedPreferences
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.preference.PreferenceManager
+import android.view.Menu
+import android.view.MenuItem
+import android.view.View
+import android.view.View.OnLongClickListener
+import android.widget.ImageView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.GravityCompat
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
-import kotlinx.android.synthetic.main.activity_main.*
-import android.os.StrictMode
-import android.preference.PreferenceManager
-import android.view.*
-import androidx.core.view.GravityCompat
 import com.google.android.material.navigation.NavigationView
-import kotlinx.android.synthetic.main.maincontent.*
-import java.util.*
 import com.univap.oneplace.settings.CustomActivity
 import com.univap.oneplace.settings.FbSettingActivity
 import com.univap.oneplace.settings.SettingActivity
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.maincontent.*
+import java.util.*
+
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     private var doubleBackToExitPressedOnce = true
@@ -33,6 +37,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     //lateinit var mAdView : AdView
     var sharedPref: SharedPreferences? =  null
     private var locale: Locale? = null
+    @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -44,8 +49,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
 
        /* AdBlocker.init(this, Schedulers.io());*/
-        setContentView(R.layout.activity_main)
+        //theme.applyStyle(R.style.AppTheme2,true)
 
+        setContentView(R.layout.activity_main)
 
         navController = Navigation.findNavController(this, R.id.fragment)
 
@@ -66,8 +72,15 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         if (fbPref) {
             menu.add(Menu.NONE, R.id.facebookFragment, Menu.NONE, "Facebook")
                 .setIcon(R.drawable.ic_fb)
-            bottomNav.setupWithNavController(navController);
 
+
+            bottomNav.setupWithNavController(navController);
+            val view = findViewById<View>(R.id.facebookFragment) // BottomNavigationView menu item id
+
+            view.setOnLongClickListener {
+                drawer_layout.openDrawer(GravityCompat.START)
+                false
+            }
             if(!isFirst){
                 bottomNav.setSelectedItemId(R.id.facebookFragment);
                 isFirst = true
@@ -78,7 +91,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             menu.add(Menu.NONE, R.id.twitterFragment, Menu.NONE, "Twitter")
                 .setIcon(R.drawable.ic_tw)
             bottomNav.setupWithNavController(navController);
+            val view = findViewById<View>(R.id.twitterFragment) // BottomNavigationView menu item id
 
+            view.setOnLongClickListener {
+                drawer_layout.openDrawer(GravityCompat.START)
+                false
+            }
             if(!isFirst){
                 bottomNav.setSelectedItemId(R.id.twitterFragment);
                 isFirst = true
@@ -88,6 +106,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             menu.add(Menu.NONE, R.id.instaFragment, Menu.NONE, "Instagram")
                 .setIcon(R.drawable.ic_ig)
             bottomNav.setupWithNavController(navController);
+            val view = findViewById<View>(R.id.instaFragment) // BottomNavigationView menu item id
+
+            view.setOnLongClickListener {
+                drawer_layout.openDrawer(GravityCompat.START)
+                false
+            }
             if(!isFirst){
                 bottomNav.setSelectedItemId(R.id.instaFragment);
                 isFirst = true
@@ -97,6 +121,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             menu.add(Menu.NONE, R.id.linkedinFragment, Menu.NONE, "LinkedIn")
                 .setIcon(R.drawable.ic_lidark)
             bottomNav.setupWithNavController(navController);
+            val view = findViewById<View>(R.id.linkedinFragment) // BottomNavigationView menu item id
+
+            view.setOnLongClickListener {
+                drawer_layout.openDrawer(GravityCompat.START)
+                false
+            }
             if(!isFirst){
                 bottomNav.setSelectedItemId(R.id.linkedinFragment);
                 isFirst = true
@@ -106,6 +136,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             menu.add(Menu.NONE, R.id.redditFragment, Menu.NONE, "Reddit")
                 .setIcon(R.drawable.ic_reddit)
             bottomNav.setupWithNavController(navController);
+            val view = findViewById<View>(R.id.redditFragment) // BottomNavigationView menu item id
+
+            view.setOnLongClickListener {
+                drawer_layout.openDrawer(GravityCompat.START)
+                false
+            }
             if(!isFirst){
                 bottomNav.setSelectedItemId(R.id.redditFragment);
                 isFirst = true
@@ -114,7 +150,14 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         if (gnPref) {
             menu.add(Menu.NONE, R.id.newsFragment, Menu.NONE, R.string.gnews)
                 .setIcon(R.drawable.ic_news)
+
             bottomNav.setupWithNavController(navController);
+            val view = findViewById<View>(R.id.newsFragment) // BottomNavigationView menu item id
+
+            view.setOnLongClickListener {
+                drawer_layout.openDrawer(GravityCompat.START)
+                false
+            }
             if(!isFirst){
                 bottomNav.setSelectedItemId(R.id.newsFragment);
                 isFirst = true
@@ -122,6 +165,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
 
 
+        val view = findViewById<View>(R.id.facebookFragment) // BottomNavigationView menu item id
+
+        view.setOnLongClickListener {
+            drawer_layout.openDrawer(GravityCompat.START)
+            false
+        }
 
         val hidenavi = sharedPref!!.getBoolean("hidenavi", false)
         if(hidenavi){bottomNav.setVisibility(View.GONE);}
@@ -131,7 +180,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         //Nastav listener na akce pro vysouvaci panel
         nav_view.setNavigationItemSelectedListener(this)
 
-        println("showfr: "+showfr)
+        //println("showfr: "+showfr)
             //show and load support window
             if (!showfr) {
 
@@ -256,6 +305,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 }
             }
     }
+
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {

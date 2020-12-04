@@ -3,14 +3,14 @@
               android:id="@+id/nav_header"
               android:layout_width="match_parent"
               android:layout_height="130dp"
-              android:background="@drawable/clouds"
+              android:background="@color/bg1"
               android:clickable="false"
               android:focusable="false"
 
               android:gravity="bottom"
               android:orientation="vertical"
 
-              android:theme="@style/Base.Theme.AppCompat.Light"
+
 
 >
     <TextView
@@ -29,7 +29,7 @@ android:gravity="center"
             android:id="@+id/nav_header_imageView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/freepoo_logo_new1"
+            android:src="@drawable/placemenuup"
     />
 
 

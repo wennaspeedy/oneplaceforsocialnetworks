@@ -56,11 +56,11 @@ class FacebFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        super.onCreate(savedInstanceState)
 
+        super.onCreate(savedInstanceState)
         setRetainInstance(true)
         val v = inflater.inflate(R.layout.fragment_faceb, container, false)
-        val fragmentManager = getFragmentManager()
+        //val fragmentManager = getFragmentManager()
         val mySwipeRefreshLayout = v.findViewById(R.id.swipeContainer) as SwipeRefreshLayout
         sharedPref = PreferenceManager.getDefaultSharedPreferences(context)
         sharedPref!!.edit().putString("src", src).commit()
@@ -76,6 +76,10 @@ class FacebFragment : Fragment() {
         //AdBlocker.init(this!!.context!!, Schedulers.io());
         viewStartImgRotate(img!!, this!!.context!!)
         SetFbTheme(context!!,/* pbar!!,*/ navimenu!!)  //Dynamically setting of facebook theme
+
+       // context!!.theme.applyStyle(R.style.AppTheme2,false)
+
+
         myWebView = v.findViewById(R.id.webview) as WebView
         if (!viewIsOnline(context!!)) {
             myWebView!!.loadUrl(DEFAULT_ERROR_PAGE_PATH);
