@@ -24,7 +24,7 @@ android {
         }
         debug {
             applicationIdSuffix ".debug"
-            resValue "string", "app_name", "OnePlace -debug"
+            resValue "string", "app_name", "1Place -debug"
             versionNameSuffix "-debug"
             debuggable true
         }
@@ -33,7 +33,7 @@ android {
     productFlavors {
         free {
             dimension "version"
-            resValue "string", "app_name", "OnePlace"
+            resValue "string", "app_name", "1Place"
             manifestPlaceholders = [appIcon: "@mipmap/ic_launcher"]
             applicationIdSuffix ".free"
             versionNameSuffix "-free"

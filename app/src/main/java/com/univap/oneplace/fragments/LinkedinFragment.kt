@@ -33,7 +33,7 @@ import java.io.IOException
 
 class LinkedinFragment : Fragment() {
 
-    private var currentUrl: String = "https://www.linkedin.com/#/feed/"
+    private var currentUrl: String = "https://www.linkedin.com/login/"
     private var myWebView: WebView? = null
     val REQUEST_CODE_LOLIPOP = 1
     private var mFilePathCallback: ValueCallback<Array<Uri>>? = null
