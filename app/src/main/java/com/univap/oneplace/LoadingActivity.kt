@@ -1,17 +1,18 @@
 package com.univap.oneplace
 
-import android.animation.*
+import android.animation.ValueAnimator
 import android.content.Context
+import android.os.AsyncTask
 import android.os.Bundle
 import android.view.View
-import android.widget.ImageView
-import androidx.appcompat.app.AppCompatActivity;
-import com.univap.oneplace.util.*
-import android.widget.RelativeLayout
-import android.os.AsyncTask
+import android.view.animation.Animation
 import android.view.animation.LinearInterpolator
-
-
+import android.view.animation.RotateAnimation
+import android.widget.ImageView
+import android.widget.RelativeLayout
+import androidx.appcompat.app.AppCompatActivity
+import com.univap.oneplace.util.viewHideActionBar
+import com.univap.oneplace.util.viewStartMainActivity
 
 
 class LoadingActivity : AppCompatActivity() {
@@ -74,7 +75,16 @@ class LoadingActivity : AppCompatActivity() {
         animDrawable.start()*/
 
         val backgroundOne = v.findViewById(R.id.background_one) as ImageView
-        val backgroundTwo = v.findViewById(R.id.background_two) as ImageView
+
+        val logo = v.findViewById(R.id.nav_header_imageViewMain) as ImageView
+
+        val loadIg = v.findViewById(R.id.loadIg) as ImageView
+        val loadFb = v.findViewById(R.id.loadFb) as ImageView
+        val loadRd = v.findViewById(R.id.loadRd) as ImageView
+        val loadTw = v.findViewById(R.id.loadTw) as ImageView
+        val loadGn = v.findViewById(R.id.loadGn) as ImageView
+        val loadLi = v.findViewById(R.id.loadLi) as ImageView
+
         val animator = ValueAnimator.ofFloat(0.0f, 1.0f)
         animator.setRepeatCount(1)
         animator.setInterpolator(LinearInterpolator())
@@ -84,12 +94,41 @@ class LoadingActivity : AppCompatActivity() {
                 val progress = animation.getAnimatedValue() as Float
                 val width = backgroundOne.getWidth()
                 val translationX = width * progress
-                backgroundOne.setTranslationX(translationX)
-                backgroundTwo.setTranslationX(translationX - width)
+                //loadTw.setTranslationX(translationX)
+                loadTw.setTranslationY(-translationX)
+                loadTw.setTranslationX(-translationX)
+
+                loadFb.setTranslationY(translationX)
+                loadFb.setTranslationX(translationX)
+
+                loadIg.setTranslationX(translationX)
+                loadIg.setTranslationY(-translationX)
+
+                loadRd.setTranslationX(-translationX)
+                loadRd.setTranslationY(translationX)
+
+                loadGn.setTranslationX(-translationX)
+                //loadGn.setTranslationX(-translationX*2)
+
+                loadLi.setTranslationX(translationX)
+                //backgroundTwo.setTranslationX(translationX - width)
+
+
             }
         })
         animator.start()
-
+        val rotate = RotateAnimation(
+            180F, 360F, Animation.RELATIVE_TO_SELF,
+            0.5f, Animation.RELATIVE_TO_SELF, 0.5f
+        )
+        val rotate2 = RotateAnimation(
+            360F, 0F, Animation.RELATIVE_TO_SELF,
+            0.5f, Animation.RELATIVE_TO_SELF, 0.5f
+        )
+        rotate.duration = 1000
+        rotate2.duration = 1000
+        backgroundOne.startAnimation(rotate2)
+        logo.startAnimation(rotate)
 
        val welcomeThread = object:Thread() {
             override fun run() {

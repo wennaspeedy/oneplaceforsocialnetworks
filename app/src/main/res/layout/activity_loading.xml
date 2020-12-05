@@ -5,21 +5,71 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/relativeloading"
         android:layout_width="match_parent" android:layout_height="match_parent"
-        android:background="@color/colorMenuBack"
+        android:background="@color/bg1"
+
 
 >
     <ImageView
             android:id="@+id/background_one"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/clouds"/>
+            android:src="@drawable/background"
+            />
 
 
     <ImageView
-            android:id="@+id/background_two"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/clouds"/>
+            android:id="@+id/loadIg"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_ig"
+            android:background="@color/colorIGpink"
+            android:tint="@color/colorWhite"
+            android:layout_centerInParent="true"/>
+
+    <ImageView
+            android:id="@+id/loadFb"
+
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_fb"
+            android:background="@color/colorFBblue"
+            android:tint="@color/colorWhite"
+            android:layout_centerInParent="true" />
+
+    <ImageView
+            android:id="@+id/loadTw"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_tw"
+            android:background="@color/colorTWblue"
+            android:tint="@color/colorWhite"
+            android:layout_centerInParent="true"/>
+    <ImageView
+            android:id="@+id/loadLi"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_lidark"
+            android:background="@color/colorLIblue"
+            android:tint="@color/colorWhite"
+            android:layout_centerInParent="true"/>
+    <ImageView
+            android:id="@+id/loadGn"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_news"
+            android:background="@color/colorNews"
+            android:tint="@color/colorWhite"
+            android:layout_centerInParent="true"/>
+    <ImageView
+            android:id="@+id/loadRd"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@color/colorRDorange"
+            android:tint="@color/colorWhite"
+            android:src="@drawable/ic_reddit"
+
+
+            android:layout_centerInParent="true"/>
 
 
     <com.tomer.fadingtextview.FadingTextView
@@ -40,7 +90,7 @@
             android:id="@+id/nav_header_imageViewMain"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/freepoo_logo_new1"
+            android:src="@drawable/placelogo"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="40dp"
             android:padding="50dp"

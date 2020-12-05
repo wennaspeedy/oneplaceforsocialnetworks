@@ -12,8 +12,6 @@ import android.preference.PreferenceManager
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.view.View.OnLongClickListener
-import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -72,7 +70,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         if (fbPref) {
             menu.add(Menu.NONE, R.id.facebookFragment, Menu.NONE, "Facebook")
                 .setIcon(R.drawable.ic_fb)
-
+                .setOnMenuItemClickListener {
+                    if (drawer_layout.isDrawerVisible(GravityCompat.START)) { true }
+                    else { false}
+                }
 
             bottomNav.setupWithNavController(navController);
             val view = findViewById<View>(R.id.facebookFragment) // BottomNavigationView menu item id
@@ -90,6 +91,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         if (twPref) {
             menu.add(Menu.NONE, R.id.twitterFragment, Menu.NONE, "Twitter")
                 .setIcon(R.drawable.ic_tw)
+                .setOnMenuItemClickListener {
+                    if (drawer_layout.isDrawerVisible(GravityCompat.START)) { true }
+                    else { false}
+                }
             bottomNav.setupWithNavController(navController);
             val view = findViewById<View>(R.id.twitterFragment) // BottomNavigationView menu item id
 
@@ -105,6 +110,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         if (igPref) {
             menu.add(Menu.NONE, R.id.instaFragment, Menu.NONE, "Instagram")
                 .setIcon(R.drawable.ic_ig)
+                .setOnMenuItemClickListener {
+                    if (drawer_layout.isDrawerVisible(GravityCompat.START)) { true }
+                    else { false}
+                }
             bottomNav.setupWithNavController(navController);
             val view = findViewById<View>(R.id.instaFragment) // BottomNavigationView menu item id
 
@@ -120,6 +129,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         if (liPref) {
             menu.add(Menu.NONE, R.id.linkedinFragment, Menu.NONE, "LinkedIn")
                 .setIcon(R.drawable.ic_lidark)
+                .setOnMenuItemClickListener {
+                    if (drawer_layout.isDrawerVisible(GravityCompat.START)) { true }
+                    else { false}
+                }
             bottomNav.setupWithNavController(navController);
             val view = findViewById<View>(R.id.linkedinFragment) // BottomNavigationView menu item id
 
@@ -135,6 +148,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         if (rdPref) {
             menu.add(Menu.NONE, R.id.redditFragment, Menu.NONE, "Reddit")
                 .setIcon(R.drawable.ic_reddit)
+                .setOnMenuItemClickListener {
+                    if (drawer_layout.isDrawerVisible(GravityCompat.START)) { true }
+                    else { false}
+                }
+
             bottomNav.setupWithNavController(navController);
             val view = findViewById<View>(R.id.redditFragment) // BottomNavigationView menu item id
 
@@ -150,6 +168,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         if (gnPref) {
             menu.add(Menu.NONE, R.id.newsFragment, Menu.NONE, R.string.gnews)
                 .setIcon(R.drawable.ic_news)
+                .setOnMenuItemClickListener {
+                    if (drawer_layout.isDrawerVisible(GravityCompat.START)) { true }
+                    else { false}
+
+                }
 
             bottomNav.setupWithNavController(navController);
             val view = findViewById<View>(R.id.newsFragment) // BottomNavigationView menu item id
@@ -234,6 +257,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
        // frLoadPositionOnRestart(fragmentManager!!,sharedPref!!,this,fragment)
 
     }
+
 
     fun getMyContext(): Context {
         val sharedPref = PreferenceManager.getDefaultSharedPreferences(applicationContext)
