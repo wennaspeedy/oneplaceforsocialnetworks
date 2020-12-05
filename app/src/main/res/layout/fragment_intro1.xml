@@ -9,13 +9,13 @@
             android:id="@+id/background_one"
             android:layout_width="wrap_content"
             android:layout_height="500dp"
-            android:src="@drawable/clouds"/>
+            android:src="@drawable/ic_reddit"/>
 
     <ImageView
             android:id="@+id/background_two"
             android:layout_width="wrap_content"
             android:layout_height="500dp"
-            android:src="@drawable/clouds"/>
+            android:src="@drawable/ic_reddit"/>
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -35,7 +35,7 @@
             android:id="@+id/logo"
             android:layout_width="wrap_content"
             android:layout_height="500dp"
-            android:src="@drawable/freepoo_logo_new1"
+            android:src="@drawable/ic_reddit"
     />
 
 </RelativeLayout>

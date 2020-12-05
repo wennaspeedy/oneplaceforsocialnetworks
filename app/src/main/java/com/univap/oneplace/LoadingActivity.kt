@@ -89,30 +89,36 @@ class LoadingActivity : AppCompatActivity() {
         animator.setRepeatCount(1)
         animator.setInterpolator(LinearInterpolator())
         animator.setDuration(10000L)
+        animator.setStartDelay(1100);
         animator.addUpdateListener(object: ValueAnimator.AnimatorUpdateListener {
             override fun onAnimationUpdate(animation:ValueAnimator) {
                 val progress = animation.getAnimatedValue() as Float
                 val width = backgroundOne.getWidth()
                 val translationX = width * progress
                 //loadTw.setTranslationX(translationX)
-                loadTw.setTranslationY(-translationX)
-                loadTw.setTranslationX(-translationX)
+                loadTw.setTranslationY(-translationX*2)
+                loadTw.setTranslationX(-translationX*2)
 
-                loadFb.setTranslationY(translationX)
-                loadFb.setTranslationX(translationX)
+                loadFb.setTranslationY(translationX*2)
+                loadFb.setTranslationX(translationX*2)
 
-                loadIg.setTranslationX(translationX)
-                loadIg.setTranslationY(-translationX)
+                loadIg.setTranslationX(translationX*2)
+                loadIg.setTranslationY(-translationX*2)
 
-                loadRd.setTranslationX(-translationX)
-                loadRd.setTranslationY(translationX)
+                loadRd.setTranslationX(-translationX*2)
+                loadRd.setTranslationY(translationX*2)
 
-                loadGn.setTranslationX(-translationX)
+                loadGn.setTranslationX(-translationX*2)
                 //loadGn.setTranslationX(-translationX*2)
 
-                loadLi.setTranslationX(translationX)
+                loadLi.setTranslationX(translationX*2)
                 //backgroundTwo.setTranslationX(translationX - width)
-
+                loadTw.setVisibility(View.VISIBLE);
+                loadFb.setVisibility(View.VISIBLE);
+                loadIg.setVisibility(View.VISIBLE);
+                loadRd.setVisibility(View.VISIBLE);
+                loadGn.setVisibility(View.VISIBLE);
+                loadLi.setVisibility(View.VISIBLE);
 
             }
         })
@@ -125,8 +131,8 @@ class LoadingActivity : AppCompatActivity() {
             360F, 0F, Animation.RELATIVE_TO_SELF,
             0.5f, Animation.RELATIVE_TO_SELF, 0.5f
         )
-        rotate.duration = 1000
-        rotate2.duration = 1000
+        rotate.duration = 650
+        rotate2.duration = 800
         backgroundOne.startAnimation(rotate2)
         logo.startAnimation(rotate)
 

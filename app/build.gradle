@@ -86,7 +86,6 @@ dependencies {
     implementation 'android.arch.navigation:navigation-ui-ktx:1.0.0'
     //new material design
     implementation 'com.google.android.material:material:1.0.0'
-    //implementation 'com.google.android.gms:play-services-ads:18.3.0'
     implementation 'com.squareup.okhttp3:okhttp:3.14.2'
     implementation "com.squareup.okhttp3:logging-interceptor:3.14.2"
     implementation "io.reactivex:rxandroid:1.2.1"
@@ -96,6 +95,7 @@ dependencies {
     implementation 'tyrantgit:explosionfield:1.0.1'
     implementation 'com.github.AppIntro:AppIntro:5.1.0'
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.3'
+
 }
 //    implementation 'com.github.gtmora200:ZExplosionField:1.0.3'
 

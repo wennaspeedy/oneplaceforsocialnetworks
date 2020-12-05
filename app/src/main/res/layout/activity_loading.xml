@@ -22,9 +22,13 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:src="@drawable/ic_ig"
-            android:background="@color/colorIGpink"
+            android:layout_centerInParent="true"
+
             android:tint="@color/colorWhite"
-            android:layout_centerInParent="true"/>
+
+            android:visibility="invisible"
+
+            />
 
     <ImageView
             android:id="@+id/loadFb"
@@ -32,40 +36,45 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:src="@drawable/ic_fb"
-            android:background="@color/colorFBblue"
             android:tint="@color/colorWhite"
-            android:layout_centerInParent="true" />
+            android:visibility="invisible"
+            android:layout_centerInParent="true"
+            />
 
     <ImageView
             android:id="@+id/loadTw"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:src="@drawable/ic_tw"
-            android:background="@color/colorTWblue"
             android:tint="@color/colorWhite"
-            android:layout_centerInParent="true"/>
+            android:visibility="invisible"
+            android:layout_centerInParent="true"
+           />
     <ImageView
             android:id="@+id/loadLi"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:src="@drawable/ic_lidark"
-            android:background="@color/colorLIblue"
             android:tint="@color/colorWhite"
-            android:layout_centerInParent="true"/>
+            android:visibility="invisible"
+            android:layout_centerInParent="true"
+            />
+
     <ImageView
             android:id="@+id/loadGn"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:src="@drawable/ic_news"
-            android:background="@color/colorNews"
             android:tint="@color/colorWhite"
-            android:layout_centerInParent="true"/>
+            android:visibility="invisible"
+            android:layout_centerInParent="true"
+            />
     <ImageView
             android:id="@+id/loadRd"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:background="@color/colorRDorange"
             android:tint="@color/colorWhite"
+            android:visibility="invisible"
             android:src="@drawable/ic_reddit"
 
 

@@ -1,5 +1,5 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-                  android:background="@drawable/gradient_center"
+
                   android:layout="@layout/activity_main"
                   android:title="@string/customize">
 
