@@ -54,7 +54,7 @@ class InstaFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val fragmentManager = getFragmentManager()
+       // val fragmentManager = getFragmentManager()
         val v = inflater.inflate(R.layout.fragment_insta, container, false)
         sharedPref = PreferenceManager.getDefaultSharedPreferences(context)
         sharedPref!!.edit().putString("src", src).commit()
@@ -78,7 +78,10 @@ class InstaFragment : Fragment() {
 
         if (!viewIsOnline(context!!)){  myWebView!!.loadUrl(DEFAULT_ERROR_PAGE_PATH); }
 else {
-            myWebView!!.initWebview()
+            myWebView!!.getSettings().setJavaScriptEnabled(false);
+            myWebView!!.stopLoading();
+            myWebView!!.getSettings().setJavaScriptEnabled(true);
+            myWebView!!.initWebview(src)
             myWebView!!.loadUrl(currentUrl)
             myWebView!!.setOnKeyListener(myWebView!!, activity!!)
             myWebView!!.setDownloadListener(activity as AppCompatActivity)

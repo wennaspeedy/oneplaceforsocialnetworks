@@ -76,7 +76,10 @@ class TwitterFragment : Fragment() {
 
         if (!viewIsOnline(context!!)) {
             myWebView!!.loadUrl(DEFAULT_ERROR_PAGE_PATH); } else {
-            myWebView!!.initWebview()
+            myWebView!!.getSettings().setJavaScriptEnabled(false);
+            myWebView!!.stopLoading();
+            myWebView!!.getSettings().setJavaScriptEnabled(true);
+            myWebView!!.initWebview(src)
             myWebView!!.loadUrl(currentUrl)
             myWebView!!.setOnKeyListener(myWebView!!, activity!!)
             myWebView!!.setDownloadListener(activity as AppCompatActivity)

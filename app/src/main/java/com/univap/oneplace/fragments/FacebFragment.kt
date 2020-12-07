@@ -84,10 +84,15 @@ class FacebFragment : Fragment() {
         if (!viewIsOnline(context!!)) {
             myWebView!!.loadUrl(DEFAULT_ERROR_PAGE_PATH);
         } else {
+            myWebView!!.getSettings().setJavaScriptEnabled(false);
+            myWebView!!.stopLoading();
+            myWebView!!.getSettings().setJavaScriptEnabled(true);
             myWebView!!.initWebview(src)
             myWebView!!.loadUrl(currentUrl)
             myWebView!!.setDownloadListener(activity as AppCompatActivity)
             myWebView!!.setOnKeyListener(myWebView!!, activity!!)
+
+
         }
         myWebView!!.webChromeClient = MyWebChromeClient()
         myWebView!!.webViewClient = object : WebViewClient() {
@@ -153,7 +158,7 @@ class FacebFragment : Fragment() {
             }
 
             override fun onLoadResource(view: WebView?, url: String?) {
-                //if (url.contains("m.facebook.com")){println ("URL:"+url)}
+                //if (url!!.contains("m.facebook.com")){println ("URL:"+url)}
                 fbOnLoadResource(view!!, url!!,context!!,sharedPref!!)
 
 

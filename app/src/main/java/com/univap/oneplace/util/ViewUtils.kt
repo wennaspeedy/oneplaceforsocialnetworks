@@ -4,13 +4,11 @@ import android.animation.ObjectAnimator
 import android.animation.ValueAnimator.INFINITE
 import android.annotation.SuppressLint
 import android.app.Activity
-
 import android.app.DownloadManager
 import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import android.content.SharedPreferences
-
 import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.GradientDrawable
 import android.graphics.drawable.ShapeDrawable
@@ -18,25 +16,26 @@ import android.net.ConnectivityManager
 import android.net.Uri
 import android.os.*
 import android.preference.PreferenceManager
+import android.util.Base64
+import android.view.KeyEvent
 import android.view.View
+import android.webkit.*
+import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
-import kotlinx.android.synthetic.main.maincontent.*
-import android.util.Base64
-import android.view.KeyEvent
-import android.webkit.*
-import android.widget.FrameLayout
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
+import androidx.core.app.ActivityCompat.finishAffinity
+import androidx.core.content.ContextCompat
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.univap.oneplace.MainActivity
 import com.univap.oneplace.PermissionController
 import com.univap.oneplace.R
+import kotlinx.android.synthetic.main.maincontent.*
 import java.io.File
 
 private var mFilePathCallback: ValueCallback<Array<Uri>>? = null
@@ -104,16 +103,18 @@ fun WebView.initWebview(agent:String = "noagent"){
         settings.setUserAgentString("Mozilla/5.0 (BB10; Touch) AppleWebKit/537.1+ (KHTML, like Gecko) Version/10.0.0.1337 Mobile Safari/537.1+")
     }
 
-    settings.setJavaScriptEnabled(true);
+    //settings.setJavaScriptEnabled(true);
     settings.setAllowFileAccess(true);
     settings.setAppCacheEnabled(true);
-    settings.setDomStorageEnabled(true);
+    //settings.setDomStorageEnabled(true);
    // getSettings().setDatabaseEnabled(true);
     setVerticalScrollBarEnabled(false);
     //getSettings().setLoadWithOverviewMode(true);
     //getSettings().setUseWideViewPort(false);
     settings.setCacheMode(WebSettings.LOAD_DEFAULT);
     //settings.setRenderPriority(WebSettings.RenderPriority.HIGH);
+    //setLayerType(View.LAYER_TYPE_HARDWARE, null);
+    settings.setRenderPriority(WebSettings.RenderPriority.HIGH);
     setLayerType(View.LAYER_TYPE_HARDWARE, null);
 
 }
@@ -331,28 +332,55 @@ if(!viewIsOnline(context)) {
 
 fun WebView.setOnKeyListener(myWebView: WebView,activity: Activity){
 
+    setOnKeyListener(object: View.OnKeyListener {
+        override fun onKey(v:View, keyCode:Int, event:KeyEvent):Boolean {
+            if (event.getAction() === KeyEvent.ACTION_DOWN)
+            {
+                val webView = v as WebView
+                if(event.isLongPress){
+                    return false
+                } else {
+                when (keyCode) {
+
+                    KeyEvent.KEYCODE_BACK -> if (webView.canGoBack())
+                    {
+                        webView.goBack()
+                        return true
+                    }
+                    else -> { // Note the block
+
+                    }
+                }
+                }
+            }
+            return false
+        }
+    })
+
+/*
     setOnKeyListener(object : View.OnKeyListener {
 
+
+
+
         override fun onKey(v: View, keyCode: Int, event: KeyEvent): Boolean {
-            if (event.getAction()!= KeyEvent.ACTION_DOWN) return true;
+            //if (event.getAction()!= KeyEvent.ACTION_DOWN) return true;
 
             if (keyCode == KeyEvent.KEYCODE_BACK) {
 
                 if (myWebView!!.canGoBack()) {
                     myWebView!!.stopLoading();
                     myWebView!!.goBack();
-                } else {
-                    //val navController = Navigation.findNavController(activity, R.id.fragment)
-                   // NavigationUI.navigateUp(navController, null)
-                  //(activity)!!.onBackPressed();
-                }
-                (activity)!!.onBackPressed();
-                return true;
-            }
-            return false;
-        }
+return true
+                } else {return false}
 
-    })
+        }
+return false
+        }
+    })*/
+
+
+
 
 }
 

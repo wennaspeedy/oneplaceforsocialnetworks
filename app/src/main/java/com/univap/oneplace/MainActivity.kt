@@ -9,9 +9,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
 import android.preference.PreferenceManager
-import android.view.Menu
-import android.view.MenuItem
-import android.view.View
+import android.view.*
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -202,7 +200,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         NavigationUI.setupActionBarWithNavController(this, navController)
         //Nastav listener na akce pro vysouvaci panel
         nav_view.setNavigationItemSelectedListener(this)
-
+        getWindow().setFlags(
+            WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED,
+            WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED);
         //println("showfr: "+showfr)
             //show and load support window
             if (!showfr) {
@@ -290,6 +290,47 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
 
+
+/*
+var first = 0
+
+    override fun onKeyLongPress(keyCode: Int, event: KeyEvent?): Boolean {
+        val builder = AlertDialog.Builder(this@MainActivity)
+        builder.setMessage(R.string.alclose)
+            .setTitle(R.string.alquit)
+            .setCancelable(true)
+            .setOnCancelListener(object: DialogInterface.OnCancelListener {
+            override fun onCancel(dialog:DialogInterface) {
+                // dialog dismiss without button press
+                first = 0
+                //println("MYLOG: "+first)
+            }
+        })
+            .setPositiveButton(R.string.yes, DialogInterface.OnClickListener { dialog, id ->
+                finishAffinity();
+                System.exit(0);
+            })
+
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            val doubleb = sharedPref!!.getBoolean("doubleb",false)
+            if (doubleb) {
+                val alert = builder.create()
+                if (alert.isShowing()) {
+                    alert.dismiss();
+                    return super.onKeyLongPress(keyCode, event)
+                }else {
+                    //println("MYLOG: firstkeycodeback "+first)
+                    if (first == 0){
+                        alert.show()
+                        first = 1
+                    }
+
+                    return true}
+
+        }}
+        return super.onKeyLongPress(keyCode, event)
+    }*/
+/*
     override fun onBackPressed() {
         //sharedPref = PreferenceManager.getDefaultSharedPreferences(applicationContext)
 
@@ -328,7 +369,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 } catch (e: Exception) {
                 }
             }
-    }
+    }*/
 
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {

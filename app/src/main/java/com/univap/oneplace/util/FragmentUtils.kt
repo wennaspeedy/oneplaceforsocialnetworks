@@ -129,15 +129,19 @@ fun frOndestroy(pbar: ProgressBar?, img: ImageView, myWebView: WebView) {
     myWebView?.let {
         //  myWebView!!.setVisibility(View.GONE);
         myWebView!!.stopLoading();
-        myWebView!!.setWebChromeClient(null);
-        myWebView!!.setWebViewClient(null);
-        myWebView!!.clearHistory();
+        //myWebView!!.getSettings().setJavaScriptEnabled(false);
+        //myWebView!!.loadData("", "text/html", null);
+        //myWebView!!.setWebChromeClient(null);
+        //myWebView!!.setWebViewClient(null);
+        //myWebView!!.clearHistory();
         // myWebView!!.clearCache(true);
         // myWebView!!.onPause();
         myWebView!!.removeAllViews()
+        myWebView!!.removeAllViewsInLayout()
         //myWebView!!.pauseTimers();
         myWebView!!.loadUrl("file:///android_asset/default_reload_page.html")
         myWebView!!.destroy()
+
     }
 }
 
