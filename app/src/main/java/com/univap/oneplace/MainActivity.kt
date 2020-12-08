@@ -291,7 +291,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
 
 
-/*
+
 var first = 0
 
     override fun onKeyLongPress(keyCode: Int, event: KeyEvent?): Boolean {
@@ -329,47 +329,15 @@ var first = 0
 
         }}
         return super.onKeyLongPress(keyCode, event)
-    }*/
-/*
+    }
+
     override fun onBackPressed() {
-        //sharedPref = PreferenceManager.getDefaultSharedPreferences(applicationContext)
 
-        val doubleb = sharedPref!!.getBoolean("doubleb",false)
-        if (doubleBackToExitPressedOnce) {
-            if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
-                drawer_layout.closeDrawer(GravityCompat.START)
-            }
-            else { //navController.navigateUp()
-                doubleBackToExitPressedOnce = true
-                 }
-
-            if(doubleb){
-                doubleBackToExitPressedOnce = false
-                Handler().postDelayed(Runnable { doubleBackToExitPressedOnce = true }, 300)
-
-            }
-            return
+        if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
+            drawer_layout.closeDrawer(GravityCompat.START)
         }
 
-            if(!doubleBackToExitPressedOnce) {
-                try {
-                    val builder = AlertDialog.Builder(this@MainActivity)
-                    builder.setMessage(R.string.alclose)
-                        .setTitle(R.string.alquit)
-                        .setCancelable(true)
-                        .setPositiveButton(R.string.yes, DialogInterface.OnClickListener { dialog, id ->
-                            finishAffinity();
-                            System.exit(0);
-                        })
-                    val alert = builder.create()
-                    if (alert.isShowing()) {
-                        alert.dismiss();
-                    }else {
-                        alert.show()}
-                } catch (e: Exception) {
-                }
-            }
-    }*/
+    }
 
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {

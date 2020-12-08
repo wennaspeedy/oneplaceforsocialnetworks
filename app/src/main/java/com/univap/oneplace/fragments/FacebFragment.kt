@@ -84,9 +84,9 @@ class FacebFragment : Fragment() {
         if (!viewIsOnline(context!!)) {
             myWebView!!.loadUrl(DEFAULT_ERROR_PAGE_PATH);
         } else {
-            myWebView!!.getSettings().setJavaScriptEnabled(false);
+            //myWebView!!.getSettings().setJavaScriptEnabled(false);
             myWebView!!.stopLoading();
-            myWebView!!.getSettings().setJavaScriptEnabled(true);
+
             myWebView!!.initWebview(src)
             myWebView!!.loadUrl(currentUrl)
             myWebView!!.setDownloadListener(activity as AppCompatActivity)

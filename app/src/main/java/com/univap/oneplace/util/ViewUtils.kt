@@ -30,13 +30,18 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.app.ActivityCompat.finishAffinity
 import androidx.core.content.ContextCompat
+import androidx.core.view.GravityCompat
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.univap.oneplace.MainActivity
 import com.univap.oneplace.PermissionController
 import com.univap.oneplace.R
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.maincontent.*
 import java.io.File
+import java.text.SimpleDateFormat
+import java.time.LocalDateTime
+import java.util.*
 
 private var mFilePathCallback: ValueCallback<Array<Uri>>? = null
 private var mCameraPhotoPath:String? = null
@@ -103,7 +108,7 @@ fun WebView.initWebview(agent:String = "noagent"){
         settings.setUserAgentString("Mozilla/5.0 (BB10; Touch) AppleWebKit/537.1+ (KHTML, like Gecko) Version/10.0.0.1337 Mobile Safari/537.1+")
     }
 
-    //settings.setJavaScriptEnabled(true);
+    settings.setJavaScriptEnabled(true);
     settings.setAllowFileAccess(true);
     settings.setAppCacheEnabled(true);
     //settings.setDomStorageEnabled(true);
@@ -329,61 +334,81 @@ if(!viewIsOnline(context)) {
     }
 }
 }
-
-fun WebView.setOnKeyListener(myWebView: WebView,activity: Activity){
-
-    setOnKeyListener(object: View.OnKeyListener {
-        override fun onKey(v:View, keyCode:Int, event:KeyEvent):Boolean {
-            if (event.getAction() === KeyEvent.ACTION_DOWN)
-            {
-                val webView = v as WebView
-                if(event.isLongPress){
-                    return false
-                } else {
-                when (keyCode) {
-
-                    KeyEvent.KEYCODE_BACK -> if (webView.canGoBack())
-                    {
-                        webView.goBack()
-                        return true
-                    }
-                    else -> { // Note the block
-
-                    }
-                }
-                }
+fun createDialogExit(activity: Activity){
+    try {
+        val builder = AlertDialog.Builder(activity)
+        builder.setMessage(R.string.alclose)
+            .setTitle(R.string.alquit)
+            .setCancelable(true)
+            .setOnCancelListener(object: DialogInterface.OnCancelListener {
+            override fun onCancel(dialog:DialogInterface) {
+               counter=0
             }
-            return false
+        })
+            .setPositiveButton(
+                R.string.yes,
+                DialogInterface.OnClickListener { dialog, id ->
+                    finishAffinity(activity);
+                    System.exit(0);
+                })
+        val alert = builder.create()
+        if (alert.isShowing()) {
+            alert.dismiss();
+        } else {
+
+            alert.show()
         }
-    })
-
-/*
-    setOnKeyListener(object : View.OnKeyListener {
-
-
-
-
-        override fun onKey(v: View, keyCode: Int, event: KeyEvent): Boolean {
-            //if (event.getAction()!= KeyEvent.ACTION_DOWN) return true;
-
-            if (keyCode == KeyEvent.KEYCODE_BACK) {
-
-                if (myWebView!!.canGoBack()) {
-                    myWebView!!.stopLoading();
-                    myWebView!!.goBack();
-return true
-                } else {return false}
-
-        }
-return false
-        }
-    })*/
-
-
-
-
+    } catch (e: Exception) {
+    }
 }
+var downtime: Long? = null
+var counter: Int = 0
+fun WebView.setOnKeyListener(myWebView: WebView,activity: Activity){
+    val sharedPref = PreferenceManager.getDefaultSharedPreferences(context)
+    setOnKeyListener(object: View.OnKeyListener {
+        override fun onKey(v: View, keyCode: Int, event: KeyEvent): Boolean {
+            //println("MYLOG--------")
+           // println("MYLOG: keyevent: " + event.toString())
 
+            if (event.getAction() == KeyEvent.ACTION_DOWN) {
+
+                if (keyCode == KeyEvent.KEYCODE_BACK && event.repeatCount == 0) {
+                    activity.onBackPressed();
+                    event.startTracking()
+                    downtime = event.eventTime
+                 //  println("MYLOG: onepress")
+                    return true;
+                } else if (keyCode == KeyEvent.KEYCODE_BACK && event.repeatCount > 0){
+                    //println("MYLOG: LONG")
+                    if (event.eventTime - downtime!! > 400) {
+                        if (counter==0){
+                        if (sharedPref!!.getBoolean("doubleb", false)) {
+                            createDialogExit(activity);
+                            counter=1
+                        }
+                        }
+                    }
+                    return true;
+                };
+            };
+
+            if (event.getAction() == KeyEvent.ACTION_UP) {
+                if (keyCode == KeyEvent.KEYCODE_BACK) {
+                    //println("MYLOG: keydown2 - ")
+                    if (event.eventTime - downtime!! > 400) {
+                    } else if (activity.drawer_layout.isDrawerOpen(GravityCompat.START)) {
+                        activity.drawer_layout.closeDrawer(GravityCompat.START)
+                    }else if (myWebView!!.canGoBack()) {
+                        myWebView!!.stopLoading();
+                        myWebView!!.goBack();
+                        return true;
+                    }
+
+                };
+            }
+            return false;
+        }
+    })}
 
 
 
