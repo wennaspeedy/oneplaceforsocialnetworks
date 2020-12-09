@@ -1,16 +1,16 @@
 <resources>
-    <style name="AppTheme2" parent="Theme.AppCompat.Light">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/bg4</item>
-        <item name="colorPrimaryDark">@color/bg5</item> <!-- barva horniho panelu telefonu!-->
 
-
-    </style>
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light">
         <!-- Customize your theme here. -->
+        <item name="android:fontFamily">@font/pressstart</item>
+        <item name="fontFamily">@font/pressstart</item>
+
         <item name="colorPrimary">@color/bg1</item>
-        <item name="colorPrimaryDark">@color/bg1</item> <!-- barva horniho panelu telefonu!-->
+
+        <item name="android:navigationBarColor">@color/bg1</item> <!-- barva spodniho panelu telefonu! - tzv kde jsou tlacitka-->
+        <item name="colorPrimaryDark">@color/bg1</item> <!-- barva horniho panelu telefonu! - tzv statusbar-->
+
         <item name="colorAccent">@color/bg1</item>
         <item name="actionBarItemBackground">@color/bg1</item>
         <item name="colorBackgroundFloating">@color/bg1</item>
@@ -22,11 +22,31 @@
         <item name="alertDialogTheme">@style/AlertDialogTheme</item>
         <item name="listMenuViewStyle">@style/NavigationDrawerStyle</item>
         <item name="android:preferenceScreenStyle">@style/PreferenceScreen</item>
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
 
     </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+    <style name="MyActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+        <item name="android:background" >@color/colorFBRed</item>
+        <item name="background">@color/colorFBRed</item>
+    </style>
+
+    <!--styl u alert dialog text-->
+    <style name="TextAppearance.AppCompat.Subhead" parent="Base.TextAppearance.AppCompat.Subhead">
+
+        <item name="android:textSize">10sp</item>
+    </style>
+    <style name="TextAppearance.AppCompat.Headline" parent="Base.TextAppearance.AppCompat.Headline">
+        <item name="fontFamily">@font/pressstart</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+    <style name="TextAppearance.AppCompat.Title" parent="Base.TextAppearance.AppCompat.Title">
+        <item name="fontFamily">@font/pressstart</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+   <!-- <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/> -->
 
 
     <style name="RobotoTextViewStyle" parent="android:Widget.TextView">
@@ -50,24 +70,33 @@
     <!--START alert dialog-->
     <style name="AlertDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
         <item name="android:fontFamily">@font/pressstart</item>
-        <item name="android:textSize">10sp</item>
+        <item name="android:textSize">10sp</item><!-- velikost tlacitek in dialog-->
         <item name="colorAccent">@color/colorWhite</item> <!-- TEXT tlacitek in dialog-->
         <item name="android:textColorPrimary">@color/bg2</item> <!-- TEXT in dialog-->
+        <item name="fontFamily">@font/pressstart</item><!-- FONT in dialog-->
+
+        <item name="android:titleTextStyle">@style/MyTitleTextStyle</item>
+        <item name="android:textColorAlertDialogListItem">@color/colorWhite</item> <!-- barva textu seznamu in dialog-->
+
         <item name="android:windowBackground">@color/bg1</item>
         <item name="android:windowTitleStyle">@style/MyTitleTextStyle</item>
+
         <item name="android:shadowColor">@color/colorFBBlack</item>
         <item name="android:shadowDx">2</item>
         <item name="android:shadowDy">2</item>
         <item name="android:shadowRadius">2</item>
-        <item name="android:colorControlNormal">@color/colorFBBlack</item>
+
+        <item name="android:colorControlNormal">@color/colorWhite</item>
         <item name="android:colorControlActivated">@color/bg2</item>
+
     </style>
+
 
     <style name="MyTitleTextStyle">
         <item name="android:textColor">@color/colorWhite</item><!-- HEADER TEXT in dialog-->
         <item name="android:textSize">12sp</item>
         <item name="android:fontFamily">@font/pressstart</item>
-        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Title</item>
+        <item name="fontFamily">@font/pressstart</item>
         <item name="android:colorButtonNormal">@color/bg2</item>
     </style>
     <!--END alert dialog-->
@@ -99,6 +128,8 @@
     <!-- vnitrek setting-->
     <style name="PreferenceScreen" parent="Theme.AppCompat">
         <item name="android:fontFamily">@font/pressstart</item>
+        <item name="fontFamily">@font/pressstart</item>
+
         <item name="android:textColorPrimary">@color/colorWhite</item><!-- HEADER-->
         <item name="android:textColor">@color/colorWhite</item><!-- ITEMS-->
         <item name="android:textSize">10sp</item>
@@ -109,14 +140,21 @@
         <item name="colorPrimary">@color/bg2</item>
         <item name="colorPrimaryDark">@color/bg2</item>
         <item name="colorAccent">@color/bg2</item>
+
+
         <!--<item name="android:windowBackground">@color/colorMenuBack</item>-->
         <item name="android:windowBackground">@color/bg1</item>
         <item name="android:alertDialogTheme">@style/AlertDialogTheme</item>
-        <item name="alertDialogTheme">@style/AlertDialogTheme</item>
+        <item name="alertDialogTheme">@style/AlertDialogTheme</item><!-- Dialog v settings (napr. kdyz se zepta, jestli restart aplikace)-->
+
+
+
     </style>
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+
+
 
 </resources>

@@ -1,8 +1,9 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-                  android:title="@string/setting">
-
+                  android:title="@string/setting"
+        >
     <ListPreference
             android:key="tabmode"
+
             android:title="@string/tabmode"
             android:entries="@array/switcharray"
             android:entryValues="@array/switchvalue"

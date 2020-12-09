@@ -76,6 +76,7 @@ class LinkedinFragment : Fragment() {
         viewHideActionBar((activity as AppCompatActivity))
         ChangeNaviColor(this!!.context!!, R.color.colorLIblue)
         setTheme(context!!, null, navimenu!!)
+        changeMaintThemescolors(activity as AppCompatActivity,src)
 
         myWebView = v.findViewById(R.id.webview) as WebView
         if (!viewIsOnline(context!!)){  myWebView!!.loadUrl(DEFAULT_ERROR_PAGE_PATH); }

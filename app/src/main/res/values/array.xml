@@ -34,22 +34,22 @@
     <string-array name="langswitch">
         <item>@string/langen</item>
         <item>@string/langcz</item>
-        <item>@string/langge</item>
+        <!--<item>@string/langge</item>
         <item>@string/langfr</item>
         <item>@string/langsp</item>
         <item>@string/langch</item>
         <item>@string/langhi</item>
-        <item>@string/langvi</item>
+        <item>@string/langvi</item>-->
     </string-array>
     <string-array name="langvalue">
         <item>en</item>
         <item>cs</item>
-        <item>de</item>
+        <!-- <item>de</item>
         <item>fr</item>
         <item>es</item>
         <item>zh</item>
         <item>hi</item>
-        <item>vi</item>
+        <item>vi</item>-->
     </string-array>
 
 

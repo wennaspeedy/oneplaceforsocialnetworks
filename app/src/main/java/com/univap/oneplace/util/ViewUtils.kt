@@ -19,6 +19,8 @@ import android.preference.PreferenceManager
 import android.util.Base64
 import android.view.KeyEvent
 import android.view.View
+import android.view.Window
+import android.view.WindowManager
 import android.webkit.*
 import android.widget.FrameLayout
 import android.widget.ImageView
@@ -462,6 +464,17 @@ fun viewGetTabColor(context:Context,themeType:String): Int {
     }
     else return R.color.colorFBblue
 }
+
+
+fun changeMaintThemescolors (context: Context,themeType:String){
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+        val window: Window = (context as AppCompatActivity).getWindow()
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+        window.statusBarColor = context.resources.getColor(viewGetTabColor(context,themeType))
+        window.navigationBarColor = context.resources.getColor(viewGetTabColor(context,themeType))
+    }
+}
+
 
 
 fun viewshouldInterceptRequest (view:WebView, request:WebResourceRequest,src:String): Boolean {

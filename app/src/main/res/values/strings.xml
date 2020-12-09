@@ -27,7 +27,7 @@
     <string name="cleard">Delete all data (Link)</string>
     <string name="clearco">Clear app cache</string>
     <string name="clearcotoast">Cache was successfully cleared...</string>
-    <string name="doubleb">Double-back to exit</string>
+    <string name="doubleb">Long press back to exit</string>
     <string name="fbdark">Facebook DarkMaterial Theme</string>
     <string name="fbheader">Fixed Top Panel</string>
     <string name="fbthemes">Facebook Themes</string>

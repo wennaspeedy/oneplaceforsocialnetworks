@@ -5,9 +5,13 @@ import android.animation.ValueAnimator
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.SharedPreferences
+import android.os.Build
 import android.preference.PreferenceManager
+import android.view.Window
+import android.view.WindowManager
 import android.webkit.WebView
 import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.content.ContextCompat
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -84,6 +88,14 @@ fun GetThemeMainColor(context: Context): Int {
         return R.color.colorFBGreen
     } else {
         return R.color.colorFBblue
+    }
+}
+fun changeFbThemescolors (context: Context){
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+        val window: Window = (context as AppCompatActivity).getWindow()
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+        window.statusBarColor = context.resources.getColor(GetThemeMainColor(context))
+        window.navigationBarColor = context.resources.getColor(GetThemeMainColor(context))
     }
 }
 

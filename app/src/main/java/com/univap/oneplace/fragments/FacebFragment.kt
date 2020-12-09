@@ -76,15 +76,15 @@ class FacebFragment : Fragment() {
         //AdBlocker.init(this!!.context!!, Schedulers.io());
         viewStartImgRotate(img!!, this!!.context!!)
         SetFbTheme(context!!,/* pbar!!,*/ navimenu!!)  //Dynamically setting of facebook theme
+        changeFbThemescolors(activity as AppCompatActivity)
 
-       // context!!.theme.applyStyle(R.style.AppTheme2,false)
 
 
         myWebView = v.findViewById(R.id.webview) as WebView
         if (!viewIsOnline(context!!)) {
             myWebView!!.loadUrl(DEFAULT_ERROR_PAGE_PATH);
         } else {
-            //myWebView!!.getSettings().setJavaScriptEnabled(false);
+
             myWebView!!.stopLoading();
 
             myWebView!!.initWebview(src)
@@ -94,6 +94,9 @@ class FacebFragment : Fragment() {
 
 
         }
+
+
+
         myWebView!!.webChromeClient = MyWebChromeClient()
         myWebView!!.webViewClient = object : WebViewClient() {
 

@@ -72,6 +72,7 @@ class InstaFragment : Fragment() {
         viewHideActionBar((activity as AppCompatActivity))
         ChangeNaviColor(this!!.context!!, R.color.colorIGpink)
         setTheme(context!!, null, navimenu!!)
+        changeMaintThemescolors(activity as AppCompatActivity,src)
 
         myWebView = v.findViewById(R.id.webview) as WebView
         //CookieManager.getInstance().setAcceptCookie(true);

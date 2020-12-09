@@ -1,26 +1,25 @@
 package com.univap.oneplace.fragments
 
 
-import android.app.*
-import android.content.*
+import android.app.Activity
+import android.content.ContentValues
+import android.content.Intent
+import android.content.SharedPreferences
 import android.net.Uri
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-
-import android.view.*
-import android.view.ViewGroup
-import android.view.LayoutInflater
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Build
+import android.os.Bundle
 import android.preference.PreferenceManager
 import android.provider.MediaStore
 import android.util.Log
+import android.view.*
 import android.view.animation.RotateAnimation
 import android.webkit.*
 import android.widget.FrameLayout
 import android.widget.ImageView
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.univap.oneplace.R
 import com.univap.oneplace.util.*
@@ -71,20 +70,23 @@ class TwitterFragment : Fragment() {
         viewHideActionBar((activity as AppCompatActivity))
         ChangeNaviColor(this!!.context!!, R.color.colorTWblue)
         setTheme(context!!, null, navimenu!!)
+        changeMaintThemescolors(activity as AppCompatActivity,src)
+
 
         myWebView = v.findViewById(R.id.webview) as WebView
 
         if (!viewIsOnline(context!!)) {
             myWebView!!.loadUrl(DEFAULT_ERROR_PAGE_PATH); } else {
-           // myWebView!!.getSettings().setJavaScriptEnabled(false);
-           // myWebView!!.stopLoading();
-          //  myWebView!!.getSettings().setJavaScriptEnabled(true);
+            myWebView!!.stopLoading();
+
             myWebView!!.initWebview(src)
             myWebView!!.loadUrl(currentUrl)
             myWebView!!.setOnKeyListener(myWebView!!, activity!!)
             myWebView!!.setDownloadListener(activity as AppCompatActivity)
 
         }
+
+
 
         myWebView!!.setWebChromeClient(MyWebChromeClient())
 

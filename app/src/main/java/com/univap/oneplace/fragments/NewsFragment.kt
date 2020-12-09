@@ -74,9 +74,11 @@ class NewsFragment : Fragment() {
         ChangeNaviColor(this!!.context!!, R.color.colorNews)
 
         setTheme(context!!, null, navimenu!!)
+        changeMaintThemescolors(activity as AppCompatActivity,src)
+
 
         myWebView = v.findViewById(R.id.webview) as WebView
-        CookieManager.getInstance().setAcceptCookie(true);
+
 
         if (!viewIsOnline(context!!)){  myWebView!!.loadUrl(DEFAULT_ERROR_PAGE_PATH); }
 else {
