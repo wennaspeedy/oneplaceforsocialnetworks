@@ -186,12 +186,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
 
 
-        val view = findViewById<View>(R.id.facebookFragment) // BottomNavigationView menu item id
+      /*  val view = findViewById<View>(R.id.facebookFragment) // BottomNavigationView menu item id
 
         view.setOnLongClickListener {
             drawer_layout.openDrawer(GravityCompat.START)
             false
-        }
+        }*/
 
         val hidenavi = sharedPref!!.getBoolean("hidenavi", false)
         if(hidenavi){bottomNav.setVisibility(View.GONE);}
@@ -213,7 +213,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
                                 builder.setMessage(R.string.freeMessage)
                                     .setTitle(R.string.freeMessageTitle)
-                                    .setCancelable(false)
+                                    .setCancelable(true)
                                     .setNegativeButton(
                                         R.string.negativeButton,
                                         DialogInterface.OnClickListener { dialog, id ->

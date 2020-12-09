@@ -1,6 +1,12 @@
 package com.univap.oneplace
 
+
+
+import android.animation.AnimatorSet
+import android.animation.ArgbEvaluator
+import android.animation.ObjectAnimator
 import android.animation.ValueAnimator
+import android.annotation.SuppressLint
 import android.content.Context
 import android.os.AsyncTask
 import android.os.Bundle
@@ -11,6 +17,7 @@ import android.view.animation.RotateAnimation
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.univap.oneplace.util.viewHideActionBar
 import com.univap.oneplace.util.viewStartMainActivity
 
@@ -18,6 +25,23 @@ import com.univap.oneplace.util.viewStartMainActivity
 class LoadingActivity : AppCompatActivity() {
     var img:ImageView? = null
     var runningTask: AsyncTask<*, *, *>? = null
+
+
+    fun animateIt(endcolor: Int, img: ImageView) {
+        val from = R.color.bg2
+        val to = endcolor
+
+        val anim = ValueAnimator()
+        anim.setIntValues(from, to)
+        anim.setEvaluator(ArgbEvaluator())
+        anim.addUpdateListener { valueAnimator -> img.setBackgroundResource(valueAnimator.animatedValue as Int) }
+        anim.setStartDelay(1100);
+        anim.duration = 1000
+        anim.start()
+    }
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -27,39 +51,6 @@ class LoadingActivity : AppCompatActivity() {
             val v: View = findViewById(android.R.id.content)
         var context:Context = this@LoadingActivity
             img = v.findViewById(R.id.nav_header_imageViewMain) as ImageView
-
-/*
-        val scaleXAnimation = ObjectAnimator.ofFloat(img, "scaleX", 0.2f, 1.2f)
-        scaleXAnimation.setInterpolator(AccelerateDecelerateInterpolator())
-        scaleXAnimation.setDuration(4000)
-        val scaleYAnimation = ObjectAnimator.ofFloat(img, "scaleY", 0.2f, 1.2f)
-        scaleYAnimation.setInterpolator(AccelerateDecelerateInterpolator())
-        scaleYAnimation.setDuration(4000)
-        val alphaAnimation = ObjectAnimator.ofFloat(img, "alpha", 0.5f, 1f)
-        alphaAnimation.setInterpolator(AccelerateDecelerateInterpolator())
-        alphaAnimation.setDuration(2000)
-        val animatorSet = AnimatorSet()
-        animatorSet.play(scaleXAnimation).with(scaleYAnimation).with(alphaAnimation)
-        animatorSet.setStartDelay(0)
-        animatorSet.start()
-
-
-            ObjectAnimator.ofFloat(img, "rotation",0f, 360f).apply {
-                duration = 2500
-                // repeatCount = 1
-                start()
-            }
-
-        val display = windowManager.defaultDisplay
-        val size: Point = Point()
-        display.getSize(size)
-        val displayWidth:Float = size.x.toFloat()
-        ObjectAnimator.ofFloat(img, "translationY", -displayWidth,displayWidth/3).apply {
-            duration = 3500
-            start()
-        }*/
-
-
 
 
         val layout1:RelativeLayout = v.findViewById(R.id.relativeloading)
@@ -123,6 +114,21 @@ class LoadingActivity : AppCompatActivity() {
             }
         })
         animator.start()
+
+        //animate from your current color to red
+
+
+        animateIt(R.color.colorFBblue,loadFb)
+        animateIt(R.color.colorTWblue,loadTw)
+        animateIt(R.color.colorIGpink,loadIg)
+        animateIt(R.color.colorLIblue,loadLi)
+        animateIt(R.color.colorRDorange,loadRd)
+        animateIt(R.color.colorNews,loadGn)
+
+
+
+
+
         val rotate = RotateAnimation(
             180F, 360F, Animation.RELATIVE_TO_SELF,
             0.5f, Animation.RELATIVE_TO_SELF, 0.5f
@@ -133,6 +139,7 @@ class LoadingActivity : AppCompatActivity() {
         )
         rotate.duration = 650
         rotate2.duration = 800
+
         backgroundOne.startAnimation(rotate2)
         logo.startAnimation(rotate)
 

@@ -8,8 +8,8 @@
 
         <item name="colorPrimary">@color/bg1</item>
 
-        <item name="android:navigationBarColor">@color/bg1</item> <!-- barva spodniho panelu telefonu! - tzv kde jsou tlacitka-->
-        <item name="colorPrimaryDark">@color/bg1</item> <!-- barva horniho panelu telefonu! - tzv statusbar-->
+        <item name="android:navigationBarColor">@color/black</item> <!-- barva spodniho panelu telefonu! - tzv kde jsou tlacitka-->
+        <item name="colorPrimaryDark">@color/black</item> <!-- barva horniho panelu telefonu! - tzv statusbar-->
 
         <item name="colorAccent">@color/bg1</item>
         <item name="actionBarItemBackground">@color/bg1</item>
@@ -22,14 +22,11 @@
         <item name="alertDialogTheme">@style/AlertDialogTheme</item>
         <item name="listMenuViewStyle">@style/NavigationDrawerStyle</item>
         <item name="android:preferenceScreenStyle">@style/PreferenceScreen</item>
-        <item name="android:actionBarStyle">@style/MyActionBar</item>
+
 
     </style>
 
-    <style name="MyActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
-        <item name="android:background" >@color/colorFBRed</item>
-        <item name="background">@color/colorFBRed</item>
-    </style>
+
 
     <!--styl u alert dialog text-->
     <style name="TextAppearance.AppCompat.Subhead" parent="Base.TextAppearance.AppCompat.Subhead">
@@ -74,12 +71,14 @@
         <item name="colorAccent">@color/colorWhite</item> <!-- TEXT tlacitek in dialog-->
         <item name="android:textColorPrimary">@color/bg2</item> <!-- TEXT in dialog-->
         <item name="fontFamily">@font/pressstart</item><!-- FONT in dialog-->
-
+        <item name="android:gravity">left|center_vertical</item>
         <item name="android:titleTextStyle">@style/MyTitleTextStyle</item>
         <item name="android:textColorAlertDialogListItem">@color/colorWhite</item> <!-- barva textu seznamu in dialog-->
 
-        <item name="android:windowBackground">@color/bg1</item>
+        <item name="android:windowBackground">@drawable/roundsp</item>
         <item name="android:windowTitleStyle">@style/MyTitleTextStyle</item>
+
+        <item name="android:colorControlHighlight">@color/colorGrey</item> <!-- barva pozadi pri kliknuti na odkazy/tlacitka-->
 
         <item name="android:shadowColor">@color/colorFBBlack</item>
         <item name="android:shadowDx">2</item>
@@ -106,7 +105,7 @@
         <item name="android:alertDialogTheme">@style/AlertDialogTheme</item>
         <item name="android:fontFamily">@font/pressstart</item>
         <item name="android:textSize">10sp</item>
-        <item name="android:windowBackground">@color/bg1</item>
+        <item name="android:windowBackground">@color/black</item>
         <item name="android:shadowColor">#000000</item>
         <item name="android:shadowDx">1</item>
         <item name="android:shadowDy">1</item>
@@ -143,7 +142,9 @@
 
 
         <!--<item name="android:windowBackground">@color/colorMenuBack</item>-->
-        <item name="android:windowBackground">@color/bg1</item>
+
+        <item name="android:windowBackground">@color/black</item>
+
         <item name="android:alertDialogTheme">@style/AlertDialogTheme</item>
         <item name="alertDialogTheme">@style/AlertDialogTheme</item><!-- Dialog v settings (napr. kdyz se zepta, jestli restart aplikace)-->
 

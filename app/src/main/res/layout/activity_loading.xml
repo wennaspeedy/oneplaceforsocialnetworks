@@ -5,7 +5,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/relativeloading"
         android:layout_width="match_parent" android:layout_height="match_parent"
-        android:background="@color/bg1"
+        android:background="@color/black"
 
 
 >
@@ -14,20 +14,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/background"
-            />
-
-
-    <ImageView
-            android:id="@+id/loadIg"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:src="@drawable/ic_ig"
-            android:layout_centerInParent="true"
-
-            android:tint="@color/colorWhite"
-
-            android:visibility="invisible"
-
             />
 
     <ImageView
@@ -39,25 +25,48 @@
             android:tint="@color/colorWhite"
             android:visibility="invisible"
             android:layout_centerInParent="true"
+            android:background="@drawable/roundfb"
+            android:scaleType="fitXY"
+
             />
+
+    <ImageView
+            android:id="@+id/loadIg"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_ig"
+
+            android:layout_centerInParent="true"
+            android:tint="@color/colorWhite"
+            android:visibility="invisible"
+            android:background="@drawable/roundfb"
+            android:scaleType="fitXY"
+
+            />
+
+
 
     <ImageView
             android:id="@+id/loadTw"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:src="@drawable/ic_tw"
+            android:layout_centerInParent="true"
             android:tint="@color/colorWhite"
             android:visibility="invisible"
-            android:layout_centerInParent="true"
+            android:background="@drawable/roundfb"
+            android:scaleType="fitXY"
            />
     <ImageView
             android:id="@+id/loadLi"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:src="@drawable/ic_lidark"
+            android:layout_centerInParent="true"
             android:tint="@color/colorWhite"
             android:visibility="invisible"
-            android:layout_centerInParent="true"
+            android:background="@drawable/roundfb"
+            android:scaleType="fitXY"
             />
 
     <ImageView
@@ -65,20 +74,23 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:src="@drawable/ic_news"
+            android:layout_centerInParent="true"
             android:tint="@color/colorWhite"
             android:visibility="invisible"
-            android:layout_centerInParent="true"
+            android:background="@drawable/roundfb"
+            android:scaleType="fitXY"
             />
     <ImageView
             android:id="@+id/loadRd"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:tint="@color/colorWhite"
-            android:visibility="invisible"
             android:src="@drawable/ic_reddit"
 
-
-            android:layout_centerInParent="true"/>
+            android:layout_centerInParent="true"
+            android:tint="@color/colorWhite"
+            android:visibility="invisible"
+            android:background="@drawable/roundfb"
+            android:scaleType="fitXY"/>
 
 
     <com.tomer.fadingtextview.FadingTextView

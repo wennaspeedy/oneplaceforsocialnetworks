@@ -80,6 +80,8 @@ class SettingActivity : AppCompatPreferenceActivity() {
         addPreferencesFromResource(R.xml.pref_setting)
         //setHasOptionsMenu(true)
 
+        //getWindow().getDecorView().background.setAlpha(50)
+
         val cleard: Preference = findPreference("cleard") as Preference
         val clearco: Preference = findPreference("clearco") as Preference
         val doubleb: CheckBoxPreference = findPreference("doubleb") as CheckBoxPreference
@@ -209,15 +211,12 @@ class SettingActivity : AppCompatPreferenceActivity() {
                 } catch (e: Exception) {
                 }
 
-
-
-
-
-
+                /*
                 CookieManager.getInstance().removeAllCookies(null)
                 CookieManager.getInstance().flush()
                 changed = true
                 Toast.makeText(applicationContext, R.string.clearcotoast, Toast.LENGTH_SHORT).show();
+                */
                 return false
             }
 

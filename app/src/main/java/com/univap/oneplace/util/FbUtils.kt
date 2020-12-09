@@ -16,6 +16,7 @@ import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.content.ContextCompat
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.univap.oneplace.R
+import kotlinx.android.synthetic.main.activity_main.*
 
 @SuppressLint("ResourceType")
 fun SetFbTheme(context: Context, /*pbar:ProgressBar,*/ navimenu: BottomNavigationView) {
@@ -91,12 +92,19 @@ fun GetThemeMainColor(context: Context): Int {
     }
 }
 fun changeFbThemescolors (context: Context){
+    val color = GetThemeMainColor(context)
+    val activity = (context as AppCompatActivity)
+    val window: Window = activity.getWindow()
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-        val window: Window = (context as AppCompatActivity).getWindow()
+
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
-        window.statusBarColor = context.resources.getColor(GetThemeMainColor(context))
-        window.navigationBarColor = context.resources.getColor(GetThemeMainColor(context))
+        window.statusBarColor = context.resources.getColor(color)
+        window.navigationBarColor = context.resources.getColor(color)
+
     }
+
+    activity.nav_view.setBackgroundResource(color);
+
 }
 
 

@@ -1,9 +1,10 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
                   android:title="@string/setting"
+        android:id="@+id/settingslayout"
         >
     <ListPreference
             android:key="tabmode"
-
+            android:dialogTitle="---"
             android:title="@string/tabmode"
             android:entries="@array/switcharray"
             android:entryValues="@array/switchvalue"
@@ -11,6 +12,7 @@
     <ListPreference
             android:key="lang"
             android:title="@string/lang"
+            android:dialogTitle="---"
             android:entries="@array/langswitch"
             android:entryValues="@array/langvalue"
     />

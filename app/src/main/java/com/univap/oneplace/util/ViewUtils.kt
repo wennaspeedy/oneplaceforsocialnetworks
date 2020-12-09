@@ -40,6 +40,7 @@ import com.univap.oneplace.PermissionController
 import com.univap.oneplace.R
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.maincontent.*
+import kotlinx.android.synthetic.main.nav_header_main.*
 import java.io.File
 import java.text.SimpleDateFormat
 import java.time.LocalDateTime
@@ -50,6 +51,7 @@ private var mCameraPhotoPath:String? = null
 
 fun ImageView.setBgColor(context: Context,color: Int){
     val background = getBackground()
+    println("MYLOG"+background.toString())
     if (background is ShapeDrawable)
     {
         (background as ShapeDrawable).getPaint().setColor(ContextCompat.getColor(context, color))
@@ -467,12 +469,20 @@ fun viewGetTabColor(context:Context,themeType:String): Int {
 
 
 fun changeMaintThemescolors (context: Context,themeType:String){
+    val color = viewGetTabColor(context,themeType);
+    val activity = (context as AppCompatActivity)
+    val window: Window = activity.getWindow()
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-        val window: Window = (context as AppCompatActivity).getWindow()
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
-        window.statusBarColor = context.resources.getColor(viewGetTabColor(context,themeType))
-        window.navigationBarColor = context.resources.getColor(viewGetTabColor(context,themeType))
+        window.statusBarColor = context.resources.getColor(color)
+        window.navigationBarColor = context.resources.getColor(color)
     }
+
+    activity.nav_view.setBackgroundResource(color);
+    //activity.nav_header.setBackgroundColor(color)
+   /* val rootview = window.getDecorView().rootView
+    rootview.setBackgroundColor(color)*/
+
 }
 
 
