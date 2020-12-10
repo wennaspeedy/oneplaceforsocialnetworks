@@ -36,6 +36,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        var perm:PermissionController = PermissionController()
+        perm.havePermissions(this)
 
         /*MobileAds.initialize(this,
             "ca-app-pub-7065309844332971~1938672281")

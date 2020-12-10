@@ -4,7 +4,7 @@
         >
     <ListPreference
             android:key="tabmode"
-            android:dialogTitle="---"
+            android:dialogTitle=""
             android:title="@string/tabmode"
             android:entries="@array/switcharray"
             android:entryValues="@array/switchvalue"
@@ -12,7 +12,7 @@
     <ListPreference
             android:key="lang"
             android:title="@string/lang"
-            android:dialogTitle="---"
+            android:dialogTitle=""
             android:entries="@array/langswitch"
             android:entryValues="@array/langvalue"
     />

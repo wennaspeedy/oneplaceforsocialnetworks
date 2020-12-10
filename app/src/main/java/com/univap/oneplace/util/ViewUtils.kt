@@ -51,7 +51,7 @@ private var mCameraPhotoPath:String? = null
 
 fun ImageView.setBgColor(context: Context,color: Int){
     val background = getBackground()
-    println("MYLOG"+background.toString())
+
     if (background is ShapeDrawable)
     {
         (background as ShapeDrawable).getPaint().setColor(ContextCompat.getColor(context, color))
@@ -86,7 +86,7 @@ fun ProgressBar.setPbarColor(context:Context,color:Int){
 fun WebView.initWebview(agent:String = "noagent"){
     //setVisibility(View.GONE);
 
-
+    settings.setGeolocationDatabasePath( context.getFilesDir().getPath() );
     settings.allowFileAccessFromFileURLs
     settings.allowFileAccess;
     settings.allowContentAccess;
@@ -107,6 +107,7 @@ fun WebView.initWebview(agent:String = "noagent"){
         }}
     else if(agent=="li"){
         settings.setUserAgentString("Mozilla/5.0 (BB10; Touch) AppleWebKit/537.1+ (KHTML, like Gecko) Version/10.0.0.1337 Mobile Safari/537.1+")
+
     } else if(agent=="tw"){settings.setUserAgentString("Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36");
     } else if(agent=="ig"){
         settings.setUserAgentString("Mozilla/5.0 (BB10; Touch) AppleWebKit/537.1+ (KHTML, like Gecko) Version/10.0.0.1337 Mobile Safari/537.1+")
@@ -115,17 +116,15 @@ fun WebView.initWebview(agent:String = "noagent"){
     settings.setJavaScriptEnabled(true);
     settings.setAllowFileAccess(true);
     settings.setAppCacheEnabled(true);
-    //settings.setDomStorageEnabled(true);
-   // getSettings().setDatabaseEnabled(true);
+    settings.setDatabaseEnabled(true);
     setVerticalScrollBarEnabled(false);
     //getSettings().setLoadWithOverviewMode(true);
     //getSettings().setUseWideViewPort(false);
     settings.setCacheMode(WebSettings.LOAD_DEFAULT);
-    //settings.setRenderPriority(WebSettings.RenderPriority.HIGH);
-    //setLayerType(View.LAYER_TYPE_HARDWARE, null);
+    settings.setDomStorageEnabled(true); //nevypinat jinak nefunguje linkedin
     settings.setRenderPriority(WebSettings.RenderPriority.HIGH);
     setLayerType(View.LAYER_TYPE_HARDWARE, null);
-
+    settings.setGeolocationEnabled(true)
 }
 
 
@@ -198,7 +197,7 @@ fun WebView.setDownloadListener(context: Context){
 
 
             var perm = PermissionController()
-            if(perm.haveStoragePermission(context as AppCompatActivity) && contentDisposition.isNotEmpty())
+            if(perm.havePermissions(context as AppCompatActivity) && contentDisposition.isNotEmpty())
             {
                 val request = DownloadManager.Request(Uri.parse(url))
                 request.setMimeType(mimetype)
@@ -491,11 +490,11 @@ fun viewshouldInterceptRequest (view:WebView, request:WebResourceRequest,src:Str
 
     var url = request.getUrl().toString()
    // var req:String? = request!!.requestHeaders.toString()
-  //  println(src + "URL: " + url)
+    println("MYLOG:"+src + "URL: " + url)
 
 
 
-    var fbadArray = arrayListOf("analytics","googlead","cedexis","track", "ads", /*"logging_client_events",*/ "googletag","adsystem","platform-telemetry")
+    var fbadArray = arrayListOf("analytics","googlead","cedexis","track", "ads", /*"logging_client_events",*/ "googletag","adsystem","platform-telemetry","checked_installed_related_apps")
     var liadArray = arrayListOf("analytics","googlead","cedexis","track", "ads", /*"logging_client_events",*/ "googletag","adsystem","platform-telemetry","facebook"/*,"XMLHttpRequest"*/)
     var igadArray = arrayListOf("analytics","googlead","cedexis","track", "logging_client_events", "googletag","adsystem","platform-telemetry"/*,"XMLHttpRequest"*/)
 
@@ -504,17 +503,29 @@ fun viewshouldInterceptRequest (view:WebView, request:WebResourceRequest,src:Str
     when(src) {
         "fb" -> adArray=fbadArray
         "ig" -> adArray=igadArray
-        "li" -> adArray=fbadArray
+        "li" -> adArray=liadArray
         else -> adArray=liadArray
     }
 
         for (it in adArray) {
+
             if (url.contains(it) )
                // || req!!.contains(it) )
             {
-             //  println(src + "URL_KILLED")
-                return true
-            }}
+                if (src=="fb" && (it=="track" || it =="ads")){
+                    if (url.contains("tracking_string") || url.contains("uploads")){
+                        println("MYLOG: notkilled exception: "+src)
+                        return false
+                    }
+                     else {return true}
+
+                } else {
+                    println("MYLOG: killed: "+src + "URL_KILLED "+url)
+                    return true
+                }
+
+            }
+        }
 
         return false
     }

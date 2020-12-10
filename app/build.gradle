@@ -7,9 +7,9 @@ apply plugin: 'kotlin-android-extensions'
 android {
     signingConfigs {
         sign {
-            keyAlias 'socialnetworks'
+            keyAlias 'place'
             keyPassword 'wweennaa'
-            storeFile file('/mnt/data/Projects/android-projects/android_keystore.jks')
+            storeFile file('D:\\Projects\\android-projects\\android_keystore.jks')
             storePassword 'wweennaa'
         }
     }
@@ -95,7 +95,6 @@ dependencies {
     implementation 'tyrantgit:explosionfield:1.0.1'
     implementation 'com.github.AppIntro:AppIntro:5.1.0'
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.3'
-
 }
 //    implementation 'com.github.gtmora200:ZExplosionField:1.0.3'
 

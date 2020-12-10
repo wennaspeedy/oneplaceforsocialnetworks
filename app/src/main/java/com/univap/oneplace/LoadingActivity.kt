@@ -87,22 +87,22 @@ class LoadingActivity : AppCompatActivity() {
                 val width = backgroundOne.getWidth()
                 val translationX = width * progress
                 //loadTw.setTranslationX(translationX)
-                loadTw.setTranslationY(-translationX*2)
-                loadTw.setTranslationX(-translationX*2)
+                loadTw.setTranslationY(-translationX*4)
+                loadTw.setTranslationX(-translationX*4)
 
-                loadFb.setTranslationY(translationX*2)
-                loadFb.setTranslationX(translationX*2)
+                loadFb.setTranslationY(translationX*4)
+                loadFb.setTranslationX(translationX*4)
 
-                loadIg.setTranslationX(translationX*2)
-                loadIg.setTranslationY(-translationX*2)
+                loadIg.setTranslationX(translationX*4)
+                loadIg.setTranslationY(-translationX*4)
 
-                loadRd.setTranslationX(-translationX*2)
-                loadRd.setTranslationY(translationX*2)
+                loadRd.setTranslationX(-translationX*4)
+                loadRd.setTranslationY(translationX*4)
 
-                loadGn.setTranslationX(-translationX*2)
+                loadGn.setTranslationX(-translationX*4)
                 //loadGn.setTranslationX(-translationX*2)
 
-                loadLi.setTranslationX(translationX*2)
+                loadLi.setTranslationX(translationX*4)
                 //backgroundTwo.setTranslationX(translationX - width)
                 loadTw.setVisibility(View.VISIBLE);
                 loadFb.setVisibility(View.VISIBLE);

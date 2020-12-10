@@ -14,10 +14,11 @@ import android.webkit.CookieManager
 import android.webkit.WebView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.core.view.GravityCompat
 import java.util.prefs.PreferenceChangeEvent
 import java.util.prefs.PreferenceChangeListener
 import com.univap.oneplace.*
-
+import kotlinx.android.synthetic.main.activity_main.*
 
 
 class SettingActivity : AppCompatPreferenceActivity() {
@@ -66,8 +67,10 @@ class SettingActivity : AppCompatPreferenceActivity() {
             } catch (e: Exception) {
             }
         } else {
+
             super.onBackPressed();
             finish();
+
         }
     }
 

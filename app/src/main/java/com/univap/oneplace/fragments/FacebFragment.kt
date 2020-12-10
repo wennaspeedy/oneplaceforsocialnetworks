@@ -26,8 +26,10 @@ import android.util.Log
 import android.webkit.WebView
 import android.webkit.WebChromeClient
 import android.widget.FrameLayout
+import androidx.core.net.toUri
 import com.univap.oneplace.R
 import java.io.*
+import java.lang.Exception
 import java.util.regex.Pattern
 
 
@@ -104,7 +106,9 @@ class FacebFragment : Fragment() {
                 val url: String = request?.url.toString()
               //  println ("FBURL:"+url)
 
-
+               // println("MYLOG: "+request?.url!!)
+                //println("MYLOG: "+request?.url!!.scheme)
+               // println("MYLOG: "+Uri.parse(url).getHost())
                 if ((Uri.parse(url).getHost().equals("m.facebook.com"))) {
                     return false;
                 } else if ((Uri.parse(url).getHost().contains("runmain")))//my static html pages->link
@@ -112,11 +116,25 @@ class FacebFragment : Fragment() {
                     viewStartMainActivity(context!!)
                 } else
 
-                if (request?.url!!.scheme.equals("intent"))
-                {
-                    val uri = Uri.parse(url)
-                    val appPackage = getAppPackageFromUri(uri)
 
+                if (request?.url!!.scheme.equals("fb-messenger"))
+                {
+                    val i = Intent(Intent.ACTION_VIEW)
+
+                    i.data = Uri.parse(url)
+                    try{
+                        startActivity(i)
+                    }
+                 catch(e: Exception){
+                     println("MYLOG: "+e.message)
+                     openExternalWebsite("https://play.google.com/store/apps/details?id=com.facebook.orca")
+                 }
+                    /*
+                    val uri = request?.url!!.toString().replace("fb-messenger","intent").toUri()
+                    println("MYLOG: uri "+uri)
+                    val appPackage = getAppPackageFromUri(uri)!!
+                    println("MYLOG: appPackege "+appPackage)*/
+                    /*
                     if (appPackage != null)
                     {
                         val manager = getContext()!!.getPackageManager()
@@ -129,7 +147,7 @@ class FacebFragment : Fragment() {
                         {
                             openExternalWebsite("https://play.google.com/store/apps/details?id=" + appPackage)
                         }
-                    }
+                    }*/
                 }
 
                  else {
@@ -260,7 +278,12 @@ class FacebFragment : Fragment() {
         webeIntent.setData(Uri.parse(url))
         getActivity()!!.startActivity(webeIntent)
     }
+
     inner class MyWebChromeClient : WebChromeClient() {
+
+            override fun onGeolocationPermissionsShowPrompt(origin:String, callback:GeolocationPermissions.Callback) {
+                callback.invoke(origin, true, false)
+            }
 
         override fun onShowFileChooser(
             webView: WebView, filePathCallback: ValueCallback<Array<Uri>>,

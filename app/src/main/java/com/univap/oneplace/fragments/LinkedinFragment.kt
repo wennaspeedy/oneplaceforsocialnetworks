@@ -118,10 +118,10 @@ class LinkedinFragment : Fragment() {
 
             override fun onLoadResource(view: WebView?, url: String?) {
            //  println ("URLLI:"+url)
-                if (url!!.contains("linkedin") && !(url!!.contains("track") || url!!.contains("mwlite") || url!!.contains("fizzy"))) {
+              /* if (url!!.contains("linkedin") && !(url!!.contains("track") || url!!.contains("mwlite") || url!!.contains("fizzy"))) {
                     viewInjectCSS(view!!,"li_login.css", context);
                    // println("URLLI-----------------INJECT")
-                }
+                }*/
 
 
 
@@ -130,7 +130,7 @@ class LinkedinFragment : Fragment() {
             }
 
             override fun onPageFinished(view: WebView?, url: String) {
-                viewInjectCSS(view!!,"li_login.css", context);
+                //viewInjectCSS(view!!,"li_login.css", context);
                 //viewInjectJS(view!!, context!!,"li_propagated.js")
                 viewOnPageFinished(null, img!!, myWebView!!,mainFrameLayout!!)
                 currentUrl = url

@@ -8,7 +8,7 @@
             android:entries="@array/fbThemeArray"
             android:entryValues="@array/fbThemeValues"
             android:defaultValue="1"
-            android:dialogTitle="---"/>
+            android:dialogTitle=""/>
 
     <CheckBoxPreference android:key="fbmessenger"
                         android:title="@string/fbmessenger"

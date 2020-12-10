@@ -71,7 +71,7 @@
         <item name="colorAccent">@color/colorWhite</item> <!-- TEXT tlacitek in dialog-->
         <item name="android:textColorPrimary">@color/bg2</item> <!-- TEXT in dialog-->
         <item name="fontFamily">@font/pressstart</item><!-- FONT in dialog-->
-        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:gravity">left|center</item>
         <item name="android:titleTextStyle">@style/MyTitleTextStyle</item>
         <item name="android:textColorAlertDialogListItem">@color/colorWhite</item> <!-- barva textu seznamu in dialog-->
 
