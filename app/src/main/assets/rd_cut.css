@@ -120,7 +120,7 @@ button.XPromoPopup__actionButton {
 }
 
 button.XPromoPopup__actionButton:before {
-  content: "REDDIT";
+  content: "R";
   font-size: 40px;
   visibility: visible;
 }

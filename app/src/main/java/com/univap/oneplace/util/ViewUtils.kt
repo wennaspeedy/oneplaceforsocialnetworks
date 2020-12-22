@@ -86,7 +86,6 @@ fun ProgressBar.setPbarColor(context:Context,color:Int){
 fun WebView.initWebview(agent:String = "noagent"){
     //setVisibility(View.GONE);
 
-    settings.setGeolocationDatabasePath( context.getFilesDir().getPath() );
     settings.allowFileAccessFromFileURLs
     settings.allowFileAccess;
     settings.allowContentAccess;
@@ -191,6 +190,7 @@ fun viewInjectCSS(myWebView2:WebView, name:String, context: Context?) {
 
 fun WebView.setDownloadListener(context: Context){
     setDownloadListener(object: DownloadListener {
+        @RequiresApi(Build.VERSION_CODES.M)
         override fun onDownloadStart(url:String, userAgent:String,
                                      contentDisposition:String, mimetype:String,
                                      contentLength:Long) {
@@ -434,7 +434,7 @@ fun viewStartImgRotate(img: ImageView, context: Context){
         return
     } else {
 
-    img.setBgColor(context, viewGetTabColor(context!!,themeType))
+    img.setBgColor(context, viewGetTabColor(context!!,themeType!!))
 
         ObjectAnimator.ofFloat(img, "rotation",0f, 360f).apply {
             duration = 1500
@@ -490,7 +490,7 @@ fun viewshouldInterceptRequest (view:WebView, request:WebResourceRequest,src:Str
 
     var url = request.getUrl().toString()
    // var req:String? = request!!.requestHeaders.toString()
-    println("MYLOG:"+src + "URL: " + url)
+  //  println("MYLOG:"+src + "URL: " + url)
 
 
 
@@ -514,13 +514,13 @@ fun viewshouldInterceptRequest (view:WebView, request:WebResourceRequest,src:Str
             {
                 if (src=="fb" && (it=="track" || it =="ads")){
                     if (url.contains("tracking_string") || url.contains("uploads")){
-                        println("MYLOG: notkilled exception: "+src)
+                      //  println("MYLOG: notkilled exception: "+src)
                         return false
                     }
                      else {return true}
 
                 } else {
-                    println("MYLOG: killed: "+src + "URL_KILLED "+url)
+                  //  println("MYLOG: killed: "+src + "URL_KILLED "+url)
                     return true
                 }
 

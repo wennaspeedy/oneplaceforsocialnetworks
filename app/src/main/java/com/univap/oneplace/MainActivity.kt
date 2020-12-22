@@ -6,11 +6,13 @@ import android.content.DialogInterface
 import android.content.Intent
 import android.content.SharedPreferences
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.preference.PreferenceManager
 import android.view.*
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
@@ -33,6 +35,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     //lateinit var mAdView : AdView
     var sharedPref: SharedPreferences? =  null
     private var locale: Locale? = null
+    @RequiresApi(Build.VERSION_CODES.M)
     @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -271,7 +274,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         if(lang == "none"){
             return applicationContext
         } else {
-            return MyContextWrapper.wrap(applicationContext, lang)
+            return MyContextWrapper.wrap(applicationContext, lang!!)
         }
     }
 
@@ -286,7 +289,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         if(lang == "none"){
             super.attachBaseContext(MyContextWrapper.wrap(newBase, deflang))
         } else {
-            super.attachBaseContext(MyContextWrapper.wrap(newBase, lang))
+            super.attachBaseContext(MyContextWrapper.wrap(newBase, lang!!))
 
         }
     }

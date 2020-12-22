@@ -12,7 +12,7 @@
 
     <CheckBoxPreference android:key="fbmessenger"
                         android:title="@string/fbmessenger"
-                        android:defaultValue="false"/>
+                        android:defaultValue="true"/>
 
     <CheckBoxPreference android:key="fbheader"
                         android:title="@string/fbheader"
@@ -27,10 +27,6 @@
                         android:enabled="true"/>
 
 
-   <!-- <CheckBoxPreference android:key=""
-                        android:title="ADBlocker"
-                        android:defaultValue="false"
-    android:enabled="false"/>-->
 
 
 

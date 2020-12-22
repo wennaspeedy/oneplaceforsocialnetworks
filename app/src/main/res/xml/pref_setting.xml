@@ -16,6 +16,10 @@
             android:entries="@array/langswitch"
             android:entryValues="@array/langvalue"
     />
+    
+    <CheckBoxPreference android:key="tracking"
+            android:title="@string/tracking"
+            android:defaultValue="true"/>
 
     <CheckBoxPreference android:key="doubleb"
                         android:title="@string/doubleb"

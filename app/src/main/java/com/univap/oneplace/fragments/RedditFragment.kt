@@ -207,7 +207,9 @@ else {
     }
 
     inner class MyWebChromeClient : WebChromeClient() {
-
+        override fun onGeolocationPermissionsShowPrompt(origin:String, callback:GeolocationPermissions.Callback) {
+            callback.invoke(origin, true, false)
+        }
         override fun onShowFileChooser(
             webView: WebView, filePathCallback: ValueCallback<Array<Uri>>,
             fileChooserParams: FileChooserParams

@@ -111,7 +111,7 @@ class FacebFragment : Fragment() {
                // println("MYLOG: "+Uri.parse(url).getHost())
                 if ((Uri.parse(url).getHost().equals("m.facebook.com"))) {
                     return false;
-                } else if ((Uri.parse(url).getHost().contains("runmain")))//my static html pages->link
+                } else if ((Uri.parse(url).getHost()?.contains("runmain")!!))//my static html pages->link
                 {
                     viewStartMainActivity(context!!)
                 } else

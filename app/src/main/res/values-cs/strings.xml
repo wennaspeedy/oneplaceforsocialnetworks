@@ -86,4 +86,5 @@
     <string name="title_activity_loading">LoadingActivity</string>
     <string name="alclose">Chceš zavřít aplikaci?</string>
     <string name="alquit">Ukončení</string>
+    <string name="tracking">Filtrovat sledování</string>
 </resources>

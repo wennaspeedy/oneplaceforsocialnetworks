@@ -53,10 +53,13 @@
     <string name="switch2">Reload after change</string>
     <string name="switch3">Leave loaded (slower)</string>
 
+    <!-- SETTINGS -->
     <string name="sponsored">Hide sponsored posts</string>
     <string name="searchspon">Sponsored</string>
     <string name="swiperefresh">Swipe down to refresh</string>
+    <string name="tracking">Tracking filter</string>
     <string name="fbmessenger">Use messenger app</string>
+
 
     <!-- FB THEMES NAMES-->
     <string name="fbtheme1">Default</string>
