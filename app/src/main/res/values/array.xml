@@ -8,7 +8,13 @@
         <item>@string/fbtheme5</item>
         <item>@string/fbtheme6</item>
         <item>@string/fbtheme7</item>
-
+        <item>@string/fbtheme8</item>
+        <item>@string/fbtheme9</item>
+        <item>@string/fbtheme10</item>
+        <item>@string/fbtheme11</item>
+        <item>@string/fbtheme12</item>
+        <item>@string/fbtheme13</item>
+        <item>@string/fbtheme14</item>
     </string-array>
     <string-array name="fbThemeValues">
         <item>1</item>
@@ -18,6 +24,14 @@
         <item>5</item>
         <item>6</item>
         <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+
     </string-array>
     <string-array name="switcharray">
         <item>@string/switch1</item>

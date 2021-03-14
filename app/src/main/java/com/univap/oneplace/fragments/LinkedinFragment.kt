@@ -15,7 +15,7 @@ import android.view.ViewGroup
 import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Build
-import android.preference.PreferenceManager
+import androidx.preference.PreferenceManager
 import android.provider.MediaStore
 import android.util.Log
 import android.view.animation.RotateAnimation
@@ -64,29 +64,29 @@ class LinkedinFragment : Fragment() {
         img = v.findViewById(R.id.imgv) as ImageView
        // pbar = v.findViewById(R.id.pBar) as ProgressBar
 
-        viewStartImgRotate(img!!, this!!.context!!)
+        viewStartImgRotate(img!!, this!!.requireContext())
 
         //pbar!!.setPbarColor(this!!.context!!, R.color.colorLIblue)
-        navimenu = (this!!.context!! as AppCompatActivity).bottomNav
+        navimenu = (this!!.requireContext() as AppCompatActivity).bottomNav
         mainFrameLayout = v.findViewById(R.id.frame) as FrameLayout
         mainFrameLayout!!.setTransparent()
        // frSaveFragmentPosition(sharedPref!!,src)
         //frSetThisMenuItemChecked((this!!.context!! as AppCompatActivity), R.id.linkedinFragment,sharedPref!!)
         //frKillOtherFragments(src, fragmentManager!!)
         viewHideActionBar((activity as AppCompatActivity))
-        ChangeNaviColor(this!!.context!!, R.color.colorLIblue)
-        setTheme(context!!, null, navimenu!!)
+        ChangeNaviColor(this!!.requireContext(), R.color.colorLIblue)
+        setTheme(requireContext(), null, navimenu!!)
         changeMaintThemescolors(activity as AppCompatActivity,src)
 
         myWebView = v.findViewById(R.id.webview) as WebView
-        if (!viewIsOnline(context!!)){  myWebView!!.loadUrl(DEFAULT_ERROR_PAGE_PATH); }
+        if (!viewIsOnline(requireContext())){  myWebView!!.loadUrl(DEFAULT_ERROR_PAGE_PATH); }
         else{
 
             myWebView!!.stopLoading();
 
             myWebView!!.initWebview(src)
             myWebView!!.loadUrl(currentUrl)
-            myWebView!!.setOnKeyListener(myWebView!!, activity!!)
+            myWebView!!.setOnKeyListener(myWebView!!, requireActivity())
             myWebView!!.setDownloadListener(activity as AppCompatActivity)
 
 
@@ -103,10 +103,10 @@ class LinkedinFragment : Fragment() {
 
                 currentUrl = url
 
-                if ((Uri.parse(url).getHost().contains("www.linkedin.com")) ||  (Uri.parse(url).getHost().contains("www.linkedin.com")) )
+                if ((Uri.parse(url).getHost()!!.contains("www.linkedin.com")) ||  (Uri.parse(url).getHost()!!.contains("www.linkedin.com")) )
                 {
                     return false ;
-                }  else if ((Uri.parse(url).getHost().contains("runmain")))
+                }  else if ((Uri.parse(url).getHost()!!.contains("runmain")))
                 {
                     viewStartMainActivity(context!!)
                 }else {
@@ -176,7 +176,7 @@ class LinkedinFragment : Fragment() {
     }
     override fun onResume() {
         super.onResume()
-        frOnResume(myWebView!!, sharedPref!!, currentUrl, tempstring,img!!,mainFrameLayout!!,context!!)
+        frOnResume(myWebView!!, sharedPref!!, currentUrl, tempstring,img!!,mainFrameLayout!!,requireContext())
         navimenu!!.menu.findItem(R.id.linkedinFragment).setChecked(true)//musi byt v pripade, ze se program nacte zpatky z pameti!!
 
     }

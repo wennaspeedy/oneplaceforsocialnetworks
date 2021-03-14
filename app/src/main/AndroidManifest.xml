@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:tools="http://schemas.android.com/tools"
-          package="com.univap.oneplace">
+        xmlns:tools="http://schemas.android.com/tools"
+        package="com.univap.oneplace">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
-    <!--<uses-permission android:name="android.permission.READ_PHONE_STATE"/>-->
+    <uses-permission android:name="com.android.vending.BILLING" /> <!-- <uses-permission android:name="android.permission.READ_PHONE_STATE"/> -->
     <uses-permission
             android:name="android.permission.MANAGE_DOCUMENTS"
-            tools:ignore="ProtectedPermissions"/>
+            tools:ignore="ProtectedPermissions" />
 
     <application
             android:allowBackup="true"
@@ -27,52 +26,46 @@
             android:usesCleartextTraffic="true">
 
         <activity
-                android:name="com.univap.oneplace.LoadingActivity"
+                android:name=".LoadingActivity"
                 android:configChanges="locale|orientation">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-                android:name="com.univap.oneplace.settings.FbSettingActivity"
+                android:name=".settings.FbSettingActivity"
+                android:configChanges="locale|orientation"
                 android:label="@string/fbsetting"
-                android:theme="@style/PreferenceScreen"
-                android:configChanges="locale|orientation">
-        </activity>
+                android:theme="@style/PreferenceScreen"></activity>
         <activity
-                android:name="com.univap.oneplace.IntroActivity"
+                android:name=".IntroActivity"
                 android:configChanges="locale|orientation"
-                android:theme="@style/AppTheme.NoActionBar">
-
-
-        </activity>
+                android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
-                android:name="com.univap.oneplace.IntroActivity2"
+                android:name=".IntroActivity2"
                 android:configChanges="locale|orientation"
-                android:theme="@style/AppTheme.NoActionBar">
-        </activity>
-
+                android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
-                android:name="com.univap.oneplace.settings.CustomActivity"
+                android:name=".settings.CustomActivity"
+                android:configChanges="locale|orientation"
                 android:label="@string/title_activity_customsoc"
-                android:theme="@style/PreferenceScreen"
-                android:configChanges="locale|orientation">
-        </activity>
+                android:theme="@style/PreferenceScreen"></activity>
         <activity
-                android:name="com.univap.oneplace.settings.SettingActivity"
-                android:label="@string/setting"
-                android:theme="@style/PreferenceScreen"
-                android:configChanges="locale|orientation">
-        </activity>
-        <activity
-                android:name="com.univap.oneplace.MainActivity"
+                android:name=".settings.SettingActivity"
                 android:configChanges="locale|orientation"
-        >
+                android:label="@string/setting"
+                android:theme="@style/PreferenceScreen"></activity>
+        <activity
+                android:name=".MainActivity"
+                android:configChanges="locale|orientation"></activity>
+        <activity android:name=".DonateActivity"
+
+                android:configChanges="locale|orientation"
+                android:label="@string/positiveButton"
+                android:theme="@style/PreferenceScreen">
         </activity>
-
-
     </application>
 
 </manifest>

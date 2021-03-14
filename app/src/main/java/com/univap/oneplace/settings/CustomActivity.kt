@@ -15,7 +15,7 @@ import com.univap.oneplace.MainActivity
 import com.univap.oneplace.MyContextWrapper
 import com.univap.oneplace.R
 import com.univap.oneplace.util.frSaveFragmentPosition
-
+import androidx.preference.PreferenceManager
 
 class CustomActivity : AppCompatPreferenceActivity() {
 
@@ -84,7 +84,7 @@ var counter = 0
         @RequiresApi(Build.VERSION_CODES.M)
         override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
-            super.onCreate(savedInstanceState)
+
             setupActionBar()
             addPreferencesFromResource(R.xml.pref_custom)
             //setHasOptionsMenu(true)
@@ -198,7 +198,7 @@ fun checkStatus(switch:SwitchPreference){
         if(lang == "none"){
             super.attachBaseContext(MyContextWrapper.wrap(newBase, deflang))
         } else {
-            super.attachBaseContext(MyContextWrapper.wrap(newBase, lang))
+            super.attachBaseContext(MyContextWrapper.wrap(newBase, lang!!))
 
         }
     }

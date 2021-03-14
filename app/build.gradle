@@ -7,9 +7,9 @@ apply plugin: 'kotlin-android-extensions'
 android {
     signingConfigs {
         sign {
-            keyAlias 'place'
+            keyAlias 'oneplace'
             keyPassword 'wweennaa'
-            storeFile file('D:\\Projects\\android-projects\\android_keystore.jks')
+            storeFile file('/mnt/data/Projects/android-projects/android_keystore.jks')
             storePassword 'wweennaa'
         }
     }
@@ -19,6 +19,7 @@ android {
         release {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             minifyEnabled true
+            signingConfig signingConfigs.sign
 
         }
         debug {
@@ -40,24 +41,11 @@ android {
             applicationId 'com.univap.oneplace'
             targetSdkVersion 29
             testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
-            versionCode 1
-            versionName '0.1'
+            versionCode 9
+            versionName '0.2'
             signingConfig signingConfigs.sign
         }
-        /*pro {
-            dimension "version"
-            resValue "string", "app_name", "FreePoo PRO"
-            manifestPlaceholders = [appIcon: "@mipmap/ic_launcher_pro"]
-            applicationIdSuffix ".pro"
-            versionNameSuffix "-prod"
-            minSdkVersion 21
-            applicationId 'com.univap.fsocialnetworks'
-            targetSdkVersion 28
-            testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
-            versionCode 13
-            versionName '0.4.1'
-            signingConfig signingConfigs.sign
-        }*/
+
 
     }
     buildToolsVersion '28.0.3'
@@ -94,6 +82,9 @@ dependencies {
     implementation 'tyrantgit:explosionfield:1.0.1'
     implementation 'com.github.AppIntro:AppIntro:5.1.0'
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.3'
+    implementation 'com.android.billingclient:billing:3.0.2'
+    implementation 'androidx.preference:preference:1.1.1'
+
 }
 //    implementation 'com.github.gtmora200:ZExplosionField:1.0.3'
 

@@ -7,77 +7,59 @@ import android.content.Intent
 import android.content.res.Resources
 import android.os.Build
 import android.os.Bundle
-import android.preference.CheckBoxPreference
-import android.preference.ListPreference
-import android.preference.Preference
-import android.preference.PreferenceManager
+import androidx.preference.CheckBoxPreference
+import androidx.preference.ListPreference
+import androidx.preference.Preference
+import androidx.preference.PreferenceManager
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import com.univap.oneplace.*
 import java.util.prefs.PreferenceChangeEvent
 import java.util.prefs.PreferenceChangeListener
 
-class FbSettingActivity : AppCompatPreferenceActivity() {
+class   FbSettingActivity : AppCompatActivity() {
 
-    var changed = false
+
 
     private fun setupActionBar() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
     }
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        val myIntent = Intent(this@FbSettingActivity, MainActivity::class.java)
+        this@FbSettingActivity.startActivity(myIntent)
+        return true
+    }
 
     override fun onBackPressed() {
+        super.onBackPressed();
+        finish()
+        val myIntent = Intent(this@FbSettingActivity, MainActivity::class.java)
+        this@FbSettingActivity.startActivity(myIntent)
 
-        if (changed) {
 
+        /*  finish();
+          this.finishAffinity();*/
 
-            try {
-                val builder = AlertDialog.Builder(this)
-
-                builder.setMessage(R.string.changesocials)
-                    .setTitle(R.string.changehead)
-                    .setCancelable(false)
-                    .setNegativeButton(R.string.notnow, DialogInterface.OnClickListener { dialog, id ->
-                        Toast.makeText(
-                            this, R.string.changenoopt,
-                            Toast.LENGTH_LONG
-                        ).show();
-                        super.onBackPressed();
-                        finish();
-                    })
-                    .setPositiveButton(R.string.reload, DialogInterface.OnClickListener { dialog, id ->
-                        val myIntent = Intent(this, MainActivity::class.java)
-                        // myIntent.putExtra("key", value) //Optional parameters
-                        this.finish()
-                        this.finishAffinity();
-
-                        this.startActivity(myIntent)
-                    })
-                val alert = builder.create()
-                if (alert.isShowing()) {
-                    alert.dismiss();
-                } else {
-                    alert.show()
-                }
-            } catch (e: Exception) {
-            }
-        } else {
-            super.onBackPressed();
-            finish();
-        }
     }
 
 
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        changed = false
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.preferenceFbSettFragment, FbSettingFragment())
+            .commit()
+        setContentView(R.layout.pref_fbsett_activity);
         setupActionBar()
-        addPreferencesFromResource(R.xml.pref_fbsetting)
+        //addPreferencesFromResource(R.xml.pref_fbsetting)
         //setHasOptionsMenu(true)
 
 
-
+/*
         val fbtheme: ListPreference = findPreference("fbthemes") as ListPreference
 
         val fbheader: CheckBoxPreference = findPreference("fbheader") as CheckBoxPreference
@@ -112,7 +94,7 @@ class FbSettingActivity : AppCompatPreferenceActivity() {
             }
 
 
-        }
+        }*/
 
 }
     override fun attachBaseContext(newBase: Context) {
@@ -123,7 +105,7 @@ class FbSettingActivity : AppCompatPreferenceActivity() {
         if(lang == "none"){
             super.attachBaseContext(MyContextWrapper.wrap(newBase, deflang))
         } else {
-            super.attachBaseContext(MyContextWrapper.wrap(newBase, lang))
+            super.attachBaseContext(MyContextWrapper.wrap(newBase, lang!!))
 
         }
     }

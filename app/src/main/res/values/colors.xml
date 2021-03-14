@@ -23,7 +23,13 @@
     <color name="colorFBGreen">#00FF00</color>
     <color name="colorMenuBack">#698EA0</color>
     <color name="colorNews">#4285f4</color>
-
+    <color name="colorGold">#FFD700</color>
+    <color name="colorPink">#FF69B4</color>
+    <color name="colorCoral">#F08080</color>
+    <color name="colorSeagreen">#3CB371</color>
+    <color name="colorViolet">#DB7093</color>
+    <color name="colorSkyblue">#87CEEB</color>
+    <color name="colorYellowgreen">#9acd32</color>
     <color name="bg1">#926E81</color>
     <color name="bg2">#E1CF6F</color>
     <color name="bg3">#141414</color>

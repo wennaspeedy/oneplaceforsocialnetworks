@@ -8,7 +8,7 @@ import android.content.SharedPreferences
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
-import android.preference.PreferenceManager
+import androidx.preference.PreferenceManager
 import android.provider.MediaStore
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -60,31 +60,31 @@ class InstaFragment : Fragment() {
         sharedPref!!.edit().putString("src", src).commit()
 
         img = v.findViewById(R.id.imgv) as ImageView
-        viewStartImgRotate(img!!, this!!.context!!)
+        viewStartImgRotate(img!!, this!!.requireContext())
         //pbar = v.findViewById(R.id.pBar) as ProgressBar
         //pbar!!.setPbarColor(this!!.context!!, R.color.colorIGpink)
-        navimenu = (this!!.context!! as AppCompatActivity).bottomNav
+        navimenu = (this!!.requireContext() as AppCompatActivity).bottomNav
         mainFrameLayout = v.findViewById(R.id.frame) as FrameLayout
         mainFrameLayout!!.setTransparent()
         //frSaveFragmentPosition(sharedPref!!,src)
         //frSetThisMenuItemChecked((this!!.context!! as AppCompatActivity), R.id.instaFragment,sharedPref!!)
         //frKillOtherFragments(src, fragmentManager!!)
         viewHideActionBar((activity as AppCompatActivity))
-        ChangeNaviColor(this!!.context!!, R.color.colorIGpink)
-        setTheme(context!!, null, navimenu!!)
+        ChangeNaviColor(this!!.requireContext(), R.color.colorIGpink)
+        setTheme(requireContext(), null, navimenu!!)
         changeMaintThemescolors(activity as AppCompatActivity,src)
 
         myWebView = v.findViewById(R.id.webview) as WebView
         //CookieManager.getInstance().setAcceptCookie(true);
 
-        if (!viewIsOnline(context!!)){  myWebView!!.loadUrl(DEFAULT_ERROR_PAGE_PATH); }
+        if (!viewIsOnline(requireContext())){  myWebView!!.loadUrl(DEFAULT_ERROR_PAGE_PATH); }
 else {
 
             myWebView!!.stopLoading();
 
             myWebView!!.initWebview(src)
             myWebView!!.loadUrl(currentUrl)
-            myWebView!!.setOnKeyListener(myWebView!!, activity!!)
+            myWebView!!.setOnKeyListener(myWebView!!, requireActivity())
             myWebView!!.setDownloadListener(activity as AppCompatActivity)
 
         }
@@ -97,10 +97,10 @@ else {
                 val url: String = request?.url.toString()
                 currentUrl = url
                 if ((Uri.parse(url).getHost().equals("www.instagram.com")) || (Uri.parse(url).toString().contains("facebook.com/dialog/oauth"))
-                    || (Uri.parse(url).toString().contains("dialog/oauth")) || (Uri.parse(url).toString().contains("facebook.com/login.php")) || (Uri.parse(url).getHost().contains("graph.instagram.com"))
+                    || (Uri.parse(url).toString().contains("dialog/oauth")) || (Uri.parse(url).toString().contains("facebook.com/login.php")) || (Uri.parse(url).getHost()!!.contains("graph.instagram.com"))
                 ) {
                     return false;
-                } else if ((Uri.parse(url).getHost().contains("runmain"))) {
+                } else if ((Uri.parse(url).getHost()!!.contains("runmain"))) {
                     viewStartMainActivity(context!!)
                 } else {
                     viewBuildExtLink(context!!, url)
@@ -162,7 +162,7 @@ else {
 
     override fun onResume() {
         super.onResume()
-        frOnResume(myWebView!!, sharedPref!!, currentUrl, tempstring,img!!,mainFrameLayout!!,context!!)
+        frOnResume(myWebView!!, sharedPref!!, currentUrl, tempstring,img!!,mainFrameLayout!!,requireContext())
         navimenu!!.menu.findItem(R.id.instaFragment).setChecked(true)//musi byt v pripade, ze se program nacte zpatky z pameti!!
 
     }

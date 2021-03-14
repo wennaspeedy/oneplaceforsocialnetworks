@@ -8,7 +8,7 @@ import android.content.SharedPreferences
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
-import android.preference.PreferenceManager
+import androidx.preference.PreferenceManager
 import android.provider.MediaStore
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -60,10 +60,10 @@ class NewsFragment : Fragment() {
         sharedPref!!.edit().putString("src", src).commit()
 
         img = v.findViewById(R.id.imgv) as ImageView
-        viewStartImgRotate(img!!, this!!.context!!)
-        img!!.setColorFilter(getContext()!!.getResources().getColor(com.univap.oneplace.R.color.colorWhite));
+        viewStartImgRotate(img!!, this!!.requireContext())
+        img!!.setColorFilter(requireContext().getResources().getColor(com.univap.oneplace.R.color.colorWhite));
         //  pbar = v.findViewById(R.id.pBar) as ProgressBar
-        navimenu = (this!!.context!! as AppCompatActivity).bottomNav
+        navimenu = (this!!.requireContext() as AppCompatActivity).bottomNav
         mainFrameLayout = v.findViewById(R.id.frame) as FrameLayout
         mainFrameLayout!!.setTransparent()
        // null.setPbarColor(this!!.context!!, R.color.colorRDorange)
@@ -71,23 +71,23 @@ class NewsFragment : Fragment() {
         //frSetThisMenuItemChecked((this!!.context!! as AppCompatActivity), R.id.redditFragment,sharedPref!!)
        // frKillOtherFragments(src, fragmentManager!!)
         viewHideActionBar((activity as AppCompatActivity))
-        ChangeNaviColor(this!!.context!!, R.color.colorNews)
+        ChangeNaviColor(this!!.requireContext(), R.color.colorNews)
 
-        setTheme(context!!, null, navimenu!!)
+        setTheme(requireContext(), null, navimenu!!)
         changeMaintThemescolors(activity as AppCompatActivity,src)
 
 
         myWebView = v.findViewById(R.id.webview) as WebView
 
 
-        if (!viewIsOnline(context!!)){  myWebView!!.loadUrl(DEFAULT_ERROR_PAGE_PATH); }
+        if (!viewIsOnline(requireContext())){  myWebView!!.loadUrl(DEFAULT_ERROR_PAGE_PATH); }
 else {
 
             myWebView!!.stopLoading();
 
             myWebView!!.initWebview("gn")
             myWebView!!.loadUrl(currentUrl)
-            myWebView!!.setOnKeyListener(myWebView!!, activity!!)
+            myWebView!!.setOnKeyListener(myWebView!!, requireActivity())
             myWebView!!.setDownloadListener(activity as AppCompatActivity)
 
         }
@@ -114,7 +114,7 @@ else {
                       }
                     return false
 
-                } else if ((Uri.parse(url).getHost().contains("runmain"))) {
+                } else if ((Uri.parse(url).getHost()!!.contains("runmain"))) {
                     viewStartMainActivity(context!!)
                 } else if ( (host.equals("myaccount.google.com"))){
                     view!!.loadUrl("https://news.google.com")
@@ -187,7 +187,7 @@ else {
 
     override fun onResume() {
         super.onResume()
-        frOnResume(myWebView!!, sharedPref!!, currentUrl, tempstring,img!!,mainFrameLayout!!,context!!)
+        frOnResume(myWebView!!, sharedPref!!, currentUrl, tempstring,img!!,mainFrameLayout!!,requireContext())
         navimenu!!.menu.findItem(R.id.newsFragment).setChecked(true)//musi byt v pripade, ze se program nacte zpatky z pameti!!
 
     }

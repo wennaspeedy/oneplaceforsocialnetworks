@@ -3,10 +3,10 @@
     <string name="error1">Connection error!</string>
     <string name="reload">Reload</string>
     <string name="errorInsta">Connection error, please reload app!</string>
-    <string name="freeMessage">The development of this application takes a lot of time. Support my work by paying any amount. Thank you.</string>
+    <string name="freeMessage">The development of this application takes a lot of time. Support my work by buying donated version. Thank you.</string>
     <string name="freeMessageTitle">PLEASE SUPPORT MY WORK</string>
     <string name="negativeButton">NO</string>
-    <string name="positiveButton">BUY ME A COFFEE</string>
+    <string name="positiveButton">DONATE</string>
     <string name="why">Why not? :(</string>
     <string name="file_chooser">choose</string>
     <string name="file_chooser_default">choose file</string>
@@ -60,15 +60,6 @@
     <string name="tracking">Tracking filter</string>
     <string name="fbmessenger">Use messenger app</string>
 
-
-    <!-- FB THEMES NAMES-->
-    <string name="fbtheme1">Default</string>
-    <string name="fbtheme2">Material dark</string>
-    <string name="fbtheme3">Material light</string>
-    <string name="fbtheme4">Drakula Red</string>
-    <string name="fbtheme5">Black</string>
-    <string name="fbtheme6">Orange Black</string>
-    <string name="fbtheme7">Fallout Pip-Boy Green</string>
     <string name="linkko">...go back</string>
     <string name="linkok">Of course!</string>
     <string name="linkmsg">Do you want to open external link in your browser?</string>
@@ -106,7 +97,31 @@
 
     <string name="alclose">Do you want to close this app?</string>
     <string name="alquit">Quit</string>
-
-
+    <string name="statuspur">Status: Donated</string>
+    <string name="statusnotpur">Status: NOT donated</string>
+    <string name="error">Error</string>
+    <string name="purnotfound">Not found</string>
+    <string name="purcan">Canceled</string>
+    <string name="purinv">Error: Invalid purchase</string>
+    <string name="purdon">Donated!</string>
+    <string name="purpen">Donating is Pending. Please complete Transaction.</string>
+    <string name="statusunk">Status: Unknown</string>
+    <string name="donatebutt">Donate</string>
+    <!-- FB THEMES NAMES-->
+    <string name="fbtheme1">Default</string>
+    <string name="fbtheme2">Dark</string>
+    <string name="fbtheme3">Light</string>
+    <string name="fbtheme4">Drakula Red</string>
+    <string name="fbtheme5">Black</string>
+    <string name="fbtheme6">Dark orange</string>
+    <string name="fbtheme7">Fallout Pip-Boy Green</string>
+    <string name="fbtheme8">Gold</string>
+    <string name="fbtheme9">Pink</string>
+    <string name="fbtheme10">Coral</string>
+    <string name="fbtheme11">Sea green</string>
+    <string name="fbtheme12">Violet</string>
+    <string name="fbtheme13">Sky blue</string>
+    <string name="fbtheme14">Yellowgreen</string>
+    <string name="purchheader">Please support my work</string>
 
 </resources>

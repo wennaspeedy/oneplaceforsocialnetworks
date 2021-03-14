@@ -1,27 +1,18 @@
 package com.univap.oneplace.settings
 
 import android.content.Context
-import androidx.appcompat.app.AlertDialog
-import android.content.DialogInterface
 import android.content.Intent
 import android.content.res.Resources
-import android.net.Uri
 import android.os.Build
 import android.os.Bundle
-import android.preference.*
-import android.provider.Settings
-import android.webkit.CookieManager
-import android.webkit.WebView
-import android.widget.Toast
 import androidx.annotation.RequiresApi
-import androidx.core.view.GravityCompat
-import java.util.prefs.PreferenceChangeEvent
-import java.util.prefs.PreferenceChangeListener
-import com.univap.oneplace.*
-import kotlinx.android.synthetic.main.activity_main.*
+import androidx.appcompat.app.AppCompatActivity
+import com.univap.oneplace.MainActivity
+import com.univap.oneplace.MyContextWrapper
+import com.univap.oneplace.R
 
 
-class SettingActivity : AppCompatPreferenceActivity() {
+class SettingActivity : AppCompatActivity() {
 
 
     var changed = false
@@ -30,66 +21,51 @@ class SettingActivity : AppCompatPreferenceActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
     }
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        val myIntent = Intent(this@SettingActivity, MainActivity::class.java)
+        this@SettingActivity.startActivity(myIntent)
+        return true
+    }
 
     override fun onBackPressed() {
+        super.onBackPressed();
+        finish()
+        val myIntent = Intent(this@SettingActivity, MainActivity::class.java)
+        this@SettingActivity.startActivity(myIntent)
 
-        if (changed) {
 
+      /*  finish();
+        this.finishAffinity();*/
 
-            try {
-                val builder = AlertDialog.Builder(this)
-
-                builder.setMessage(R.string.changesocials)
-                    .setTitle(R.string.changehead)
-                    .setCancelable(false)
-                    .setNegativeButton(R.string.notnow, DialogInterface.OnClickListener { dialog, id ->
-                        Toast.makeText(
-                            this, R.string.changenoopt,
-                            Toast.LENGTH_LONG
-                        ).show();
-                        super.onBackPressed();
-                        finish();
-                    })
-                    .setPositiveButton(R.string.reload, DialogInterface.OnClickListener { dialog, id ->
-                        val myIntent = Intent(this, MainActivity::class.java)
-                        // myIntent.putExtra("key", value) //Optional parameters
-                        this.finish()
-                        this.finishAffinity();
-
-                        this.startActivity(myIntent)
-                    })
-                val alert = builder.create()
-                if (alert.isShowing()) {
-                    alert.dismiss();
-                } else {
-                    alert.show()
-                }
-            } catch (e: Exception) {
-            }
-        } else {
-
-            super.onBackPressed();
-            finish();
-
-        }
     }
 
 
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        changed = false
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.preferenceSettFragment, SettingFragment())
+            .commit()
+        setContentView(R.layout.pref_sett_activity);
+        //addPreferencesFromResource(R.xml.pref_setting)
+       // changed = false
         setupActionBar()
-        addPreferencesFromResource(R.xml.pref_setting)
+
+
         //setHasOptionsMenu(true)
 
         //getWindow().getDecorView().background.setAlpha(50)
-
+/*
         val cleard: Preference = findPreference("cleard") as Preference
+        getPreferenceScreen().findPreference("PREF_SAVE_PATH");
+
         val clearco: Preference = findPreference("clearco") as Preference
         val doubleb: CheckBoxPreference = findPreference("doubleb") as CheckBoxPreference
-        val showfr: CheckBoxPreference = findPreference("showfr") as CheckBoxPreference
+       // val showfr: CheckBoxPreference = findPreference("showfr")!! as CheckBoxPreference
         val hidenavi: CheckBoxPreference = findPreference("hidenavi") as CheckBoxPreference
+        val donate: CheckBoxPreference = findPreference("donate") as CheckBoxPreference
         /*if(BuildConfig.VERSION_NAME.contains("free")){
             showfr.setEnabled(true)
 
@@ -124,7 +100,16 @@ class SettingActivity : AppCompatPreferenceActivity() {
                 true
             }
         }*/
+        donate.onPreferenceClickListener = object : Preference.OnPreferenceClickListener {
+            override fun onPreferenceClick(preference: Preference?): Boolean {
+                finish()
+                val myIntent = Intent(this@SettingActivity, DonateActivity::class.java)
+                this@SettingActivity.startActivity(myIntent)
+                return false
+            }
 
+
+        }
 
 
 
@@ -143,6 +128,7 @@ class SettingActivity : AppCompatPreferenceActivity() {
 
 
         }
+        /*
         showfr.onPreferenceChangeListener = object : PreferenceChangeListener, Preference.OnPreferenceChangeListener {
             override fun onPreferenceChange(preference: Preference?, newValue: Any?): Boolean {
                 if (showfr.isChecked()) {
@@ -157,7 +143,7 @@ class SettingActivity : AppCompatPreferenceActivity() {
             }
 
 
-        }
+        }*/
         hidenavi.onPreferenceChangeListener = object : PreferenceChangeListener, Preference.OnPreferenceChangeListener {
             override fun onPreferenceChange(preference: Preference?, newValue: Any?): Boolean {
                 if (hidenavi.isChecked()) {
@@ -227,7 +213,7 @@ class SettingActivity : AppCompatPreferenceActivity() {
         }
 
 
-        val lang: ListPreference = findPreference("lang") as ListPreference
+
 
 
         lang.onPreferenceChangeListener = object : PreferenceChangeListener, Preference.OnPreferenceChangeListener {
@@ -242,7 +228,7 @@ class SettingActivity : AppCompatPreferenceActivity() {
                 return true
             }
 
-        }
+        }*/
 
 
 
@@ -251,13 +237,13 @@ class SettingActivity : AppCompatPreferenceActivity() {
 
     override fun attachBaseContext(newBase: Context) {
 
-        val sharedPref = PreferenceManager.getDefaultSharedPreferences(newBase)
+        val sharedPref = newBase.getSharedPreferences("MyPref", 0)
         val lang = sharedPref!!.getString("lang", "none")
         val deflang = Resources.getSystem().getConfiguration().locale.getLanguage();
         if(lang == "none"){
             super.attachBaseContext(MyContextWrapper.wrap(newBase, deflang))
         } else {
-            super.attachBaseContext(MyContextWrapper.wrap(newBase, lang))
+            super.attachBaseContext(MyContextWrapper.wrap(newBase, lang!!))
 
         }
     }

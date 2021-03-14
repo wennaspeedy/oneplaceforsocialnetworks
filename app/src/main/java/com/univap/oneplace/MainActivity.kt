@@ -9,7 +9,7 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
-import android.preference.PreferenceManager
+import androidx.preference.PreferenceManager
 import android.view.*
 import android.widget.Toast
 import androidx.annotation.RequiresApi
@@ -29,14 +29,28 @@ import kotlinx.android.synthetic.main.maincontent.*
 import java.util.*
 
 
+
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     private var doubleBackToExitPressedOnce = true
     private lateinit var navController: NavController
     //lateinit var mAdView : AdView
     var sharedPref: SharedPreferences? =  null
     private var locale: Locale? = null
-    @RequiresApi(Build.VERSION_CODES.M)
-    @SuppressLint("ResourceType")
+
+    private val preferenceObject: SharedPreferences
+        get() = applicationContext.getSharedPreferences("MyPref", 0)
+
+    private val preferenceEditObject: SharedPreferences.Editor
+        get() {
+            val pref: SharedPreferences = applicationContext.getSharedPreferences("MyPref", 0)
+            //val pref = PreferenceManager.getDefaultSharedPreferences(applicationContext)
+            return pref.edit()
+        }
+
+    private val purchaseValueFromPref: Boolean
+        get() = preferenceObject.getBoolean("donate", false)
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         var perm:PermissionController = PermissionController()
@@ -60,6 +74,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         sharedPref = PreferenceManager.getDefaultSharedPreferences(getMyContext())
         val showfr:Boolean = sharedPref!!.getBoolean("showfr", false)
+        val donate:Boolean = sharedPref!!.getBoolean("donate", false)
         val fbPref = sharedPref!!.getBoolean("switchfacebook",true)
         val twPref = sharedPref!!.getBoolean("switchtwitter", true)
         val igPref = sharedPref!!.getBoolean("switchinstagram", true)
@@ -210,7 +225,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED);
         //println("showfr: "+showfr)
             //show and load support window
-            if (!showfr) {
+
+        if (!purchaseValueFromPref) {
 
 
                             try {
@@ -219,6 +235,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                                 builder.setMessage(R.string.freeMessage)
                                     .setTitle(R.string.freeMessageTitle)
                                     .setCancelable(true)
+                                    .setOnCancelListener(DialogInterface.OnCancelListener {
+                                        Toast.makeText(
+                                            this@MainActivity, R.string.why,
+                                            Toast.LENGTH_LONG
+                                        ).show();
+                                    })
                                     .setNegativeButton(
                                         R.string.negativeButton,
                                         DialogInterface.OnClickListener { dialog, id ->
@@ -236,9 +258,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                                             i.data =
                                                 Uri.parse("https://play.google.com/store/apps/details?id=com.univap.fsocialnetworks.pro")
                                             startActivity(i)*/
-                                            val myIntent = Intent(Intent.ACTION_VIEW)
-                                            myIntent.setData(Uri.parse("https://www.paypal.me/wnzk"))
+                                            //val myIntent = Intent(Intent.ACTION_VIEW)
+                                            //myIntent.setData(Uri.parse("https://www.paypal.me/wnzk"))
+                                            val myIntent = Intent(this@MainActivity, DonateActivity::class.java)
                                             this@MainActivity.startActivity(myIntent)
+
 
                                         })
                                 val alert = builder.create()
@@ -371,8 +395,9 @@ var first = 0
 
 
             R.id.nav_donate -> {
-                val myIntent = Intent(Intent.ACTION_VIEW)
-                myIntent.setData(Uri.parse("https://www.paypal.me/wnzk"))
+               // val myIntent = Intent(Intent.ACTION_VIEW)
+                //myIntent.setData(Uri.parse("https://www.paypal.me/wnzk"))
+                val myIntent = Intent(this@MainActivity, DonateActivity::class.java)
                 this@MainActivity.startActivity(myIntent)
 
             }

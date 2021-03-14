@@ -5,10 +5,10 @@
     <string name="error1">Chyba připojení!</string>
     <string name="reload">OBNOVIT</string>
     <string name="errorInsta">Chyba připojení, obnovte aplikaci!</string>
-    <string name="freeMessage">Vývoj této aplikace zabírá mnoho času. Zaplacením libovolné částky podpoříte moji práci. Děkuji.</string>
+    <string name="freeMessage">Vývoj této aplikace zabírá mnoho času. Koupí sponzorované verze podpoříte mojí práci. Děkuji.</string>
     <string name="freeMessageTitle">PROSÍM PODPOŘTE MĚ</string>
     <string name="negativeButton">NE</string>
-    <string name="positiveButton">KUP MI KAFE</string>
+    <string name="positiveButton">PODPOŘIT</string>
     <string name="why">Proč ne? :(</string>
     <string name="changehead">Vyžadován restart</string>
     <string name="notnow">Teď ne</string>
@@ -60,14 +60,12 @@
         přes paypal nebo koupením PRO verze a já budu přidávat další funkce a aplikace
     </string>
     <string name="title_activity_customsoc">Přizpůsobit aplikace</string>
-    <string name="fbtheme7">Zelená Fallout Pip-Boy</string>
-    <string name="fbtheme6">Oranžovo-černá</string>
-    <string name="fbtheme5">Černá</string>
+
     <string name="file_chooser">Vybrat</string>
     <string name="filechoose">Vybrat soubory</string>
     <string name="file_chooser_default">Vybrat soubor</string>
     <string name="file_chooser_custom">Vybrat volitelný soubor</string>
-    <string name="fbtheme1">Původní</string>
+
     <string name="fbmessenger">Použít aplikaci Messenger</string>
     <string name="fbheader">Přilepit nahoru hlavní panel</string>
     <string name="fbfast">Úsporný režim</string>
@@ -78,13 +76,40 @@
     <string name="clear">Vyčistit data</string>
     <string name="changesocials">Tato možnost vyžaduje restart</string>
     <string name="changenoopt">Tato změna se projeví po restartu</string>
-    <string name="fbtheme3">Material - světlá</string>
-    <string name="fbtheme2">Material - tmavá</string>
-    <string name="fbtheme4">Drakula Red</string>
+
     <string name="fbdark">Facebook DarkMaterial Theme</string>
     <string name="title_activity_fb_setting">"FbSettingActivity "</string>
     <string name="title_activity_loading">LoadingActivity</string>
     <string name="alclose">Chceš zavřít aplikaci?</string>
     <string name="alquit">Ukončení</string>
     <string name="tracking">Filtrovat sledování</string>
+    <string name="statuspur">Stav příspěvku: OK</string>
+    <string name="statusnotpur">Stav příspěvku: NEDAROVÁNO</string>
+    <string name="error">Chyba</string>
+    <string name="purnotfound">Nenalezeno</string>
+    <string name="purcan">Zrušeno</string>
+    <string name="purinv">Chyba: Neplatná transakce</string>
+    <string name="purdon">Darováno!</string>
+    <string name="purpen">Příspěvěk čeká - prosím dokončete transakci.</string>
+    <string name="statusunk">Stav příspěvku: Neznámý</string>
+    <string name="donatebutt">Podpořit</string>
+    <string name="fbtheme3">Světlá</string>
+    <string name="fbtheme2">Temná</string>
+    <string name="fbtheme4">Drakula</string>
+    <string name="fbtheme1">Původní</string>
+    <string name="fbtheme7">Zelená Fallout Pip-Boy</string>
+    <string name="fbtheme6">Temná oranžová</string>
+    <string name="fbtheme5">Černá</string>
+
+    <string name="fbtheme8">Zlatá</string>
+    <string name="fbtheme9">Růžová</string>
+    <string name="fbtheme10">Korálová</string>
+    <string name="fbtheme11">Mořská zelená</string>
+    <string name="fbtheme12">Violet</string>
+    <string name="fbtheme13">Oblázkově modrá</string>
+    <string name="fbtheme14">Zelenožlutá</string>
+    <string name="purchheader">Prosím podpoř moji práci</string>
+
+
+
 </resources>

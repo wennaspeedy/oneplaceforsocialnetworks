@@ -1,18 +1,18 @@
 body * {
     border-color:  transparent !important;
-    color: #ffa900de !important;
+    color:  #ffffff !important;
     background-color:  transparent !important;
 }
 
 html, body, ._2v9s  {
-    background-image: url("data:image/gif;base64,R0lGODlhBAAEAKECABERESQkJP///////yH5BAEKAAIALAAAAAAEAAQAAAIFhB6nhlIAOw==") !important;
-    background-repeat: repeat !important;
-    background-color: #181818 !important;
+   /* background-image: url("data:image/gif;base64,R0lGODlhBAAEAKECABERESQkJP///////yH5BAEKAAIALAAAAAAEAAQAAAIFhB6nhlIAOw==") !important;
+    background-repeat: repeat !important;*/
+    background-color: #DB7093 !important;
 }
 
 .storyStream, ._4nmh, ._4u3j, ._35aq, ._146a, ._5pxb, ._55wq, ._53_-, ._55ws, ._u42, .jx-result, .jx-typeahead-results, ._56bt, ._52x7, ._vqv, ._5rgt, .popover_flyout, .flyout, #m_newsfeed_stream, ._55wo, ._3iln, .mentions-suggest, #header, ._xy, ._bgx, .acb, .acg, .aclb, .nontouch ._5ui0, input[type=text], .acw, ._5up8, ._5kgn, .tlLinkContainer, .aps, .jewel .flyout .header, .appCenterCategorySelectorButton, .tlBody, #timelineBody, .timelineX, .timeline .feed, .timeline .tlPrelude, .timeline .tlFeedPlaceholder, .touch ._5c9u, .touch ._5ca9, .innerLink, ._5dy4, ._52x3, #m_group_stories_container, .albums, .subpage, ._uwu, ._uww, .scrollAreaBody, .al, .apl, .structuredPublisher, .groupChromeView, ._djv, ._bjg, ._5kgn, ._3f50, ._55wm, ._58f0 {
-    background: #202020 !important;
-     text-shadow: 0px 0px 2px #000 !important;
+    background: #DB7093 !important;
+     text-shadow: 0px 0px 1px #000 !important;
      -webkit-transition: background .2s, box-shadow .4s, border-color .2s !important; /* Safari */
     transition: background .2s, box-shadow .4s, border-color .2s !important;
     transition-timing-function: linear !important;
@@ -23,11 +23,11 @@ html, body, ._2v9s  {
 }
 
 ._56bu, ._56bs {
-    background: #202020 !important;
+    background: #DB7093 !important;
 }
 
 .touch ._56bu::before, .touch.wp.x1-5 ._56bu::before, .touch.wp.x2 ._56bu::before{
-    background-color: #202020 !important;
+    background-color: #DB7093 !important;
     text-shadow: 0px 0px 2px #000 !important;
 }
 
@@ -76,7 +76,7 @@ body, .touch ._2ya3, ._4qas, ._4qau, .composerTextSelected, .composerInput, .men
 /* blue link text */
 
 a, .actor, .mfsl, .fcw, .title, .blueName, ._5aw4, ._vqv, ._5yll, ._5qc3, ._52lz, ._4nwe, ._27vp, ._ir4, ._5wsv, ._46pa {
-    color: #ffa500 !important;
+    color: #FFFFFF !important;
 }
 
 /* dark important */
@@ -85,7 +85,7 @@ a, .actor, .mfsl, .fcw, .title, .blueName, ._5aw4, ._vqv, ._5yll, ._5qc3, ._52lz
     background: #304702 !important;
 }
 .statusBox, ._5whq, ._56bt, .composerInput, .mentions-input,  ._bji {
-    background: #323232 !important;
+    background: #DB7093 !important;
 }
 .ufiBorder, ._5as0, ._5ef_, ._35aq {
     border-color: #555 !important;
@@ -106,20 +106,20 @@ a, .actor, .mfsl, .fcw, .title, .blueName, ._5aw4, ._vqv, ._5yll, ._5qc3, ._52lz
     background: #4e4e4e !important;
 }
 article, ._4o50, ._3wjp, ._usq, ._55wq, ._400s {
-    border: 1px dotted #383838 !important;
+    border: 0px dotted #383838 !important;
     border-radius: 4px;
 }
 .messages-flyout-item, .more, ._4ut2, ._52we {
-    border-top: 1px dotted #383838 !important;
+    border-top: 0px dotted #383838 !important;
 }
 ._53_- {
-    border-bottom: 1px dotted #383838 !important;
+    border-bottom: 0px dotted #383838 !important;
 }
 ._1_oa, ._bmx, ._52x1 {
-    border-bottom: 1px dotted #383838 !important;
+    border-bottom: 0px dotted #383838 !important;
 }
 article h3 {
-    color: #FFA500 !important;
+    color: #FFFFFF !important;
 }
 ._4756, ._4qax {
     background-color: #1F1F1F !important;
@@ -137,7 +137,7 @@ article h3 {
     border-right: 1px solid #424242;
 }
 ._2lut {
-    border: 1px dotted #e9eaed !important;
+    border: 0px dotted #e9eaed !important;
 }
 
 /* badges */
@@ -156,7 +156,7 @@ article h3 {
 /* unread */
 
 .aclb {
-    background: #323232 !important;
+    background: #323232!important;
 }
 /*to se mi libi oznaceno*/
 ._15ks ._77la._77la {
@@ -165,6 +165,6 @@ article h3 {
 
 /*header se sipkou*/
 ._6j_d {
-    background: #202020 !important;
+    background: #DB7093 !important;
 
 }

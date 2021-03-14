@@ -1,8 +1,10 @@
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-                  android:title="@string/fbsetting">
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:title="@string/fbsetting"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
 
-    <ListPreference
+    <androidx.preference.ListPreference
             android:key="fbthemes"
             android:title="@string/fbthemes"
             android:entries="@array/fbThemeArray"
@@ -10,18 +12,10 @@
             android:defaultValue="1"
             android:dialogTitle=""/>
 
-    <CheckBoxPreference android:key="fbmessenger"
-                        android:title="@string/fbmessenger"
-                        android:defaultValue="true"/>
-
-    <CheckBoxPreference android:key="fbheader"
-                        android:title="@string/fbheader"
-                        android:defaultValue="false"/>
-
-    <CheckBoxPreference android:key="fbfast"
+    <androidx.preference.CheckBoxPreference android:key="fbfast"
                         android:title="@string/fbfast"
                         android:defaultValue="false"/>
-    <CheckBoxPreference android:key="sponsored"
+    <androidx.preference.CheckBoxPreference android:key="sponsored"
                         android:title="@string/sponsored"
                         android:defaultValue="false"
                         android:enabled="true"/>
@@ -30,4 +24,4 @@
 
 
 
-</PreferenceScreen>
+</androidx.preference.PreferenceScreen>

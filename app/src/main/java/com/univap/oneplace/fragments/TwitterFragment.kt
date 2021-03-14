@@ -8,7 +8,7 @@ import android.content.SharedPreferences
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
-import android.preference.PreferenceManager
+import androidx.preference.PreferenceManager
 import android.provider.MediaStore
 import android.util.Log
 import android.view.*
@@ -52,36 +52,36 @@ class TwitterFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val v = inflater.inflate(R.layout.fragment_twitter, container, false)
-        val fragmentManager = getFragmentManager()
+        //val fragmentManager = getFragmentManager()
 
         sharedPref = PreferenceManager.getDefaultSharedPreferences(context)
         sharedPref!!.edit().putString("src", src).commit()
 
         img = v.findViewById(R.id.imgv) as ImageView
-        viewStartImgRotate(img!!, this!!.context!!)
+        viewStartImgRotate(img!!, this!!.requireContext())
         // pbar = v.findViewById(R.id.pBar) as ProgressBar
         //null.setPbarColor(this!!.context!!, R.color.colorTWblue)
-        navimenu = (this!!.context!! as AppCompatActivity).bottomNav
+        navimenu = (this!!.requireContext() as AppCompatActivity).bottomNav
         mainFrameLayout = v.findViewById(R.id.frame) as FrameLayout
         mainFrameLayout!!.setTransparent()
        // frKillOtherFragments(src, fragmentManager!!)
        // frSaveFragmentPosition(sharedPref!!, src)
        // frSetThisMenuItemChecked((this!!.context!! as AppCompatActivity), R.id.twitterFragment, sharedPref!!)
         viewHideActionBar((activity as AppCompatActivity))
-        ChangeNaviColor(this!!.context!!, R.color.colorTWblue)
-        setTheme(context!!, null, navimenu!!)
+        ChangeNaviColor(this!!.requireContext(), R.color.colorTWblue)
+        setTheme(requireContext(), null, navimenu!!)
         changeMaintThemescolors(activity as AppCompatActivity,src)
 
 
         myWebView = v.findViewById(R.id.webview) as WebView
 
-        if (!viewIsOnline(context!!)) {
+        if (!viewIsOnline(requireContext())) {
             myWebView!!.loadUrl(DEFAULT_ERROR_PAGE_PATH); } else {
             myWebView!!.stopLoading();
 
             myWebView!!.initWebview(src)
             myWebView!!.loadUrl(currentUrl)
-            myWebView!!.setOnKeyListener(myWebView!!, activity!!)
+            myWebView!!.setOnKeyListener(myWebView!!, requireActivity())
             myWebView!!.setDownloadListener(activity as AppCompatActivity)
 
         }
@@ -98,7 +98,7 @@ class TwitterFragment : Fragment() {
                 currentUrl = url
                 if ((Uri.parse(url).getHost().equals("mobile.twitter.com")) || (Uri.parse(url).getHost().equals("mobile.twitter.com"))) {
                     return false;
-                } else if ((Uri.parse(url).getHost().contains("runmain"))) {
+                } else if ((Uri.parse(url).getHost()!!.contains("runmain"))) {
                     viewStartMainActivity(context!!)
                 } else {
                     viewBuildExtLink(context!!, url)
@@ -158,7 +158,7 @@ class TwitterFragment : Fragment() {
     }
     override fun onResume() {
         super.onResume()
-        frOnResume(myWebView!!, sharedPref!!, currentUrl, tempstring,img!!,mainFrameLayout!!,context!!)
+        frOnResume(myWebView!!, sharedPref!!, currentUrl, tempstring,img!!,mainFrameLayout!!,requireContext())
         navimenu!!.menu.findItem(R.id.twitterFragment).setChecked(true)//musi byt v pripade, ze se program nacte zpatky z pameti!!
 
     }

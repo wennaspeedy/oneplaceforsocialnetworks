@@ -1,15 +1,22 @@
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
                   android:title="@string/setting"
         android:id="@+id/settingslayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         >
-    <ListPreference
+    <androidx.preference.Preference android:key="donate"
+            android:title="@string/showfr"
+            android:defaultValue="false"
+            android:id="@+id/donate"
+            android:enabled="true"/>
+    <androidx.preference.ListPreference
             android:key="tabmode"
             android:dialogTitle=""
             android:title="@string/tabmode"
             android:entries="@array/switcharray"
             android:entryValues="@array/switchvalue"
             android:defaultValue="2"/>
-    <ListPreference
+    <androidx.preference.ListPreference
             android:key="lang"
             android:title="@string/lang"
             android:dialogTitle=""
@@ -17,34 +24,30 @@
             android:entryValues="@array/langvalue"
     />
     
-    <CheckBoxPreference android:key="tracking"
+    <androidx.preference.CheckBoxPreference android:key="tracking"
             android:title="@string/tracking"
             android:defaultValue="true"/>
 
-    <CheckBoxPreference android:key="doubleb"
+    <androidx.preference.CheckBoxPreference android:key="doubleb"
                         android:title="@string/doubleb"
                         android:defaultValue="true"/>
-    <CheckBoxPreference android:key="hidenavi"
+    <androidx.preference.CheckBoxPreference android:key="hidenavi"
                         android:title="@string/hidenavi"
                         android:defaultValue="false"
                        />
-    <CheckBoxPreference android:key="swiperefresh"
+    <androidx.preference.CheckBoxPreference android:key="swiperefresh"
                         android:title="@string/swiperefresh"
                         android:defaultValue="false"
     />
-    <Preference android:key="clearco"
-                android:title="@string/clearco"></Preference>
+    <androidx.preference.Preference android:key="clearco"
+                android:title="@string/clearco"></androidx.preference.Preference>
 
-    <Preference android:key="cleard"
-                android:title="@string/cleard"></Preference>
+    <androidx.preference.Preference android:key="cleard"
+                android:title="@string/cleard"></androidx.preference.Preference>
 
 
-    <CheckBoxPreference android:key="showfr"
-                        android:title="@string/showfr"
-                        android:defaultValue="false"
-                        android:id="@+id/showfr"
-                        android:enabled="true"/>
-    <CheckBoxPreference android:key="rememposit"
+
+    <androidx.preference.CheckBoxPreference android:key="rememposit"
                         android:title="@string/rememposit"
                         android:defaultValue="false"
                         android:enabled="false"
@@ -52,4 +55,4 @@
 
 
 
-</PreferenceScreen>
+</androidx.preference.PreferenceScreen>

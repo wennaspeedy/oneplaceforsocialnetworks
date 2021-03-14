@@ -6,7 +6,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Build
-import android.preference.PreferenceManager
+import androidx.preference.PreferenceManager
 import android.view.Window
 import android.view.WindowManager
 import android.webkit.WebView
@@ -25,48 +25,20 @@ fun SetFbTheme(context: Context, /*pbar:ProgressBar,*/ navimenu: BottomNavigatio
 
     val themeType = sharedPref.getString("fbthemes", "1")
     val themeColor = GetThemeMainColor(context);
-    if (themeType == "2") {
-        // pbar!!.setPbarColor(context!!, R.color.colorFBBlack)
-        navimenu!!.background = ContextCompat.getDrawable(context!!, themeColor)
-        navimenu!!.setItemTextColor(AppCompatResources.getColorStateList(context!!, R.drawable.item_selector))
-        navimenu!!.setItemIconTintList(AppCompatResources.getColorStateList(context!!, R.drawable.item_selector));
-    } else if (themeType == "3") {
-        //pbar!!.setPbarColor(context!!, R.color.colorFBGrey)
-        navimenu!!.background = ContextCompat.getDrawable(context!!, themeColor)
+    navimenu!!.background = ContextCompat.getDrawable(context!!, themeColor)
+    if (themeType == "3") {
+
+
+        navimenu!!.setItemTextColor(AppCompatResources.getColorStateList(context!!, R.drawable.is_fb_white_black))
+        navimenu!!.setItemIconTintList(AppCompatResources.getColorStateList(context!!, R.drawable.is_fb_white_black)) // ikony navimenu
+
+    } else {
 
         navimenu!!.setItemTextColor(AppCompatResources.getColorStateList(context!!, R.drawable.is_fb_black_white))
         navimenu!!.setItemIconTintList(AppCompatResources.getColorStateList(context!!, R.drawable.is_fb_black_white));
 
-    } else if (themeType == "4") {
-        // pbar!!.setPbarColor(context!!, R.color.colorFBRed)
-        navimenu!!.background = ContextCompat.getDrawable(context!!, themeColor)
-        navimenu!!.setItemTextColor(AppCompatResources.getColorStateList(context!!, R.drawable.is_fb_white_black))
-        navimenu!!.setItemIconTintList(AppCompatResources.getColorStateList(context!!, R.drawable.is_fb_white_black))
-
-    } else if (themeType == "5") {
-        // pbar!!.setPbarColor(context!!, R.color.colorFBRed)
-        navimenu!!.background = ContextCompat.getDrawable(context!!, themeColor)
-        navimenu!!.setItemTextColor(AppCompatResources.getColorStateList(context!!, R.drawable.is_fb_white_black))
-        navimenu!!.setItemIconTintList(AppCompatResources.getColorStateList(context!!, R.drawable.is_fb_white_black))
-
-    } else if (themeType == "6") {
-        // pbar!!.setPbarColor(context!!, R.color.colorFBRed)
-        navimenu!!.background = ContextCompat.getDrawable(context!!, themeColor)
-        navimenu!!.setItemTextColor(AppCompatResources.getColorStateList(context!!, R.drawable.is_fb_white_black))
-        navimenu!!.setItemIconTintList(AppCompatResources.getColorStateList(context!!, R.drawable.is_fb_white_black))
-
-    } else if (themeType == "7") {
-        // pbar!!.setPbarColor(context!!, R.color.colorFBRed)
-        navimenu!!.background = ContextCompat.getDrawable(context!!, themeColor)
-        navimenu!!.setItemTextColor(AppCompatResources.getColorStateList(context!!, R.drawable.is_fb_white_black))
-        navimenu!!.setItemIconTintList(AppCompatResources.getColorStateList(context!!, R.drawable.is_fb_white_black))
-
-    }else {
-        //pbar!!.setPbarColor(context!!, R.color.colorFBblue)
-        navimenu!!.background = ContextCompat.getDrawable(context!!, themeColor)
-        navimenu!!.setItemTextColor(AppCompatResources.getColorStateList(context!!, R.drawable.item_selector))
-        navimenu!!.setItemIconTintList(AppCompatResources.getColorStateList(context!!, R.drawable.item_selector));
     }
+
     navimenu!!.menu.findItem(R.id.facebookFragment).setChecked(true)
 
 }
@@ -87,9 +59,25 @@ fun GetThemeMainColor(context: Context): Int {
         return R.color.colorFBOrange
     } else if (themeType == "7") {
         return R.color.colorFBGreen
-    } else {
+    } else if (themeType == "8") {
+        return R.color.colorGold
+    } else if (themeType == "9") {
+        return R.color.colorPink
+    } else if (themeType == "10") {
+        return R.color.colorCoral
+    } else if (themeType == "11") {
+        return R.color.colorSeagreen
+    } else if (themeType == "12") {
+        return R.color.colorViolet
+    }  else if (themeType == "13") {
+        return R.color.colorSkyblue
+    } else if (themeType == "14") {
+        return R.color.colorYellowgreen
+    }
+    else {
         return R.color.colorFBblue
     }
+
 }
 fun changeFbThemescolors (context: Context){
     val color = GetThemeMainColor(context)
@@ -131,18 +119,18 @@ fun GetThemeType(context: Context): String {
     val sharedPref = PreferenceManager.getDefaultSharedPreferences(context)
 
     val themeType = sharedPref.getString("fbthemes", "1")
-    return themeType
+    return themeType!!
 }
 
 fun fbOnLoadResource(myWebView: WebView, url: String, context: Context, sharedPref: SharedPreferences) {
-    val fbheader = sharedPref!!.getBoolean("fbheader", false)
+   // val fbheader = sharedPref!!.getBoolean("fbheader", false)
     //if(url.contains("m.facebook.com")){println ("URL: "+url)}
     if (url!!.isNotEmpty()) {
-        if (url.contains("%2Fpages")) {
+       /* if (url.contains("%2Fpages")) {
             myWebView!!.loadUrl("https://m.facebook.com/pages");
         } else if (url.contains("messages")) {
             viewInjectCSS(myWebView!!, "fb_hides.css", context);
-        } else if (url.contains("home")) {
+        } else*/ if (url.contains("home")) {
             val sponsored = sharedPref!!.getBoolean("sponsored", false)
             if (sponsored) {
                 viewInjectJS(myWebView!!, context!!, "fb_spon.js")
@@ -155,7 +143,7 @@ fun fbOnLoadResource(myWebView: WebView, url: String, context: Context, sharedPr
         }//inject css everytime is page loaded
 
 
-        if (fbheader) {
+      /*  if (fbheader) {
             viewInjectCSS(myWebView!!, "fb_header.css", context);
 
             if (myWebView!!.getUrl().contains("soft=bookmarks") || myWebView!!.getUrl().contains("composer") ) {
@@ -167,7 +155,7 @@ fun fbOnLoadResource(myWebView: WebView, url: String, context: Context, sharedPr
             if (myWebView!!.getUrl().contains("composer") ) {
                 viewInjectCSS(myWebView!!, "fb_header_unfix.css", context)
             }
-        }
+        }*/
 
     }
 }
@@ -195,9 +183,33 @@ fun fbInjector(sharedPref: SharedPreferences, view: WebView, context: Context) {
         viewInjectCSS(view!!, "fb_blackorange.css", context);
 
     }
-else if (themeType == "7") {
-    viewInjectCSS(view!!, "fb_blackgreen.css", context);
+    else if (themeType == "7") {
+        viewInjectCSS(view!!, "fb_blackgreen.css", context);
 
-}
+    }
+    else if (themeType == "8") {
+        viewInjectCSS(view!!, "fb_gold.css", context);
+
+    }
+    else if (themeType == "9") {
+        viewInjectCSS(view!!, "fb_pink.css", context);
+
+    }
+    else if (themeType == "10") {
+        viewInjectCSS(view!!, "fb_coral.css", context);
+
+    }  else if (themeType == "11") {
+        viewInjectCSS(view!!, "fb_seagreen.css", context);
+
+    }  else if (themeType == "12") {
+        viewInjectCSS(view!!, "fb_violet.css", context);
+
+    }else if (themeType == "13") {
+        viewInjectCSS(view!!, "fb_skyblue.css", context);
+
+    }  else if (themeType == "14") {
+        viewInjectCSS(view!!, "fb_yellowgreen.css", context);
+
+    }
 
 }

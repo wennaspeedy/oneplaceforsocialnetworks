@@ -7,7 +7,7 @@ import android.content.*
 import android.content.ContentValues.TAG
 import android.net.Uri
 import android.os.*
-import android.preference.PreferenceManager
+import androidx.preference.PreferenceManager
 import androidx.fragment.app.Fragment
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import android.view.*
@@ -68,7 +68,7 @@ class FacebFragment : Fragment() {
         sharedPref!!.edit().putString("src", src).commit()
         img = v.findViewById(R.id.imgv) as ImageView
         // pbar = v.findViewById(R.id.pBar) as ProgressBar
-        navimenu = (this!!.context!! as AppCompatActivity).bottomNav
+        navimenu = (this!!.requireContext() as AppCompatActivity).bottomNav
         mainFrameLayout = v.findViewById(R.id.frame) as FrameLayout
         mainFrameLayout!!.setTransparent()
         // frKillOtherFragments(src, fragmentManager!!)
@@ -76,14 +76,14 @@ class FacebFragment : Fragment() {
        // frSetThisMenuItemChecked((this!!.context!! as AppCompatActivity), R.id.facebookFragment, sharedPref!!)
         viewHideActionBar((activity as AppCompatActivity))
         //AdBlocker.init(this!!.context!!, Schedulers.io());
-        viewStartImgRotate(img!!, this!!.context!!)
-        SetFbTheme(context!!,/* pbar!!,*/ navimenu!!)  //Dynamically setting of facebook theme
+        viewStartImgRotate(img!!, requireContext())
+        SetFbTheme(requireContext(),/* pbar!!,*/ navimenu!!)  //Dynamically setting of facebook theme
         changeFbThemescolors(activity as AppCompatActivity)
 
 
 
         myWebView = v.findViewById(R.id.webview) as WebView
-        if (!viewIsOnline(context!!)) {
+        if (!viewIsOnline(requireContext())) {
             myWebView!!.loadUrl(DEFAULT_ERROR_PAGE_PATH);
         } else {
 
@@ -92,7 +92,7 @@ class FacebFragment : Fragment() {
             myWebView!!.initWebview(src)
             myWebView!!.loadUrl(currentUrl)
             myWebView!!.setDownloadListener(activity as AppCompatActivity)
-            myWebView!!.setOnKeyListener(myWebView!!, activity!!)
+            myWebView!!.setOnKeyListener(myWebView!!, requireActivity())
 
 
         }
@@ -229,10 +229,10 @@ class FacebFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        frOnResume(myWebView!!, sharedPref!!, currentUrl, tempstring,img!!,mainFrameLayout!!,context!!)
+        frOnResume(myWebView!!, sharedPref!!, currentUrl, tempstring,img!!,mainFrameLayout!!,requireContext())
         navimenu!!.menu.findItem(R.id.facebookFragment).setChecked(true)//musi byt v pripade, ze se program nacte zpatky z pameti!!
         val sponsored = sharedPref!!.getBoolean("sponsored", false)
-        if (sponsored){viewInjectJS(myWebView!!, context!!,"fb_spon.js")}
+        if (sponsored){viewInjectJS(myWebView!!, requireContext(),"fb_spon.js")}
 
     }
 
