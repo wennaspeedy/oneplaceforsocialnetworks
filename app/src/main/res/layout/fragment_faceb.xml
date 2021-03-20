@@ -8,6 +8,34 @@
         android:background="@color/colorWhite">
 
   <include layout="@layout/frag_common"/>
+  <Button   android:id="@+id/topButton"
+          android:layout_width="50dp"
+          android:layout_height="50dp"
+          android:background="@drawable/roundbutton"
+          android:drawableLeft="@drawable/ic_arrowup"
+          android:paddingLeft="13dp"
+          android:textSize="10dp"
+          style="@style/Widget.AppCompat.Button.Colored"
+          android:layout_alignParentBottom="true"
+          android:layout_alignParentRight="true"
+          android:layout_marginRight="5dp"
+          android:layout_marginBottom="5dp"
+
+          />
+  <Button   android:id="@+id/messButton"
+          android:layout_width="50dp"
+          android:layout_height="50dp"
+          android:background="@drawable/roundbutton"
+          android:drawableLeft="@drawable/ic_messenger"
+          android:paddingLeft="13dp"
+          android:textSize="10dp"
+          style="@style/Widget.AppCompat.Button.Colored"
+          android:layout_alignParentBottom="true"
+          android:layout_alignParentLeft="true"
+          android:layout_marginLeft="5dp"
+          android:layout_marginBottom="5dp"
+
+          />
 
 
     <ImageView android:layout_width="50dp" android:layout_height="50dp"

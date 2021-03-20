@@ -15,6 +15,8 @@ import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.univap.oneplace.*
+import com.univap.oneplace.util.SetThemeType
+import petrov.kristiyan.colorpicker.ColorPicker
 import java.util.prefs.PreferenceChangeEvent
 import java.util.prefs.PreferenceChangeListener
 
@@ -55,6 +57,13 @@ class   FbSettingActivity : AppCompatActivity() {
             .commit()
         setContentView(R.layout.pref_fbsett_activity);
         setupActionBar()
+
+
+
+
+
+
+
         //addPreferencesFromResource(R.xml.pref_fbsetting)
         //setHasOptionsMenu(true)
 

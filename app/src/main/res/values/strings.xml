@@ -123,5 +123,6 @@
     <string name="fbtheme13">Sky blue</string>
     <string name="fbtheme14">Yellowgreen</string>
     <string name="purchheader">Please support my work</string>
+    <string name="minstallmsg">Please install Messenger</string>
 
 </resources>

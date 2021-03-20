@@ -9,6 +9,7 @@ import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import android.content.SharedPreferences
+import android.graphics.Paint
 import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.GradientDrawable
 import android.graphics.drawable.ShapeDrawable
@@ -86,10 +87,27 @@ fun ProgressBar.setPbarColor(context:Context,color:Int){
 fun WebView.initWebview(agent:String = "noagent"){
     //setVisibility(View.GONE);
 
-    settings.allowFileAccessFromFileURLs
+    /*settings.allowFileAccessFromFileURLs
     settings.allowFileAccess;
     settings.allowContentAccess;
-    settings.allowUniversalAccessFromFileURLs
+    settings.allowUniversalAccessFromFileURLs*/
+    isFocusable = true
+    isFocusableInTouchMode = true
+    isSaveEnabled = true
+    isVerticalScrollBarEnabled = true
+    isHorizontalScrollBarEnabled = true
+    CookieManager.getInstance().setAcceptCookie(true)
+    CookieManager.getInstance().setAcceptThirdPartyCookies(this, true)
+    //setLayerType(2, null as Paint?)
+    setLayerType(View.LAYER_TYPE_HARDWARE, null as Paint?);
+    val settings = settings
+    settings.javaScriptEnabled = true
+    settings.domStorageEnabled = true
+    settings.mixedContentMode = 2
+    settings.layoutAlgorithm = WebSettings.LayoutAlgorithm.NORMAL
+    settings.displayZoomControls = false
+    settings.setAppCacheEnabled(true)
+    settings.databaseEnabled = true
 
     if(agent=="fb"){
         val sharedPref = PreferenceManager.getDefaultSharedPreferences(context)
@@ -102,15 +120,20 @@ fun WebView.initWebview(agent:String = "noagent"){
 
             // settings.setUserAgentString("Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36");
         }}
-    else if(agent=="li"){
-        settings.setUserAgentString("Mozilla/5.0 (BB10; Touch) AppleWebKit/537.1+ (KHTML, like Gecko) Version/10.0.0.1337 Mobile Safari/537.1+")
 
-    } else if(agent=="tw"){settings.setUserAgentString("Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36");
-    } else if(agent=="ig"){
-        settings.setUserAgentString("Mozilla/5.0 (BB10; Touch) AppleWebKit/537.1+ (KHTML, like Gecko) Version/10.0.0.1337 Mobile Safari/537.1+")
+
+
+     else if(agent=="li"){
+         settings.setUserAgentString("Mozilla/5.0 (BB10; Touch) AppleWebKit/537.1+ (KHTML, like Gecko) Version/10.0.0.1337 Mobile Safari/537.1+")
+
+     } else if(agent=="tw"){settings.setUserAgentString("Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36");
+     } else if(agent=="ig"){
+         settings.setUserAgentString("Mozilla/5.0 (BB10; Touch) AppleWebKit/537.1+ (KHTML, like Gecko) Version/10.0.0.1337 Mobile Safari/537.1+")
+     }else if(agent=="gn"){
+        settings.setUserAgentString("Mozilla/5.0 (iPhone; CPU iPhone OS 13_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/89.0.4389.82 Mobile/15E148 Safari/604.1");
     }
 
-    settings.setJavaScriptEnabled(true);
+  /*  settings.setJavaScriptEnabled(true);
     settings.setAllowFileAccess(true);
     settings.setAppCacheEnabled(true);
     settings.setDatabaseEnabled(true);
@@ -120,7 +143,7 @@ fun WebView.initWebview(agent:String = "noagent"){
     settings.setCacheMode(WebSettings.LOAD_DEFAULT);
     settings.setDomStorageEnabled(true); //nevypinat jinak nefunguje linkedin
     settings.setRenderPriority(WebSettings.RenderPriority.HIGH);
-    setLayerType(View.LAYER_TYPE_HARDWARE, null);
+    setLayerType(View.LAYER_TYPE_HARDWARE, null);*/
     settings.setGeolocationEnabled(true)
 }
 
@@ -475,7 +498,7 @@ fun changeMaintThemescolors (context: Context,themeType:String){
         window.navigationBarColor = context.resources.getColor(color)
     }
 
-    activity.nav_view.setBackgroundResource(color);
+    //activity.nav_view.setBackgroundResource(color);
     //activity.nav_header.setBackgroundColor(color)
    /* val rootview = window.getDecorView().rootView
     rootview.setBackgroundColor(color)*/

@@ -22,10 +22,17 @@ for (var i = 0; i < y.length; i++) {
 
 }
 function killads() {
+/*
+var links = document.getElementsByTagName("a");
+    for (var i = 0, l = links.length; i < l; i++) {
+            //links[i].href = ""
+            links[i].target = "_parent";
+    }*/
+
 var y = document.getElementsByTagName('span')
 
 for (var i = 0; i < y.length; i++) {
-     if (y[i].innerHTML.indexOf('PROMOTED') !== -1) {
+     if (y[i].innerHTML.indexOf('promoted') !== -1 || y[i].innerHTML.indexOf('PROMOTED') !== -1) {
        y[i].parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.style.cssText = 'display:none !important';
 
      }
@@ -43,7 +50,15 @@ if (y.length==0){
 else {hidebuttons();}
 }
 
+function MakeMenuLinksOpenInNewWindow() {
+    var links = document.getElementsByTagName("a");
+    for (var i = 0, l = links.length; i < l; i++) {
 
+            links[i].target = "_self";
+    }
+}
+
+MakeMenuLinksOpenInNewWindow()
 killads();
 setInterval(showFoo, 500);
 

@@ -1,6 +1,28 @@
 ._3q-XSJ2vokDQrvdG6mR__k {
 visibility:hidden}
 
+  h1.Title.m-no-margin::before {
+    display: none !important;
+   }
+
+   fieldset.AnimatedForm__field.m-checkbox::after {
+       display: none !important;
+
+   }
+a.CommunityHeader-subscribe-button.m-capitalized {
+   display: none !important;
+}
+
+.GeoBlockingFooter {
+     display: none !important;
+}
+
+.xPromoAppStoreFooter {
+  display: none !important;
+}
+span.XPromoPopup__actionTitle {
+    display: none!important;
+}
 
 .active .XPromoPopup__content {
 
@@ -78,9 +100,10 @@ visibility:hidden}
        display: none;
    }
 
-   span.XPromoPopup__actionTitle {
-       display: none;
-   }
+ img.XPromoPopup__chrome {
+     display: none;
+ }
+
 
 
    img.XPromoPopup__chrome {
@@ -89,17 +112,29 @@ visibility:hidden}
 
    .XPromoPopup__actionButton {
 
-    margin-right: 35%
+    margin-left: 37%;
+           margin-right: 37%;
    }
 
    .XPromoPopup__imageBtnWrapper {
 
-       margin-left: 45%;
+       margin-left: 44%;
+       margin-right: 44%;
    }
 
    a.XPromoInFeed {
        display: none !important;
    }
+
+a#use-app:before  {
+    display: none !important;
+}
+a#use-app:after  {
+    display: none !important;
+}
+a.BottomLink.BottomLink__switchLink.m-secondary-text {
+    font-size: xx-large !important;
+}
 
    /*
  button.XPromoPopup__actionButton {
@@ -113,22 +148,72 @@ visibility:hidden}
 
         margin-bottom: 50px !important;
    }*/
-
+/*
 button.XPromoPopup__actionButton {
   position: absolute;
   visibility: hidden;
-}
-
+   display: block;
+margin-right:150px;
+    text-align:left
+}*/
+/*
 button.XPromoPopup__actionButton:before {
-  content: "R";
-  font-size: 40px;
+  content: "Reloaded";
+  font-size: 30px;
   visibility: visible;
+ display: block;
+  max-width: 300px;
+  margin: auto;
+
+}*/
+/*
+.App.m-mobile .AnimatedForm__appLink, .App.m-mobile .AnimatedForm__appLink:active, .App.m-mobile .AnimatedForm__appLink:hover, .App.m-mobile .AnimatedForm__appLink:visited, .Container.m-mobile .AnimatedForm__appLink, .Container.m-mobile .AnimatedForm__appLink:active, .Container.m-mobile .AnimatedForm__appLink:hover, .Container.m-mobile .AnimatedForm__appLink:visited {
+    display: none !important;
+}*/
+
+
+
+.XPromoPill.m-slideIn {
+    display: none;
 }
-
-
-
-
 
    a.XPromoPopup__actionButton.m-blue {
     display: none !important;
+   }
+
+a.AppStoreButton.SignupWall__AppBtn {
+    display: none !important;
+}
+   a.AppStoreButton.large.SignupWall__AppBtn {
+       display: none !important;
+   }
+
+
+
+   /*change text in promo messages*/
+   h3.xPromoChat__title {
+     text-indent:-9999px;
+   }
+  h3.xPromoChat__title:before {
+     text-indent:0;
+     content:'You have to login';
+     float:left;
+   }
+
+   p.xPromoChat__description {
+       display: none;
+   }
+
+   a.xPromoChat__button {
+       display: none;
+   }
+
+
+   h1.Title.m-no-margin:before {
+    display: none !important;
+   }
+
+   fieldset.AnimatedForm__field.m-checkbox:before {
+       display: none !important;
+
    }

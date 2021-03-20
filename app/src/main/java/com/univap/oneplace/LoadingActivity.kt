@@ -69,7 +69,7 @@ class LoadingActivity : AppCompatActivity() {
 
         val logo = v.findViewById(R.id.nav_header_imageViewMain) as ImageView
 
-        val loadIg = v.findViewById(R.id.loadIg) as ImageView
+      /*  val loadIg = v.findViewById(R.id.loadIg) as ImageView
         val loadFb = v.findViewById(R.id.loadFb) as ImageView
         val loadRd = v.findViewById(R.id.loadRd) as ImageView
         val loadTw = v.findViewById(R.id.loadTw) as ImageView
@@ -125,7 +125,7 @@ class LoadingActivity : AppCompatActivity() {
         animateIt(R.color.colorRDorange,loadRd)
         animateIt(R.color.colorNews,loadGn)
 
-
+*/
 
 
 
@@ -140,8 +140,8 @@ class LoadingActivity : AppCompatActivity() {
         rotate.duration = 650
         rotate2.duration = 800
 
-        backgroundOne.startAnimation(rotate2)
-        logo.startAnimation(rotate)
+        //backgroundOne.startAnimation(rotate2)
+        //logo.startAnimation(rotate)
 
        val welcomeThread = object:Thread() {
             override fun run() {
@@ -149,7 +149,7 @@ class LoadingActivity : AppCompatActivity() {
                 {
                     super.run()
 
-                    Thread.sleep(2000)
+                    Thread.sleep(100)
                 }
                 catch (e:Exception) {
                 }

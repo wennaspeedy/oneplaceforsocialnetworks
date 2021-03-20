@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <integer-array name="themeColors">
+        <item>@color/colorFBblue</item>
+        <item>@color/colorFBBlack</item>
+        <item>@color/colorFBGrey</item>
+        <item>@color/colorFBRed</item>
+        <item>@color/colorFBBlack2</item>
+        <item>@color/colorFBOrange</item>
+        <item>@color/colorFBGreen</item>
+        <item>@color/colorGold</item>
+        <item>@color/colorPink</item>
+        <item>@color/colorCoral</item>
+        <item>@color/colorSeagreen</item>
+        <item>@color/colorViolet</item>
+        <item>@color/colorSkyblue</item>
+        <item>@color/colorYellowgreen</item>
+    </integer-array>
+
     <string-array name="fbThemeArray">
         <item>@string/fbtheme1</item>
         <item>@string/fbtheme2</item>

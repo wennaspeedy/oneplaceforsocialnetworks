@@ -21,11 +21,14 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.univap.oneplace.util.*
 import kotlinx.android.synthetic.main.maincontent.*
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.provider.MediaStore
 import android.util.Log
 import android.webkit.WebView
 import android.webkit.WebChromeClient
+import android.widget.Button
 import android.widget.FrameLayout
+import android.widget.Toast
 import androidx.core.net.toUri
 import com.univap.oneplace.R
 import java.io.*
@@ -67,6 +70,8 @@ class FacebFragment : Fragment() {
         sharedPref = PreferenceManager.getDefaultSharedPreferences(context)
         sharedPref!!.edit().putString("src", src).commit()
         img = v.findViewById(R.id.imgv) as ImageView
+        val button: Button = v.findViewById(R.id.topButton) as Button
+        val buttonmess: Button = v.findViewById(R.id.messButton) as Button
         // pbar = v.findViewById(R.id.pBar) as ProgressBar
         navimenu = (this!!.requireContext() as AppCompatActivity).bottomNav
         mainFrameLayout = v.findViewById(R.id.frame) as FrameLayout
@@ -78,7 +83,7 @@ class FacebFragment : Fragment() {
         //AdBlocker.init(this!!.context!!, Schedulers.io());
         viewStartImgRotate(img!!, requireContext())
         SetFbTheme(requireContext(),/* pbar!!,*/ navimenu!!)  //Dynamically setting of facebook theme
-        changeFbThemescolors(activity as AppCompatActivity)
+        changeFbThemescolors(activity as AppCompatActivity,button,buttonmess)
 
 
 
@@ -109,7 +114,7 @@ class FacebFragment : Fragment() {
                // println("MYLOG: "+request?.url!!)
                 //println("MYLOG: "+request?.url!!.scheme)
                // println("MYLOG: "+Uri.parse(url).getHost())
-                if ((Uri.parse(url).getHost().equals("m.facebook.com"))) {
+                if((Uri.parse(url).getHost().equals("m.facebook.com"))||(Uri.parse(url).getHost().equals("www.facebook.com"))) {
                     return false;
                 } else if ((Uri.parse(url).getHost()?.contains("runmain")!!))//my static html pages->link
                 {
@@ -198,6 +203,51 @@ class FacebFragment : Fragment() {
             }
         }
         mySwipeRefreshLayout.setRefresh(myWebView!!, currentUrl, sharedPref!!)
+
+        button.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(v: View?) {
+                viewInjectJS(myWebView!!, requireContext(),"fb_top.js")
+            }
+        })
+
+        buttonmess.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(v: View?) {
+                var i = Intent(Intent.ACTION_MAIN)
+                val managerclock: PackageManager = (activity as AppCompatActivity).getPackageManager()
+                try {
+                    i =
+                        managerclock.getLaunchIntentForPackage("com.facebook.mlite")!! //com.facebook.orca
+                    i?.let {
+                        it.addCategory(Intent.CATEGORY_LAUNCHER)
+                        startActivity(it)
+                        return
+                    }
+                }
+                catch (e: java.lang.Exception){}
+
+                try {
+                    i =
+                        managerclock.getLaunchIntentForPackage("com.facebook.orca")!! //com.facebook.orca
+                    i?.let {
+                        it.addCategory(Intent.CATEGORY_LAUNCHER)
+                        startActivity(it)
+                        return
+                    }
+                }
+
+                catch (e: java.lang.Exception){}
+                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.facebook.mlite")))
+
+                Toast.makeText(context,R.string.minstallmsg, Toast.LENGTH_SHORT).show()
+
+            }
+        })
+
+
+
+
+
+
         return v
 
     }

@@ -3,14 +3,18 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+    <androidx.preference.Preference android:key="fbthemes"
+            android:title="@string/fbthemes"
+            android:defaultValue="false"
+            android:enabled="true"/>
 
-    <androidx.preference.ListPreference
+  <!--><androidx.preference.ListPreference
             android:key="fbthemes"
             android:title="@string/fbthemes"
             android:entries="@array/fbThemeArray"
             android:entryValues="@array/fbThemeValues"
             android:defaultValue="1"
-            android:dialogTitle=""/>
+            android:dialogTitle=""/>-->
 
     <androidx.preference.CheckBoxPreference android:key="fbfast"
                         android:title="@string/fbfast"
