@@ -41,7 +41,7 @@ android {
             applicationId 'com.univap.oneplace'
             targetSdkVersion 29
             testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
-            versionCode 10
+            versionCode 12
             versionName '0.3'
             signingConfig signingConfigs.sign
         }
@@ -85,7 +85,6 @@ dependencies {
     implementation 'com.android.billingclient:billing:3.0.2'
     implementation 'androidx.preference:preference:1.1.1'
     implementation 'petrov.kristiyan:colorpicker-library:1.1.10'
-
 }
 //    implementation 'com.github.gtmora200:ZExplosionField:1.0.3'
 

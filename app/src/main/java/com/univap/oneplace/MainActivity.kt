@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
 
     private val purchaseValueFromPref: Boolean
-        get() = preferenceObject.getBoolean("donate", false)
+        get() = preferenceObject.getBoolean("donate", true)
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -387,11 +387,7 @@ var first = 0
                 this@MainActivity.startActivity(myIntent)
 
             }
-            R.id.nav_tutorial -> {
-                val myIntent = Intent(this@MainActivity, IntroActivity2::class.java)
-                this@MainActivity.startActivity(myIntent)
 
-            }
 
 
             R.id.nav_donate -> {

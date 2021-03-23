@@ -29,7 +29,6 @@ import android.webkit.WebChromeClient
 import android.widget.Button
 import android.widget.FrameLayout
 import android.widget.Toast
-import androidx.core.net.toUri
 import com.univap.oneplace.R
 import java.io.*
 import java.lang.Exception
@@ -95,7 +94,24 @@ class FacebFragment : Fragment() {
             myWebView!!.stopLoading();
 
             myWebView!!.initWebview(src)
-            myWebView!!.loadUrl(currentUrl)
+
+            //var pathfile = requireContext().getFilesDir().getPath() + "/savedWebPage.mht"
+               myWebView!!.loadUrl(currentUrl)
+          //  var fileCont = File(pathfile).inputStream().readBytes().toString(Charsets.UTF_8)
+           /* val file = File(pathfile)
+          //  println("MYLOG"+fileCont)
+            if (file.exists()){
+                myWebView!!.loadUrl("file://"+requireContext().getFilesDir().getPath() + "/savedWebPage.mht");
+
+            }else{
+                myWebView!!.loadUrl(currentUrl)
+
+            }*/
+
+
+
+
+
             myWebView!!.setDownloadListener(activity as AppCompatActivity)
             myWebView!!.setOnKeyListener(myWebView!!, requireActivity())
 
@@ -111,7 +127,7 @@ class FacebFragment : Fragment() {
                 val url: String = request?.url.toString()
               //  println ("FBURL:"+url)
 
-               // println("MYLOG: "+request?.url!!)
+                println("MYLOG: "+request?.url!!)
                 //println("MYLOG: "+request?.url!!.scheme)
                // println("MYLOG: "+Uri.parse(url).getHost())
                 if((Uri.parse(url).getHost().equals("m.facebook.com"))||(Uri.parse(url).getHost().equals("www.facebook.com"))) {
@@ -255,20 +271,40 @@ class FacebFragment : Fragment() {
 
     override fun onStop() {
         // println ("URLSTOP: "+myWebView!!.getUrl())
-
         val someString: String? = myWebView!!.url
         tempstring = currentUrl
         someString.notNull {
             tempstring = myWebView!!.url
         }
 
-       // println ("URLSTOP: "+tempstring)
+       // println ("MYLOG: onstop"+tempstring)
+      //  sharedPref!!.edit().putString("currentUrl", tempstring).commit()
+
         frOnStop(null, img!!, myWebView!!, sharedPref!!)
+
+
         super.onStop()
 
     }
 
+    override fun onPause() {
+       // println ("MYLOG: onpause")
+        /*val pathFilename = requireContext().getFilesDir().getPath() + "/savedWebPage.mht";
+        myWebView!!.saveWebArchive(pathFilename);*/
+        super.onPause()
+    }
+
+
+
+
+
+
+
     override fun onDestroy() {
+
+     /*   val pathFilename = requireContext().getFilesDir().getPath();
+        val file = File(pathFilename, "savedWebPage.mht")
+        file.deleteRecursively()*/
         super.onDestroy()
         myWebView.notNull {
             frOndestroy(null, img!!, myWebView!!)
@@ -278,6 +314,7 @@ class FacebFragment : Fragment() {
     }
 
     override fun onResume() {
+      //  println ("MYLOG: onresume "+tempstring)
         super.onResume()
         frOnResume(myWebView!!, sharedPref!!, currentUrl, tempstring,img!!,mainFrameLayout!!,requireContext())
         navimenu!!.menu.findItem(R.id.facebookFragment).setChecked(true)//musi byt v pripade, ze se program nacte zpatky z pameti!!
@@ -326,7 +363,7 @@ class FacebFragment : Fragment() {
         val webeIntent = Intent(Intent.ACTION_VIEW)
         webeIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         webeIntent.setData(Uri.parse(url))
-        getActivity()!!.startActivity(webeIntent)
+        requireActivity().startActivity(webeIntent)
     }
 
     inner class MyWebChromeClient : WebChromeClient() {

@@ -7,6 +7,7 @@ import android.os.Build
 import android.os.Bundle
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.preference.PreferenceManager
 import com.univap.oneplace.MainActivity
 import com.univap.oneplace.MyContextWrapper
 import com.univap.oneplace.R
@@ -237,7 +238,7 @@ class SettingActivity : AppCompatActivity() {
 
     override fun attachBaseContext(newBase: Context) {
 
-        val sharedPref = newBase.getSharedPreferences("MyPref", 0)
+        val sharedPref = PreferenceManager.getDefaultSharedPreferences(newBase)
         val lang = sharedPref!!.getString("lang", "none")
         val deflang = Resources.getSystem().getConfiguration().locale.getLanguage();
         if(lang == "none"){

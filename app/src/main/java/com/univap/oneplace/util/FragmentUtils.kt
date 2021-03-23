@@ -179,6 +179,7 @@ fun frOnResume(myWebView: WebView, sharedPref: SharedPreferences, url: String, t
                 myWebView!!.loadUrl(tempstring);
             }
         }
+
     }
 
 

@@ -39,14 +39,7 @@
                 android:configChanges="locale|orientation"
                 android:label="@string/fbsetting"
                 android:theme="@style/PreferenceScreen"></activity>
-        <activity
-                android:name=".IntroActivity"
-                android:configChanges="locale|orientation"
-                android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity
-                android:name=".IntroActivity2"
-                android:configChanges="locale|orientation"
-                android:theme="@style/AppTheme.NoActionBar"></activity>
+
         <activity
                 android:name=".settings.CustomActivity"
                 android:configChanges="locale|orientation"

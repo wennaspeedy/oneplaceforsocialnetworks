@@ -49,11 +49,11 @@ class LoadingActivity : AppCompatActivity() {
 
             setContentView(R.layout.activity_loading)
             val v: View = findViewById(android.R.id.content)
-        var context:Context = this@LoadingActivity
+      /*  var context:Context = this@LoadingActivity
             img = v.findViewById(R.id.nav_header_imageViewMain) as ImageView
 
 
-        val layout1:RelativeLayout = v.findViewById(R.id.relativeloading)
+        val layout1:RelativeLayout = v.findViewById(R.id.relativeloading)*/
         /*
         ObjectAnimator.ofFloat(layout1, "alpha",0f, 1f).apply {
             duration = 1500
@@ -67,7 +67,7 @@ class LoadingActivity : AppCompatActivity() {
 
         val backgroundOne = v.findViewById(R.id.background_one) as ImageView
 
-        val logo = v.findViewById(R.id.nav_header_imageViewMain) as ImageView
+        /*val logo = v.findViewById(R.id.nav_header_imageViewMain) as ImageView*/
 
       /*  val loadIg = v.findViewById(R.id.loadIg) as ImageView
         val loadFb = v.findViewById(R.id.loadFb) as ImageView
@@ -140,7 +140,7 @@ class LoadingActivity : AppCompatActivity() {
         rotate.duration = 650
         rotate2.duration = 800
 
-        //backgroundOne.startAnimation(rotate2)
+        backgroundOne.startAnimation(rotate2)
         //logo.startAnimation(rotate)
 
        val welcomeThread = object:Thread() {
@@ -149,7 +149,7 @@ class LoadingActivity : AppCompatActivity() {
                 {
                     super.run()
 
-                    Thread.sleep(100)
+                    Thread.sleep(1000)
                 }
                 catch (e:Exception) {
                 }

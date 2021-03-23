@@ -1,8 +1,10 @@
 package com.univap.oneplace
 
+import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.content.SharedPreferences.Editor
+import android.content.res.Resources
 import android.os.Bundle
 import androidx.preference.PreferenceManager
 import android.view.View
@@ -269,5 +271,17 @@ class DonateActivity : AppCompatActivity(), PurchasesUpdatedListener {
         const val PREF_FILE = "MyPref"
         const val PURCHASE_KEY = "donate"
         const val PRODUCT_ID = "purchase"
+    }
+    override fun attachBaseContext(newBase: Context) {
+
+        val sharedPref = PreferenceManager.getDefaultSharedPreferences(newBase)
+        val lang = sharedPref!!.getString("lang", "none")
+        val deflang = Resources.getSystem().getConfiguration().locale.getLanguage();
+        if(lang == "none"){
+            super.attachBaseContext(MyContextWrapper.wrap(newBase, deflang))
+        } else {
+            super.attachBaseContext(MyContextWrapper.wrap(newBase, lang!!))
+
+        }
     }
 }
